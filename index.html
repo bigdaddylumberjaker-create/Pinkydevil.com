@@ -3,26 +3,289 @@
 <head>
 <title>PinkyDevil</title>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 <style>
+/* BODY */
 body{
-background:black;
-color:pink;
+margin:0;
 font-family:Arial;
+background:#070707;
+color:white;
+overflow-x:hidden;
+}
+
+/* LOADING SCREEN */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#070707;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+overflow:hidden;
+transition:opacity 1s ease;
+}
+
+#logoIntro{
+width:230px;
+z-index:2;
+animation:logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow{
+0%{opacity:0.7; filter:drop-shadow(0 0 10px #ff66cc);}
+50%{opacity:1; filter:drop-shadow(0 0 35px #ff66cc);}
+100%{opacity:0.7; filter:drop-shadow(0 0 10px #ff66cc);}
+}
+
+#particleCanvas{
+position:absolute;
+width:100%;
+height:100%;
+z-index:1;
+}
+
+/* PARTICLE BACKGROUND */
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* HERO SECTION */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding-top:100px;
 }
 
-h1{
-font-size:50px;
+.hero h1{
+font-size:70px;
+color:#ff66cc;
+text-shadow:0 0 25px #ff66cc;
+margin-bottom:10px;
 }
+
+.hero p{
+font-size:22px;
+opacity:0.8;
+}
+
+/* BUTTONS */
+.buttons{
+margin-top:40px;
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+background:#ff66cc;
+padding:15px 35px;
+border-radius:30px;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.15);
+box-shadow:0 0 20px #ff66cc;
+}
+
+/* SECTION CARDS */
+.section{
+padding:100px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:35px;
+width:260px;
+border-radius:20px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #ff66cc;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+opacity:0.6;
+}
+
+/* SOCIAL ICONS */
+.socials{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:25px;
+}
+
+.socials a{
+color:#ff66cc;
+font-size:24px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.socials a:hover{
+transform:scale(1.3);
+}
+
 </style>
-
 </head>
 
 <body>
 
-<h1>Welcome to PinkyDevil.com</h1>
-<p>Femboy • Furry • Developer</p>
+<!-- LOADING SCREEN -->
+<div id="loader">
+<img src="logo.png" id="logoIntro">
+<canvas id="particleCanvas"></canvas>
+</div>
 
+<!-- PARTICLE BACKGROUND -->
+<div id="particles-js"></div>
+
+<!-- HERO -->
+<section class="hero">
+<h1>PinkyDevil</h1>
+<p>Femboy • Furry • Developer • Sax Player</p>
+
+<div class="buttons">
+<button class="btn" onclick="clickSound()">Projects</button>
+<button class="btn" onclick="clickSound()">Streams</button>
+<button class="btn" onclick="clickSound()">Music</button>
+<button class="btn" onclick="clickSound()">Links</button>
+</div>
+</section>
+
+<!-- PROJECT SECTION -->
+<section class="section">
+<h2>Things I Do</h2>
+<div class="cards">
+<div class="card">
+<h3>💻 Development</h3>
+<p>Roblox tools, websites, and coding projects.</p>
+</div>
+<div class="card">
+<h3>🎮 Streaming</h3>
+<p>Gaming streams and chill hangouts.</p>
+</div>
+<div class="card">
+<h3>🎷 Music</h3>
+<p>Saxophone lessons and performances.</p>
+</div>
+</div>
+</section>
+
+<!-- SOCIALS -->
+<section class="section">
+<h2>Connect with Me</h2>
+<div class="socials">
+<a href="#" target="_blank">Discord</a>
+<a href="#" target="_blank">Twitch</a>
+<a href="#" target="_blank">GitHub</a>
+</div>
+</section>
+
+<footer>
+© PinkyDevil
+</footer>
+
+<audio id="click" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+
+<script>
+/* CLICK SOUND */
+function clickSound(){
+document.getElementById("click").play();
+}
+
+/* PARTICLES BACKGROUND */
+particlesJS("particles-js",{
+particles:{
+number:{value:90},
+color:{value:"#ff66cc"},
+shape:{type:"circle"},
+opacity:{value:0.6},
+size:{value:3},
+move:{speed:2}
+}
+});
+
+/* LOADER LOGO → PARTICLE EXPLOSION */
+const canvas = document.getElementById("particleCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let particles = [];
+
+function createParticles(){
+for(let i=0;i<140;i++){
+particles.push({
+x:window.innerWidth/2,
+y:window.innerHeight/2,
+vx:(Math.random()-0.5)*10,
+vy:(Math.random()-0.5)*10,
+size:Math.random()*4+1
+});
+}
+}
+
+function animateParticles(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+p.x+=p.vx;
+p.y+=p.vy;
+ctx.fillStyle="#ff66cc";
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+ctx.fill();
+});
+requestAnimationFrame(animateParticles);
+}
+
+window.addEventListener("load",()=>{
+// wait 1s to show glow
+setTimeout(()=>{
+document.getElementById("logoIntro").style.opacity="0";
+createParticles();
+animateParticles();
+
+// fade loader after 1.5s
+setTimeout(()=>{
+document.getElementById("loader").style.opacity="0";
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1000);
+},1500);
+
+},1000);
+});
+
+</script>
 </body>
 </html>
