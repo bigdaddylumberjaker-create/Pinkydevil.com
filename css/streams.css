@@ -1,0 +1,78 @@
+.streamsFrame {
+  max-width: 1200px;
+  margin: auto;
+  background: rgba(31,34,63,0.95);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+/* HEADER */
+.streamsHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pageSubtitle {
+  color: #ece8f8;
+  margin-top: 10px;
+}
+
+/* STREAM AREA */
+.streamSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+/* VIDEO */
+.streamPlayer {
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,214,240,0.2);
+  box-shadow: 0 0 20px rgba(255,182,224,0.2);
+}
+
+/* CHAT */
+.streamChat {
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,214,240,0.2);
+  background: rgba(20,20,40,0.9);
+}
+
+/* INFO CARDS */
+.streamInfo {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+
+.infoCard {
+  background: rgba(18,21,42,0.85);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,214,240,0.12);
+}
+
+.infoCard h2 {
+  margin-bottom: 10px;
+}
+
+.infoCard p, .infoCard li {
+  color: #ece8f8;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .streamSection {
+    grid-template-columns: 1fr;
+  }
+
+  .streamInfo {
+    grid-template-columns: 1fr;
+  }
+}
