@@ -3,226 +3,184 @@
 <head>
 <title>PinkyDevil</title>
 
+<!-- Matter.js physics engine -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
 <style>
-
-/* BODY */
-
-body{
-margin:0;
-font-family:Arial;
-color:white;
-overflow-x:hidden;
-background:#070707;
+body {
+  margin: 0;
+  font-family: Arial;
+  color: white;
+  overflow-x: hidden;
+  background: #070707;
 }
 
 /* CHECKER BACKGROUND */
-
-.checkerBackground{
-position:fixed;
-width:200%;
-height:200%;
-top:-50%;
-left:-50%;
-z-index:-2;
-
-background-image:
-linear-gradient(45deg,#ffd6f0 25%,transparent 25%),
-linear-gradient(-45deg,#ffd6f0 25%,transparent 25%),
-linear-gradient(45deg,transparent 75%,#ffd6f0 75%),
-linear-gradient(-45deg,transparent 75%,#ffd6f0 75%);
-
-background-size:60px 60px;
-background-position:0 0,0 30px,30px -30px,-30px 0;
-background-color:white;
-
-animation:moveCheckers 18s linear infinite;
-
-transform:perspective(800px) rotateX(10deg);
-transition:transform 0.2s ease;
+.checkerBackground {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -2;
+  background-image:
+    linear-gradient(45deg,#ffd6f0 25%,transparent 25%),
+    linear-gradient(-45deg,#ffd6f0 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#ffd6f0 75%),
+    linear-gradient(-45deg,transparent 75%,#ffd6f0 75%);
+  background-size: 60px 60px;
+  background-position: 0 0,0 30px,30px -30px,-30px 0;
+  background-color: white;
+  animation: moveCheckers 18s linear infinite;
+  transform: perspective(800px) rotateX(10deg);
+  transition: transform 0.2s ease;
 }
 
-@keyframes moveCheckers{
-0%{transform:translate(0,0) perspective(800px) rotateX(10deg);}
-100%{transform:translate(-300px,-300px) perspective(800px) rotateX(10deg);}
+@keyframes moveCheckers {
+  0% { transform: translate(0,0) perspective(800px) rotateX(10deg);}
+  100% { transform: translate(-300px,-300px) perspective(800px) rotateX(10deg);}
 }
 
-/* DARK OVERLAY */
-
-body::after{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:radial-gradient(circle,transparent 40%,#070707 100%);
-pointer-events:none;
-z-index:-1;
+/* VIGNETTE OVERLAY */
+body::after {
+  content:"";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle,transparent 40%,#070707 100%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#070707;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-overflow:hidden;
-transition:opacity 1s ease;
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #070707;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 1s ease;
 }
 
-#logoIntro{
-width:240px;
-animation:logoGlow 3s ease-in-out infinite;
-margin-bottom:30px;
+#logoIntro {
+  width: 240px;
+  animation: logoGlow 3s ease-in-out infinite;
+  margin-bottom: 30px;
 }
 
-@keyframes logoGlow{
-0%{opacity:0.7; filter:drop-shadow(0 0 10px #ff66cc);}
-50%{opacity:1; filter:drop-shadow(0 0 35px #ff66cc);}
-100%{opacity:0.7; filter:drop-shadow(0 0 10px #ff66cc);}
+@keyframes logoGlow {
+  0% {opacity: 0.7; filter: drop-shadow(0 0 10px #ff66cc);}
+  50% {opacity: 1; filter: drop-shadow(0 0 35px #ff66cc);}
+  100% {opacity: 0.7; filter: drop-shadow(0 0 10px #ff66cc);}
 }
 
-#enterButton{
-padding:14px 40px;
-font-size:18px;
-background:#ff66cc;
-border:none;
-border-radius:30px;
-color:white;
-cursor:pointer;
-transition:0.3s;
+#enterButton {
+  padding: 14px 40px;
+  font-size: 18px;
+  background: #ff66cc;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#enterButton:hover{
-transform:scale(1.15);
-box-shadow:0 0 20px #ff66cc;
+#enterButton:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px #ff66cc;
 }
 
-/* IMAGE RAIN */
-
-#imageRain{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-}
-
-.rainImg{
-position:absolute;
-width:60px;
-animation:fall 1s linear forwards;
-}
-
-@keyframes fall{
-0%{transform:translateY(-150px);}
-100%{transform:translateY(110vh);}
-}
-
-.spreadLeft{
-animation:spreadLeft 1s forwards;
-}
-
-.spreadRight{
-animation:spreadRight 1s forwards;
-}
-
-@keyframes spreadLeft{
-to{ transform:translateX(-120vw); }
-}
-
-@keyframes spreadRight{
-to{ transform:translateX(120vw); }
+#physicsCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.hero h1{
-font-size:70px;
-color:#ff66cc;
-text-shadow:0 0 25px #ff66cc;
+.hero h1 {
+  font-size: 70px;
+  color: #ff66cc;
+  text-shadow: 0 0 25px #ff66cc;
 }
 
-.hero p{
-font-size:22px;
-opacity:0.9;
+.hero p {
+  font-size: 22px;
+  opacity: 0.9;
 }
 
-/* BUTTONS */
-
-.buttons{
-margin-top:40px;
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-justify-content:center;
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.btn{
-background:#ff66cc;
-padding:15px 35px;
-border-radius:30px;
-border:none;
-color:white;
-font-size:18px;
-cursor:pointer;
-transition:0.3s;
+.btn {
+  background: #ff66cc;
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn:hover{
-transform:scale(1.15);
-box-shadow:0 0 20px #ff66cc;
+.btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px #ff66cc;
 }
 
 /* CARDS */
-
-.section{
-padding:100px 20px;
-text-align:center;
+.section {
+  padding: 100px 20px;
+  text-align: center;
 }
 
-.cards{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px;
-margin-top:40px;
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.card{
-background:#111;
-padding:35px;
-width:260px;
-border-radius:20px;
-transition:0.4s;
+.card {
+  background: #111;
+  padding: 35px;
+  width: 260px;
+  border-radius: 20px;
+  transition: 0.4s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #ff66cc;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #ff66cc;
 }
 
-footer{
-text-align:center;
-padding:40px;
-opacity:0.6;
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
 }
-
 </style>
 </head>
 
@@ -230,133 +188,117 @@ opacity:0.6;
 
 <div class="checkerBackground"></div>
 
-<!-- INTRO -->
-
 <div id="loader">
-
-<img src="logo.png" id="logoIntro">
-
-<button id="enterButton">Enter</button>
-
-<div id="imageRain"></div>
-
+  <img src="logo.png" id="logoIntro">
+  <button id="enterButton">Enter</button>
+  <canvas id="physicsCanvas"></canvas>
 </div>
-
-<!-- HERO -->
 
 <section class="hero">
-
-<h1>PinkyDevil</h1>
-<p>Femboy • Furry • Developer • Sax Player</p>
-
-<div class="buttons">
-
-<button class="btn">Projects</button>
-<button class="btn">Streams</button>
-<button class="btn">Music</button>
-<button class="btn">Links</button>
-
-</div>
-
+  <h1>PinkyDevil</h1>
+  <p>Femboy • Furry • Developer • Sax Player</p>
+  <div class="buttons">
+    <button class="btn">Projects</button>
+    <button class="btn">Streams</button>
+    <button class="btn">Music</button>
+    <button class="btn">Links</button>
+  </div>
 </section>
 
 <section class="section">
-
-<h2>Things I Do</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>💻 Development</h3>
-<p>Roblox tools and coding projects.</p>
-</div>
-
-<div class="card">
-<h3>🎮 Streaming</h3>
-<p>Gaming streams and chill hangouts.</p>
-</div>
-
-<div class="card">
-<h3>🎷 Music</h3>
-<p>Saxophone lessons and performances.</p>
-</div>
-
-</div>
-
+  <h2>Things I Do</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>💻 Development</h3>
+      <p>Roblox tools and coding projects.</p>
+    </div>
+    <div class="card">
+      <h3>🎮 Streaming</h3>
+      <p>Gaming streams and chill hangouts.</p>
+    </div>
+    <div class="card">
+      <h3>🎷 Music</h3>
+      <p>Saxophone lessons and performances.</p>
+    </div>
+  </div>
 </section>
 
-<footer>
-© PinkyDevil
-</footer>
+<footer>© PinkyDevil</footer>
 
 <script>
-
-/* BACKGROUND PARALLAX */
-
-const bg = document.querySelector(".checkerBackground");
-
+// CHECKER PARALLAX
+const bg=document.querySelector(".checkerBackground");
 document.addEventListener("mousemove",(e)=>{
-
-let x = (e.clientX / window.innerWidth - 0.5) * 20;
-let y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-bg.style.transform =
-`perspective(800px) rotateX(${10-y}deg) rotateY(${x}deg)`;
-
+  let x=(e.clientX/window.innerWidth-0.5)*20;
+  let y=(e.clientY/window.innerHeight-0.5)*20;
+  bg.style.transform=`perspective(800px) rotateX(${10-y}deg) rotateY(${x}deg)`;
 });
 
-/* INTRO IMAGE RAIN */
-
-const enterButton = document.getElementById("enterButton");
-const rainContainer = document.getElementById("imageRain");
+// PHYSICS INTRO
+const {Engine,Render,Runner,Bodies,Composite,Body} = Matter;
+const enterButton=document.getElementById("enterButton");
 
 enterButton.addEventListener("click",()=>{
+  document.getElementById("logoIntro").style.opacity="0";
+  enterButton.style.opacity="0";
 
-document.getElementById("logoIntro").style.opacity="0";
-enterButton.style.opacity="0";
+  const engine=Engine.create();
+  const world=engine.world;
 
-for(let i=0;i<120;i++){
+  const render=Render.create({
+    canvas: document.getElementById("physicsCanvas"),
+    engine: engine,
+    options: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      wireframes: false,
+      background: "transparent"
+    }
+  });
 
-let img=document.createElement("img");
-img.src="logo.png";
-img.className="rainImg";
+  // ground to pile up logos
+  const ground = Bodies.rectangle(window.innerWidth/2, window.innerHeight+40, window.innerWidth, 80, {isStatic:true});
+  Composite.add(world, ground);
 
-img.style.left=Math.random()*100+"vw";
-img.style.animationDelay=(Math.random()*0.5)+"s";
+  let logos=[];
+  for(let i=0;i<70;i++){
+    let logo=Bodies.rectangle(
+      Math.random()*window.innerWidth,
+      -200-Math.random()*500,
+      60, 60,
+      {
+        restitution: 0.4,
+        friction: 0.1,
+        render: { sprite:{texture:"logo.png", xScale:0.3, yScale:0.3} }
+      }
+    );
+    logos.push(logo);
+    Composite.add(world, logo);
+  }
 
-rainContainer.appendChild(img);
+  Render.run(render);
+  const runner=Runner.create();
+  Runner.run(runner, engine);
 
-}
+  // spread logos after pile
+  setTimeout(()=>{
+    logos.forEach((logo,i)=>{
+      let force=i%2===0?-0.05:0.05;
+      Body.applyForce(logo, logo.position, {x:force,y:-0.02});
+    });
+  },4000);
 
-setTimeout(()=>{
-
-let images=document.querySelectorAll(".rainImg");
-
-images.forEach((img,index)=>{
-
-if(index%2===0){
-img.classList.add("spreadLeft");
-}else{
-img.classList.add("spreadRight");
-}
+  // fade loader and reveal site
+  setTimeout(()=>{
+    document.getElementById("loader").style.opacity="0";
+    setTimeout(()=>{document.getElementById("loader").style.display="none";},1000);
+  },5500);
 
 });
-
-},1200);
-
-setTimeout(()=>{
-
-document.getElementById("loader").style.opacity="0";
-
-setTimeout(()=>{
-document.getElementById("loader").style.display="none";
-},1000);
-
-},2200);
-
-});
-
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
