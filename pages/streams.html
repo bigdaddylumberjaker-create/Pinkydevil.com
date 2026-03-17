@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streams - PinkyDevil</title>
 
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/streams.css">
+</head>
+<body>
+
+<div class="checkerBackground"></div>
+
+<div class="pageShell">
+
+  <!-- NAVBAR -->
+  <nav class="topNav reveal">
+    <a href="../index.html" class="navLogoWrap">
+      <img src="../images/logo.png" class="navLogo">
+    </a>
+
+    <div class="navLinks">
+      <a href="about.html" class="navButton">about</a>
+      <a href="projects.html" class="navButton">projects</a>
+      <a href="streams.html" class="navButton active">streams</a>
+      <a href="music.html" class="navButton">music</a>
+      <a href="../index.html" class="navButton">home</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="streamsFrame reveal delay1">
+
+    <!-- HEADER -->
+    <section class="streamsHeader">
+      <h1 class="siteTitle glowText">Streams</h1>
+      <p class="pageSubtitle">come hang out, chill, and vibe with me 💗</p>
+    </section>
+
+    <!-- STREAM PLAYER -->
+    <section class="streamSection reveal delay2">
+
+      <div class="streamPlayer">
+        <!-- TWITCH EMBED (replace channel name) -->
+        <iframe
+          src="https://player.twitch.tv/?channel=YOUR_CHANNEL&parent=localhost"
+          frameborder="0"
+          allowfullscreen="true"
+          scrolling="no"
+          height="100%"
+          width="100%">
+        </iframe>
+      </div>
+
+      <div class="streamChat">
+        <iframe
+          src="https://www.twitch.tv/embed/YOUR_CHANNEL/chat?parent=localhost"
+          frameborder="0"
+          height="100%"
+          width="100%">
+        </iframe>
+      </div>
+
+    </section>
+
+    <!-- INFO CARDS -->
+    <section class="streamInfo reveal delay3">
+
+      <div class="infoCard floatingCard">
+        <h2 class="glowTextSmall">when i stream</h2>
+        <p>
+          usually random times (lol), but mostly late night vibes.
+          expect chill, chaotic, and cozy energy 💗
+        </p>
+      </div>
+
+      <div class="infoCard floatingCard">
+        <h2 class="glowTextSmall">what i play</h2>
+        <ul>
+          <li>🎮 FPS games</li>
+          <li>🧩 puzzle games</li>
+          <li>💻 coding streams</li>
+          <li>✨ random chaos</li>
+        </ul>
+      </div>
+
+      <div class="infoCard floatingCard">
+        <h2 class="glowTextSmall">stream vibe</h2>
+        <p>
+          chill, friendly, a little chaotic sometimes —
+          just a comfy place to hang out 💗
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="siteFooter reveal delay4">
+    <div>© PinkyDevil</div>
+    <div class="footerLinks">
+      <a href="../index.html">home</a>
+      <a href="streams.html">streams</a>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../js/main.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+  const reveals = document.querySelectorAll(".reveal");
+  reveals.forEach((el, i) => {
+    setTimeout(() => {
+      el.classList.add("show");
+    }, 120 + i * 100);
+  });
+});
+</script>
+
+</body>
+</html>
