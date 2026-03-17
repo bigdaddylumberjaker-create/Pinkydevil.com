@@ -71,3 +71,175 @@
   opacity: 1;
   transform: translateY(0);
 }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+  position: relative;
+  z-index: 1;
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heartWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: heartFloat 4s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.heartPanel {
+  position: relative;
+  width: min(760px, 92vw);
+  aspect-ratio: 1.1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 90px 80px;
+  clip-path: path("M 50 15 C 35 -5 0 5 0 40 C 0 78 50 110 50 110 C 50 110 100 78 100 40 C 100 5 65 -5 50 15 Z");
+  background: linear-gradient(180deg, rgba(255, 196, 230, 0.30), rgba(255, 133, 196, 0.18));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 214, 240, 0.30);
+  box-shadow:
+    0 0 25px rgba(255, 182, 224, 0.28),
+    0 0 60px rgba(255, 182, 224, 0.18),
+    inset 0 0 25px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* fallback heart shape for browsers that don't like path() */
+@supports not (clip-path: path("M 0 0")) {
+  .heartPanel {
+    width: 520px;
+    height: 470px;
+    clip-path: polygon(
+      50% 92%,
+      12% 58%,
+      4% 34%,
+      12% 16%,
+      28% 8%,
+      42% 15%,
+      50% 26%,
+      58% 15%,
+      72% 8%,
+      88% 16%,
+      96% 34%,
+      88% 58%
+    );
+  }
+}
+
+.heartPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.20), transparent 25%),
+    radial-gradient(circle at 70% 70%, rgba(255,182,224,0.16), transparent 28%);
+  pointer-events: none;
+}
+
+.heartPanel::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  box-shadow:
+    0 0 35px rgba(255, 182, 224, 0.35),
+    0 0 80px rgba(255, 182, 224, 0.18);
+  pointer-events: none;
+}
+
+.heartContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: 460px;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 0.95;
+  color: #fff3fa;
+  text-shadow:
+    0 0 10px rgba(255, 182, 224, 0.45),
+    0 0 24px rgba(255, 182, 224, 0.28),
+    0 0 50px rgba(255, 182, 224, 0.16);
+}
+
+.heroSubtitle {
+  margin: 14px 0 0;
+  color: #fff0f8;
+  font-size: clamp(14px, 2vw, 18px);
+  letter-spacing: 1px;
+  opacity: 0.95;
+  text-shadow: 0 0 10px rgba(255, 182, 224, 0.15);
+}
+
+.heroButtons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.heroButtons .btn {
+  min-width: 128px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow:
+    0 0 14px rgba(255, 182, 224, 0.14),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* different hover colors per page */
+.btn-about:hover {
+  box-shadow: 0 0 24px rgba(255, 182, 224, 0.55);
+}
+
+.btn-projects:hover {
+  box-shadow: 0 0 24px rgba(196, 182, 255, 0.55);
+}
+
+.btn-streams:hover {
+  box-shadow: 0 0 24px rgba(182, 255, 230, 0.55);
+}
+
+.btn-music:hover {
+  box-shadow: 0 0 24px rgba(255, 220, 182, 0.55);
+}
+
+@media (max-width: 700px) {
+  .heartPanel {
+    width: 92vw;
+    padding: 95px 28px 60px;
+  }
+
+  .heroButtons .btn {
+    min-width: 110px;
+    padding: 13px 20px;
+    font-size: 16px;
+  }
+}
