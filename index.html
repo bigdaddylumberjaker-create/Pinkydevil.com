@@ -1,36 +1,86 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>PinkyDevil</title>
+const { Engine, Render, Runner, Bodies, Composite, Body } = Matter;
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
+const enterButton = document.getElementById("enterButton");
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-</head>
+enterButton.addEventListener("click", () => {
 
-<body>
+  const logo = document.getElementById("logoIntro");
 
-<div class="checkerBackground"></div>
+  logo.style.opacity = "0";
+  enterButton.style.opacity = "0";
 
-<div id="loader">
-  <img src="images/logo.png" id="logoIntro">
-  <button id="enterButton">enter</button>
-  <canvas id="physicsCanvas"></canvas>
-</div>
+  const engine = Engine.create();
+  const world = engine.world;
 
-<section class="hero">
-  <h1>PinkyDevil</h1>
+  const render = Render.create({
+    canvas: document.getElementById("physicsCanvas"),
+    engine: engine,
+    options: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      wireframes: false,
+      background: "transparent"
+    }
+  });
 
-  <div class="buttons">
-    <a href="pages/about.html" class="btn">About</a>
-    <a href="pages/projects.html" class="btn">Projects</a>
-  </div>
-</section>
+  /* GROUND */
+  const ground = Bodies.rectangle(
+    window.innerWidth / 2,
+    window.innerHeight + 40,
+    window.innerWidth,
+    80,
+    { isStatic: true }
+  );
 
-<script src="js/main.js"></script>
-<script src="js/intro.js"></script>
+  Composite.add(world, ground);
 
-</body>
-</html>
-</html>
+  /* FALLING LOGOS */
+  let logos = [];
+
+  for (let i = 0; i < 70; i++) {
+    let logoBody = Bodies.rectangle(
+      Math.random() * window.innerWidth,
+      -200 - Math.random() * 400,
+      60,
+      60,
+      {
+        restitution: 0.4,
+        render: {
+          sprite: {
+            texture: "images/logo.png",
+            xScale: 0.3,
+            yScale: 0.3
+          }
+        }
+      }
+    );
+
+    logos.push(logoBody);
+    Composite.add(world, logoBody);
+  }
+
+  Render.run(render);
+  Runner.run(Runner.create(), engine);
+
+  /* SPREAD EFFECT */
+  setTimeout(() => {
+    logos.forEach((l, i) => {
+      Body.applyForce(l, l.position, {
+        x: i % 2 === 0 ? -0.05 : 0.05,
+        y: -0.02
+      });
+    });
+  }, 3500);
+
+  /* FADE OUT LOADER */
+  setTimeout(() => {
+    document.getElementById("loader").style.opacity = "0";
+
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.querySelector(".hero").classList.add("visible");
+    }, 1000);
+
+  }, 5000);
+
+});
