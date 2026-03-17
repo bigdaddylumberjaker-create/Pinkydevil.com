@@ -1,1 +1,26 @@
+.about-container {
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+}
 
+.about-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-right {
+  flex: 2;
+  padding: 30px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.about-text {
+  color: #ffd6e8;
+  font-size: 18px;
+  line-height: 1.6;
+}
