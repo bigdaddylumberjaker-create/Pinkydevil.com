@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const workerUrl = "https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev/";
+  const workerUrl = "https://pinky-twitch-status.bigdaddylumberjaker.workers.dev/";
 
   const liveWrap = document.getElementById("liveBadgeWrap");
   const liveDot = document.getElementById("liveDot");
