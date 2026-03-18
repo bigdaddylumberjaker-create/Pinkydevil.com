@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PinkyDevil</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 </head>
 <body>
 
-  <!-- INTRO / LOADER -->
+  <!-- INTRO -->
   <div id="loader">
-    <div class="spiralBg"></div>
+    <div class="introBg">
+      <div class="introGlow introGlow1"></div>
+      <div class="introGlow introGlow2"></div>
+      <div class="introGlow introGlow3"></div>
+
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+
+      <div class="sparkles">
+        <span class="spark s1"></span>
+        <span class="spark s2"></span>
+        <span class="spark s3"></span>
+        <span class="spark s4"></span>
+        <span class="spark s5"></span>
+        <span class="spark s6"></span>
+        <span class="spark s7"></span>
+        <span class="spark s8"></span>
+      </div>
+    </div>
 
     <div class="loaderCenter">
-      <img src="images/logo.png" id="logoIntro" alt="PinkyDevil logo">
+      <img src="images/logo.png" id="logoIntro" alt="PinkyDevil logo" />
       <button id="enterButton">enter</button>
     </div>
 
@@ -25,22 +44,35 @@
   </div>
 
   <!-- HOME BACKGROUND -->
-  <div class="homeBg"></div>
+  <div class="homeBg">
+    <div class="bgBlob blob1"></div>
+    <div class="bgBlob blob2"></div>
+    <div class="bgBlob blob3"></div>
+    <div class="bgGrid"></div>
+    <div class="bgHearts">
+      <span class="miniHeart h1">♡</span>
+      <span class="miniHeart h2">♡</span>
+      <span class="miniHeart h3">♡</span>
+      <span class="miniHeart h4">♡</span>
+      <span class="miniHeart h5">♡</span>
+      <span class="miniHeart h6">♡</span>
+    </div>
+  </div>
 
-  <!-- HOME HERO -->
+  <!-- HERO -->
   <section class="hero">
     <div class="heartScene">
 
       <svg class="heartSvg" viewBox="0 0 600 540" aria-hidden="true">
         <defs>
           <linearGradient id="heartFill" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffdff0" stop-opacity="0.72" />
-            <stop offset="55%" stop-color="#ffb6e0" stop-opacity="0.42" />
-            <stop offset="100%" stop-color="#ff8ccd" stop-opacity="0.26" />
+            <stop offset="0%" stop-color="#ffe6f4" stop-opacity="0.82" />
+            <stop offset="50%" stop-color="#ffcde8" stop-opacity="0.48" />
+            <stop offset="100%" stop-color="#ff9fd3" stop-opacity="0.28" />
           </linearGradient>
 
           <linearGradient id="heartStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffe6f4" />
+            <stop offset="0%" stop-color="#fff2fa" />
             <stop offset="100%" stop-color="#ffb6e0" />
           </linearGradient>
 
@@ -50,7 +82,7 @@
               in="blur1"
               type="matrix"
               values="1 0 0 0 0
-                      0 0.75 0 0 0
+                      0 0.72 0 0 0
                       0 0.88 0 0 0
                       0 0 0 1 0"
               result="pinkGlow"/>
@@ -83,7 +115,7 @@
              C333 100, 373 67, 429 77
              C497 89, 540 152, 513 236
              C479 340, 328 446, 300 470 Z"
-          fill="rgba(255,255,255,0.06)"
+          fill="rgba(255,255,255,0.08)"
         />
       </svg>
 
