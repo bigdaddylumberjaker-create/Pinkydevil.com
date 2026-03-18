@@ -1,125 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Streams - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/streams.css">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/streams.css" />
 </head>
 <body>
 
-<div class="checkerBackground"></div>
+  <div class="checkerBackground"></div>
 
-<div class="pageShell">
+  <div class="pageShell">
 
-  <!-- NAVBAR -->
-  <nav class="topNav reveal">
-    <a href="../index.html" class="navLogoWrap">
-      <img src="../images/logo.png" class="navLogo">
-    </a>
+    <nav class="topNav reveal">
+      <a href="../index.html" class="navLogoWrap">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
 
-    <div class="navLinks">
-      <a href="about.html" class="navButton">about</a>
-      <a href="projects.html" class="navButton">projects</a>
-      <a href="streams.html" class="navButton active">streams</a>
-      <a href="music.html" class="navButton">music</a>
-      <a href="../index.html" class="navButton">home</a>
-    </div>
-  </nav>
-
-  <!-- MAIN -->
-  <main class="streamsFrame reveal delay1">
-
-    <!-- HEADER -->
-    <section class="streamsHeader">
-      <h1 class="siteTitle glowText">Streams</h1>
-      <p class="pageSubtitle">come hang out, chill, and vibe with me 💗</p>
-    </section>
-
-    <!-- STREAM PLAYER -->
-    <section class="streamSection reveal delay2">
-
-      <div class="streamPlayer">
-        <!-- TWITCH EMBED (replace channel name) -->
-        <iframe
-          src="https://player.twitch.tv/?channel=pinkydevii&parent=pinkydevil.com"
-          frameborder="0"
-          allowfullscreen="true"
-          scrolling="no"
-          height="100%"
-          width="100%">
-        </iframe>
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton active">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
+        <a href="../index.html" class="navButton">home</a>
       </div>
+    </nav>
 
-      <div class="streamChat">
-        <iframe
-          src="https://www.twitch.tv/embed/pinkydevii/chat?parent=pinkydevil.com"
-          frameborder="0"
-          height="100%"
-          width="100%">
-        </iframe>
-      </div>
+    <main class="streamsFrame reveal delay1">
 
-    </section>
-
-    <!-- INFO CARDS -->
-    <section class="streamInfo reveal delay3">
-
-      <div class="infoCard floatingCard">
-        <h2 class="glowTextSmall">when i stream</h2>
-        <p>
-          usually random times (lol), but mostly late night vibes.
-          expect chill, chaotic, and cozy energy 💗
+      <section class="streamsHeader">
+        <div class="headerPattern"></div>
+        <div class="liveBadgeWrap">
+          <span class="liveDot"></span>
+          <span class="liveText">stream space</span>
+        </div>
+        <h1 class="siteTitle glowText">Streams</h1>
+        <p class="pageSubtitle">
+          watch, chill, hang out, and keep up with my content 💗
         </p>
+      </section>
+
+      <section class="streamLayout">
+
+        <div class="mainStreamArea reveal delay2">
+
+          <div class="streamCard streamPlayerCard">
+            <div class="panelTop">
+              <h2 class="glowTextSmall">featured stream</h2>
+              <span class="softPill">twitch</span>
+            </div>
+
+            <div class="streamPlayerWrap">
+              <iframe
+                src="https://player.twitch.tv/?channel=YOUR_TWITCH_USERNAME&parent=pinkydevil.com"
+                allowfullscreen="true"
+                scrolling="no"
+                frameborder="0"
+                width="100%"
+                height="100%">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="streamBottomGrid">
+
+            <div class="streamCard scheduleCard">
+              <div class="panelTop">
+                <h2 class="glowTextSmall">schedule timeline</h2>
+                <span class="softPill">planned</span>
+              </div>
+
+              <div class="timeline">
+                <div class="timelineItem">
+                  <div class="timelineDot"></div>
+                  <div class="timelineContent">
+                    <h3>monday</h3>
+                    <p>late-night chill / random games</p>
+                  </div>
+                </div>
+
+                <div class="timelineItem">
+                  <div class="timelineDot"></div>
+                  <div class="timelineContent">
+                    <h3>wednesday</h3>
+                    <p>coding / experiments / site work</p>
+                  </div>
+                </div>
+
+                <div class="timelineItem">
+                  <div class="timelineDot"></div>
+                  <div class="timelineContent">
+                    <h3>friday</h3>
+                    <p>main stream night / cozy chaos</p>
+                  </div>
+                </div>
+
+                <div class="timelineItem">
+                  <div class="timelineDot"></div>
+                  <div class="timelineContent">
+                    <h3>weekends</h3>
+                    <p>extra streams if i'm feeling cute and energetic</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="streamCard overlayCard">
+              <div class="panelTop">
+                <h2 class="glowTextSmall">overlay preview</h2>
+                <span class="softPill">concept</span>
+              </div>
+
+              <div class="overlayPreview">
+                <div class="overlayTopBar">
+                  <span class="overlayMiniTag">LIVE</span>
+                  <span class="overlayMiniName">PinkyDevil</span>
+                </div>
+
+                <div class="overlayCenter">
+                  <div class="overlayBox chatBoxGlow">chat glow</div>
+                  <div class="overlayBox camBox">cam / vtuber / avatar</div>
+                </div>
+
+                <div class="overlayBottom">
+                  <div class="overlayPill">latest supporter</div>
+                  <div class="overlayPill">music now playing</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <aside class="streamSideArea reveal delay3">
+
+          <div class="streamCard chatCard">
+            <div class="panelTop">
+              <h2 class="glowTextSmall">stream chat</h2>
+              <span class="softPill">live vibe</span>
+            </div>
+
+            <div class="chatEmbedWrap">
+              <iframe
+                src="https://www.twitch.tv/embed/YOUR_TWITCH_USERNAME/chat?parent=pinkydevil.com"
+                frameborder="0"
+                width="100%"
+                height="100%">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="streamCard linksCard">
+            <div class="panelTop">
+              <h2 class="glowTextSmall">quick links</h2>
+              <span class="softPill">go go go</span>
+            </div>
+
+            <div class="quickButtons">
+              <a href="../index.html" class="quickBtn q-home">home</a>
+              <a href="projects.html" class="quickBtn q-projects">projects</a>
+              <a href="music.html" class="quickBtn q-music">music</a>
+              <a href="chat.html" class="quickBtn q-chat">chat</a>
+              <a href="donated.html" class="quickBtn q-donate">donate</a>
+            </div>
+          </div>
+
+          <div class="streamCard socialsCard">
+            <div class="panelTop">
+              <h2 class="glowTextSmall">stream info</h2>
+              <span class="softPill">connect</span>
+            </div>
+
+            <div class="socialInfo">
+              <div class="socialRow">
+                <span class="label">youtube</span>
+                <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">your youtube channel</a>
+              </div>
+
+              <div class="socialRow">
+                <span class="label">discord</span>
+                <span>tv.man</span>
+              </div>
+
+              <div class="socialRow">
+                <span class="label">donations</span>
+                <a href="donated.html">support page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="streamCard vibeCard floatingCard">
+            <div class="panelTop">
+              <h2 class="glowTextSmall">stream vibe</h2>
+              <span class="softPill">energy</span>
+            </div>
+
+            <p class="vibeText">
+              comfy, chaotic, cute, friendly, sometimes cursed,
+              and always pinky-coded 💗
+            </p>
+          </div>
+
+        </aside>
+
+      </section>
+
+    </main>
+
+    <footer class="siteFooter reveal delay4">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="streams.html">streams</a>
       </div>
+    </footer>
 
-      <div class="infoCard floatingCard">
-        <h2 class="glowTextSmall">what i play</h2>
-        <ul>
-          <li>🎮 FPS games</li>
-          <li>🧩 puzzle games</li>
-          <li>💻 coding streams</li>
-          <li>✨ random chaos</li>
-        </ul>
-      </div>
+  </div>
 
-      <div class="infoCard floatingCard">
-        <h2 class="glowTextSmall">stream vibe</h2>
-        <p>
-          chill, friendly, a little chaotic sometimes —
-          just a comfy place to hang out 💗
-        </p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="siteFooter reveal delay4">
-    <div>© PinkyDevil</div>
-    <div class="footerLinks">
-      <a href="../index.html">home</a>
-      <a href="streams.html">streams</a>
-    </div>
-  </footer>
-
-</div>
-
-<script src="../js/main.js"></script>
-
-<script>
-window.addEventListener("load", () => {
-  const reveals = document.querySelectorAll(".reveal");
-  reveals.forEach((el, i) => {
-    setTimeout(() => {
-      el.classList.add("show");
-    }, 120 + i * 100);
-  });
-});
-</script>
-
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
 </body>
 </html>
