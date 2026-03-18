@@ -1,90 +1,87 @@
-```css
 /* ========================= */
-/* 💗 LOADER / INTRO */
-/* ========================= */
-
-/* ========================= */
-/* 💗 LOADER / INTRO FIX */
+/* 💗 LOADER */
 /* ========================= */
 
 #loader {
   position: fixed;
   inset: 0;
-
-  background: radial-gradient(circle at center, #0a0a12, #000000);
-
-  display: grid;
-  place-items: center;
-
-  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  z-index: 9999;
 }
 
-/* CENTER STACK */
-#loader > * {
-  grid-area: 1 / 1;
+/* 🌪️ SPIRAL BACKGROUND */
+.spiralBg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    repeating-radial-gradient(
+      circle at center,
+      #ffb6e0 0px,
+      #ffb6e0 2px,
+      #000000 4px,
+      #000000 12px
+    );
+
+  animation: spiralMove 12s linear infinite;
+  opacity: 0.25;
 }
 
-/* WRAP CONTENT */
-.loaderContent {
+@keyframes spiralMove {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.4) rotate(360deg); }
+}
+
+/* CENTER */
+.loaderCenter {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 /* LOGO */
 #logoIntro {
   width: 320px;
   max-width: 80vw;
-
-  display: block;
-  margin: 0 auto;
-
   animation: logoFloat 4s ease-in-out infinite;
   filter: drop-shadow(0 0 20px #ffb6e0);
 }
 
 @keyframes logoFloat {
-  0% { transform: translateY(0px); }
+  0% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  100% { transform: translateY(0); }
 }
 
 /* BUTTON */
 #enterButton {
   margin-top: 40px;
-
   padding: 14px 40px;
-  font-size: 18px;
-
   border-radius: 30px;
   border: none;
-
-  background: linear-gradient(135deg, #ffd6e8, #ffb6e0);
+  background: linear-gradient(135deg,#ffd6e8,#ffb6e0);
   color: white;
-
   cursor: pointer;
-
   box-shadow: 0 0 20px #ffb6e0;
+  transition: 0.3s;
+}
 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+#enterButton:hover {
+  transform: scale(1.15);
 }
 
 /* CANVAS */
 #physicsCanvas {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
 }
 
-
 /* ========================= */
-/* 💖 HERO + HEART LAYOUT */
+/* 💖 HERO */
 /* ========================= */
 
 .hero {
@@ -92,12 +89,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
   opacity: 0;
   transform: translateY(50px);
   transition: 1s;
-  position: relative;
-  z-index: 1;
 }
 
 .hero.visible {
@@ -105,134 +99,59 @@
   transform: translateY(0);
 }
 
-/* HEART CONTAINER */
+/* HEART */
 .heartScene {
   position: relative;
-  width: min(820px, 92vw);
-  aspect-ratio: 600 / 540;
+  width: min(800px, 90vw);
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: heartFloat 4s ease-in-out infinite;
 }
 
-@keyframes heartFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* SVG HEART */
 .heartSvg {
   position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
 }
 
-/* CONTENT INSIDE HEART */
+/* CONTENT */
 .heartContent {
-  position: relative;
   z-index: 2;
-  width: 62%;
-  max-width: 430px;
   text-align: center;
-  padding-top: 30px;
+  width: 60%;
 }
 
-/* TITLE */
 .heroTitle {
-  margin: 0;
-  font-size: clamp(42px, 7vw, 80px);
-  line-height: 0.95;
-  color: #fff3fa;
-  text-shadow:
-    0 0 10px rgba(255, 182, 224, 0.45),
-    0 0 24px rgba(255, 182, 224, 0.28),
-    0 0 50px rgba(255, 182, 224, 0.16);
+  font-size: clamp(40px,7vw,80px);
+  color: #fff;
+  text-shadow: 0 0 20px #ffb6e0;
 }
 
-/* SUBTITLE */
 .heroSubtitle {
-  margin: 14px 0 0;
-  color: #fff0f8;
-  font-size: clamp(14px, 2vw, 18px);
-  letter-spacing: 1px;
-  opacity: 0.95;
-  text-shadow: 0 0 10px rgba(255, 182, 224, 0.15);
+  color: #ffd6e8;
+  margin-top: 10px;
 }
 
 /* BUTTONS */
 .heroButtons {
-  margin-top: 28px;
+  margin-top: 25px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
+  justify-content: center;
 }
 
-.heroButtons .btn {
-  min-width: 128px;
+.btn {
+  padding: 12px 20px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.1);
+  color: white;
   text-decoration: none;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.16);
-  box-shadow:
-    0 0 14px rgba(255, 182, 224, 0.14),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-  backdrop-filter: blur(6px);
 }
 
-/* DIFFERENT HOVER COLORS */
-.btn-about:hover {
-  box-shadow: 0 0 24px rgba(255, 182, 224, 0.55);
-}
-
-.btn-projects:hover {
-  box-shadow: 0 0 24px rgba(196, 182, 255, 0.55);
-}
-
-.btn-streams:hover {
-  box-shadow: 0 0 24px rgba(182, 255, 230, 0.55);
-}
-
-.btn-music:hover {
-  box-shadow: 0 0 24px rgba(255, 220, 182, 0.55);
-}
-
-
-/* ========================= */
-/* 📱 MOBILE FIXES */
-/* ========================= */
-
-@media (max-width: 900px) {
-  .heartScene {
-    width: 95vw;
-  }
-
-  .heartContent {
-    width: 68%;
-    padding-top: 16px;
-  }
-}
-
-@media (max-width: 640px) {
-  .heartContent {
-    width: 72%;
-    padding-top: 4px;
-  }
-
-  .heroButtons {
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .heroButtons .btn {
-    min-width: 110px;
-    padding: 13px 20px;
-    font-size: 16px;
-  }
-
-  .heroSubtitle {
-    font-size: 14px;
-  }
-}
-```
+/* DIFFERENT COLORS */
+.btn-about:hover { box-shadow: 0 0 20px pink; }
+.btn-projects:hover { box-shadow: 0 0 20px purple; }
+.btn-streams:hover { box-shadow: 0 0 20px cyan; }
+.btn-music:hover { box-shadow: 0 0 20px orange; }
