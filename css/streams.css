@@ -83,7 +83,7 @@
 
 .streamsHeader {
   position: relative;
-  padding: 54px 24px 34px;
+  padding: 28px 24px 34px;
   text-align: center;
   overflow: hidden;
   border-bottom: 2px solid rgba(255, 214, 240, 0.08);
@@ -103,6 +103,90 @@
   );
   opacity: 0.5;
   pointer-events: none;
+}
+
+.liveHeroBanner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 24px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: 0.35s ease;
+}
+
+.liveBanner {
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 30%),
+    linear-gradient(135deg, rgba(255, 91, 151, 0.18), rgba(255, 182, 224, 0.08));
+  box-shadow:
+    0 0 26px rgba(255, 91, 151, 0.18),
+    inset 0 0 18px rgba(255,255,255,0.05);
+  animation: liveBannerPulse 2.8s ease-in-out infinite;
+}
+
+.offlineBanner {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  box-shadow:
+    0 0 18px rgba(180,180,180,0.08),
+    inset 0 0 12px rgba(255,255,255,0.03);
+}
+
+@keyframes liveBannerPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 22px rgba(255, 91, 151, 0.16),
+      inset 0 0 18px rgba(255,255,255,0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 34px rgba(255, 91, 151, 0.28),
+      0 0 60px rgba(255, 91, 151, 0.08),
+      inset 0 0 18px rgba(255,255,255,0.08);
+  }
+}
+
+.bannerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #f6e2f0;
+  font-size: 14px;
+  text-transform: lowercase;
+}
+
+.bannerTextWrap {
+  text-align: left;
+}
+
+.bannerTextWrap h2 {
+  margin: 0 0 4px 0;
+  color: #fff2f8;
+  font-size: 24px;
+}
+
+.bannerTextWrap p {
+  margin: 0;
+  color: #efdbe8;
+  line-height: 1.6;
+}
+
+.bannerViewers {
+  color: #fff0f8;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .liveBadgeWrap {
@@ -204,6 +288,15 @@
   border-radius: 24px;
   padding: 20px;
   box-shadow:
+    0 0 0 1px rgba(255,255,255,0.02) inset,
+    0 12px 24px rgba(0,0,0,0.22);
+  transition: 0.3s ease;
+}
+
+.liveCardGlow {
+  box-shadow:
+    0 0 24px rgba(255, 91, 151, 0.18),
+    0 0 48px rgba(255, 91, 151, 0.10),
     0 0 0 1px rgba(255,255,255,0.02) inset,
     0 12px 24px rgba(0,0,0,0.22);
 }
@@ -311,8 +404,22 @@
 
 .chatCardLive {
   box-shadow:
-    0 0 18px rgba(255, 182, 224, 0.20),
-    inset 0 0 24px rgba(255, 182, 224, 0.05);
+    0 0 20px rgba(255, 182, 224, 0.24),
+    inset 0 0 24px rgba(255, 182, 224, 0.06);
+  animation: chatPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes chatPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(255, 182, 224, 0.18),
+      inset 0 0 18px rgba(255, 182, 224, 0.04);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(255, 182, 224, 0.28),
+      inset 0 0 28px rgba(255, 182, 224, 0.08);
+  }
 }
 
 .timeline {
@@ -414,6 +521,28 @@
   box-shadow:
     0 0 14px rgba(255, 182, 224, 0.16),
     inset 0 0 20px rgba(255, 182, 224, 0.06);
+}
+
+.chatGlowPulse {
+  animation: fakeChatFlash 1s ease;
+}
+
+@keyframes fakeChatFlash {
+  0% {
+    box-shadow:
+      0 0 0 rgba(255, 182, 224, 0),
+      inset 0 0 0 rgba(255, 182, 224, 0);
+  }
+  50% {
+    box-shadow:
+      0 0 26px rgba(255, 182, 224, 0.34),
+      inset 0 0 18px rgba(255, 182, 224, 0.14);
+  }
+  100% {
+    box-shadow:
+      0 0 14px rgba(255, 182, 224, 0.16),
+      inset 0 0 20px rgba(255, 182, 224, 0.06);
+  }
 }
 
 .quickButtons {
@@ -561,6 +690,15 @@
   .chatEmbedWrap {
     height: 380px;
   }
+
+  .liveHeroBanner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .bannerTextWrap {
+    text-align: center;
+  }
 }
 
 @media (max-width: 760px) {
@@ -591,8 +729,8 @@
   .streamMeta {
     grid-template-columns: 1fr;
   }
-}
-  .streamInfo {
-    grid-template-columns: 1fr;
+
+  .bannerTextWrap h2 {
+    font-size: 20px;
   }
 }
