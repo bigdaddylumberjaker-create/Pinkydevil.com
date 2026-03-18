@@ -12,12 +12,18 @@
 </head>
 <body>
 
-  <!-- INTRO -->
+  <!-- INTRO / LOADER -->
   <div id="loader">
     <div class="introBg">
       <div class="introGlow introGlow1"></div>
       <div class="introGlow introGlow2"></div>
       <div class="introGlow introGlow3"></div>
+
+      <div class="aurora aurora1"></div>
+      <div class="aurora aurora2"></div>
+
+      <div class="lightBeam beam1"></div>
+      <div class="lightBeam beam2"></div>
 
       <div class="ring ring1"></div>
       <div class="ring ring2"></div>
@@ -32,6 +38,12 @@
         <span class="spark s6"></span>
         <span class="spark s7"></span>
         <span class="spark s8"></span>
+
+        <span class="star st1">✦</span>
+        <span class="star st2">✦</span>
+        <span class="star st3">✦</span>
+        <span class="star st4">✦</span>
+        <span class="star st5">✦</span>
       </div>
     </div>
 
@@ -48,7 +60,9 @@
     <div class="bgBlob blob1"></div>
     <div class="bgBlob blob2"></div>
     <div class="bgBlob blob3"></div>
+
     <div class="bgGrid"></div>
+
     <div class="bgHearts">
       <span class="miniHeart h1">♡</span>
       <span class="miniHeart h2">♡</span>
@@ -77,7 +91,7 @@
           </linearGradient>
 
           <filter id="heartGlow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="10" result="blur1"/>
+            <feGaussianBlur stdDeviation="10" result="blur1"></feGaussianBlur>
             <feColorMatrix
               in="blur1"
               type="matrix"
@@ -85,10 +99,11 @@
                       0 0.72 0 0 0
                       0 0.88 0 0 0
                       0 0 0 1 0"
-              result="pinkGlow"/>
+              result="pinkGlow">
+            </feColorMatrix>
             <feMerge>
-              <feMergeNode in="pinkGlow"/>
-              <feMergeNode in="SourceGraphic"/>
+              <feMergeNode in="pinkGlow"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
             </feMerge>
           </filter>
         </defs>
@@ -104,8 +119,8 @@
           fill="url(#heartFill)"
           stroke="url(#heartStroke)"
           stroke-width="8"
-          filter="url(#heartGlow)"
-        />
+          filter="url(#heartGlow)">
+        </path>
 
         <path
           d="M300 470
@@ -115,8 +130,8 @@
              C333 100, 373 67, 429 77
              C497 89, 540 152, 513 236
              C479 340, 328 446, 300 470 Z"
-          fill="rgba(255,255,255,0.08)"
-        />
+          fill="rgba(255,255,255,0.08)">
+        </path>
       </svg>
 
       <div class="heartContent">
