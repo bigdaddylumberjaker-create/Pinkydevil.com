@@ -24,6 +24,7 @@
         <a href="projects.html" class="navButton">projects</a>
         <a href="streams.html" class="navButton active">streams</a>
         <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
         <a href="chat.html" class="navButton">chat</a>
         <a href="donated.html" class="navButton">donated</a>
         <a href="../index.html" class="navButton">home</a>
@@ -32,11 +33,23 @@
 
     <main class="streamsFrame reveal delay1">
 
-      <section class="streamsHeader">
+      <section class="streamsHeader" id="streamsHeader">
         <div class="headerPattern"></div>
 
+        <div class="liveHeroBanner offlineBanner" id="liveHeroBanner">
+          <div class="bannerBadge">
+            <span class="liveDot offlineNow" id="liveDot"></span>
+            <span id="bannerStatus">offline</span>
+          </div>
+          <div class="bannerTextWrap">
+            <h2 id="bannerTitle">not live right now</h2>
+            <p id="bannerGame">come back later for cozy chaos 💗</p>
+          </div>
+          <div class="bannerViewers" id="bannerViewers">— viewers</div>
+        </div>
+
         <div class="liveBadgeWrap isOffline" id="liveBadgeWrap">
-          <span class="liveDot offlineNow" id="liveDot"></span>
+          <span class="liveDot offlineNow" id="badgeDot"></span>
           <span class="liveText" id="liveText">checking stream status...</span>
         </div>
 
@@ -50,7 +63,7 @@
 
         <div class="mainStreamArea reveal delay2">
 
-          <div class="streamCard streamPlayerCard">
+          <div class="streamCard streamPlayerCard" id="streamPlayerCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">featured stream</h2>
               <span class="softPill" id="streamStatusPill">twitch</span>
@@ -130,7 +143,7 @@
               </div>
             </div>
 
-            <div class="streamCard overlayCard">
+            <div class="streamCard overlayCard" id="overlayCard">
               <div class="panelTop">
                 <h2 class="glowTextSmall">overlay preview</h2>
                 <span class="softPill">concept</span>
@@ -143,13 +156,13 @@
                 </div>
 
                 <div class="overlayCenter">
-                  <div class="overlayBox chatBoxGlow">chat glow</div>
+                  <div class="overlayBox chatBoxGlow" id="chatGlowBox">chat glow</div>
                   <div class="overlayBox camBox">cam / avatar</div>
                 </div>
 
                 <div class="overlayBottom">
-                  <div class="overlayPill">latest supporter</div>
-                  <div class="overlayPill">music now playing</div>
+                  <div class="overlayPill" id="overlayTitlePill">latest supporter</div>
+                  <div class="overlayPill" id="overlayGamePill">music now playing</div>
                 </div>
               </div>
             </div>
@@ -159,7 +172,7 @@
 
         <aside class="streamSideArea reveal delay3">
 
-          <div class="streamCard chatCard">
+          <div class="streamCard chatCard" id="chatCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">stream chat</h2>
               <span class="softPill">live vibe</span>
