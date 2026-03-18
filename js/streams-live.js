@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev/");
+    const response = await fetch("pinky-twitch-status.bigdaddylumberjaker.workers.dev");
 
     if (!response.ok) {
       throw new Error("Failed to fetch live status");
