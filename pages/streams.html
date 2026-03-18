@@ -35,9 +35,9 @@
       <section class="streamsHeader">
         <div class="headerPattern"></div>
 
-        <div class="liveBadgeWrap">
-          <span class="liveDot"></span>
-          <span class="liveText">stream space</span>
+        <div class="liveBadgeWrap isOffline" id="liveBadgeWrap">
+          <span class="liveDot offlineNow" id="liveDot"></span>
+          <span class="liveText" id="liveText">checking stream status...</span>
         </div>
 
         <h1 class="siteTitle glowText">Streams</h1>
@@ -48,16 +48,34 @@
 
       <section class="streamLayout">
 
-        <!-- MAIN STREAM -->
         <div class="mainStreamArea reveal delay2">
 
           <div class="streamCard streamPlayerCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">featured stream</h2>
-              <span class="softPill">twitch</span>
+              <span class="softPill" id="streamStatusPill">twitch</span>
             </div>
 
-            <div class="streamPlayerWrap">
+            <div class="streamMeta" id="streamMeta">
+              <div class="metaRow">
+                <span class="metaLabel">status</span>
+                <span class="metaValue" id="metaStatus">offline</span>
+              </div>
+              <div class="metaRow">
+                <span class="metaLabel">title</span>
+                <span class="metaValue" id="metaTitle">not live right now</span>
+              </div>
+              <div class="metaRow">
+                <span class="metaLabel">game</span>
+                <span class="metaValue" id="metaGame">—</span>
+              </div>
+              <div class="metaRow">
+                <span class="metaLabel">viewers</span>
+                <span class="metaValue" id="metaViewers">—</span>
+              </div>
+            </div>
+
+            <div class="streamPlayerWrap" id="streamPlayerWrap">
               <iframe
                 src="https://player.twitch.tv/?channel=pinkydevi&parent=pinkydevil.com"
                 allowfullscreen="true"
@@ -69,10 +87,8 @@
             </div>
           </div>
 
-          <!-- BOTTOM GRID -->
           <div class="streamBottomGrid">
 
-            <!-- SCHEDULE -->
             <div class="streamCard scheduleCard">
               <div class="panelTop">
                 <h2 class="glowTextSmall">schedule timeline</h2>
@@ -114,7 +130,6 @@
               </div>
             </div>
 
-            <!-- OVERLAY PREVIEW -->
             <div class="streamCard overlayCard">
               <div class="panelTop">
                 <h2 class="glowTextSmall">overlay preview</h2>
@@ -123,7 +138,7 @@
 
               <div class="overlayPreview">
                 <div class="overlayTopBar">
-                  <span class="overlayMiniTag">LIVE</span>
+                  <span class="overlayMiniTag" id="overlayLiveTag">LIVE</span>
                   <span class="overlayMiniName">PinkyDevil</span>
                 </div>
 
@@ -142,17 +157,15 @@
           </div>
         </div>
 
-        <!-- SIDE PANEL -->
         <aside class="streamSideArea reveal delay3">
 
-          <!-- CHAT -->
           <div class="streamCard chatCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">stream chat</h2>
               <span class="softPill">live vibe</span>
             </div>
 
-            <div class="chatEmbedWrap">
+            <div class="chatEmbedWrap" id="chatEmbedWrap">
               <iframe
                 src="https://www.twitch.tv/embed/pinkydevi/chat?parent=pinkydevil.com"
                 frameborder="0"
@@ -162,7 +175,6 @@
             </div>
           </div>
 
-          <!-- QUICK LINKS -->
           <div class="streamCard linksCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">quick links</h2>
@@ -178,7 +190,6 @@
             </div>
           </div>
 
-          <!-- SOCIALS -->
           <div class="streamCard socialsCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">stream info</h2>
@@ -188,7 +199,7 @@
             <div class="socialInfo">
               <div class="socialRow">
                 <span class="label">youtube</span>
-                <a href="https://youtube.com/" target="_blank">your youtube channel</a>
+                <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">your youtube channel</a>
               </div>
 
               <div class="socialRow">
@@ -203,7 +214,6 @@
             </div>
           </div>
 
-          <!-- VIBE -->
           <div class="streamCard vibeCard floatingCard">
             <div class="panelTop">
               <h2 class="glowTextSmall">stream vibe</h2>
@@ -232,13 +242,16 @@
   </div>
 
   <script src="../js/main.js"></script>
+  <script src="../js/streams-live.js"></script>
   <script>
     window.addEventListener("load", () => {
-      document.querySelectorAll(".reveal").forEach((el, i) => {
-        setTimeout(() => el.classList.add("show"), 120 + i * 110);
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
       });
     });
   </script>
-
 </body>
 </html>
