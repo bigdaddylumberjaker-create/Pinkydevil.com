@@ -11,17 +11,17 @@
 <body>
 
   <div class="roomBg">
-    <div class="wallGlow glow1"></div>
-    <div class="wallGlow glow2"></div>
-    <div class="wallGlow glow3"></div>
+    <div class="bgGlow bgGlow1"></div>
+    <div class="bgGlow bgGlow2"></div>
+    <div class="bgGlow bgGlow3"></div>
 
-    <div class="floatingDecor decorHeart1">♡</div>
-    <div class="floatingDecor decorHeart2">♡</div>
-    <div class="floatingDecor decorStar1">✦</div>
-    <div class="floatingDecor decorStar2">✦</div>
-    <div class="floatingDecor decorStar3">✦</div>
+    <div class="spark spark1">✦</div>
+    <div class="spark spark2">✦</div>
+    <div class="spark spark3">✦</div>
+    <div class="spark spark4">♡</div>
+    <div class="spark spark5">♡</div>
 
-    <div class="wallGrid"></div>
+    <div class="wallPattern"></div>
   </div>
 
   <div class="pageShell">
@@ -55,9 +55,12 @@
 
       <section class="deskSurface">
 
-        <div class="deskTopRow">
-          <article class="stickyCard reveal delay2 floatingCard">
-            <span class="stickyEmoji">💗</span>
+        <div class="deskTopBand">
+          <div class="deskLampGlow"></div>
+
+          <article class="sideWidget stickyWidget reveal delay2 floatingCard">
+            <div class="widgetPin"></div>
+            <span class="widgetEmoji">💗</span>
             <h3>what lives here</h3>
             <p>
               this page is for the things i’m building, testing, polishing, and dreaming up.
@@ -65,7 +68,7 @@
             </p>
           </article>
 
-          <article class="windowCard mainMonitor reveal delay2">
+          <article class="mainMonitor reveal delay2">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -76,7 +79,8 @@
             </div>
 
             <div class="monitorScreen">
-              <div class="monitorGlow"></div>
+              <div class="monitorShine"></div>
+
               <div class="monitorContent">
                 <span class="miniLabel">featured</span>
                 <h2>PinkyDevil.com</h2>
@@ -85,13 +89,13 @@
                   i’m building it to feel cute, interactive, dreamy, and way more personal than a normal portfolio.
                 </p>
 
-                <div class="monitorStats">
+                <div class="monitorTags">
                   <span>main focus</span>
                   <span>cute + interactive</span>
                   <span>always evolving</span>
                 </div>
 
-                <div class="windowButtons">
+                <div class="monitorButtons">
                   <a href="../index.html" class="deskBtn">open home</a>
                   <a href="about.html" class="deskBtn alt">learn more</a>
                 </div>
@@ -99,16 +103,21 @@
             </div>
           </article>
 
-          <article class="noteCard reveal delay3 floatingCard">
-            <span class="noteLabel">status note</span>
+          <article class="sideWidget statusWidget reveal delay3 floatingCard">
+            <span class="statusLabel">status note</span>
             <p>
               i keep improving things over time instead of rushing them. that’s part of the magic.
             </p>
+            <div class="statusStars">
+              <span>✦</span>
+              <span>✦</span>
+              <span>✦</span>
+            </div>
           </article>
         </div>
 
         <div class="deskShelf reveal delay3">
-          <article class="miniWindowCard">
+          <article class="appCard">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -117,7 +126,8 @@
               </div>
               <span class="windowTitle">roblox_tools.txt</span>
             </div>
-            <div class="miniWindowBody">
+
+            <div class="appBody">
               <span class="miniTag">active</span>
               <h3>Bloxstrap / FastFlags Stuff</h3>
               <p>
@@ -127,7 +137,7 @@
             </div>
           </article>
 
-          <article class="miniWindowCard">
+          <article class="appCard">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -136,7 +146,8 @@
               </div>
               <span class="windowTitle">stream_visuals.ui</span>
             </div>
-            <div class="miniWindowBody">
+
+            <div class="appBody">
               <span class="miniTag mint">building</span>
               <h3>Stream Visuals &amp; Tools</h3>
               <p>
@@ -146,7 +157,7 @@
             </div>
           </article>
 
-          <article class="miniWindowCard">
+          <article class="appCard">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -155,7 +166,8 @@
               </div>
               <span class="windowTitle">music_notes.mp3</span>
             </div>
-            <div class="miniWindowBody">
+
+            <div class="appBody">
               <span class="miniTag peach">growing</span>
               <h3>Sax / Music Projects</h3>
               <p>
@@ -166,7 +178,7 @@
           </article>
         </div>
 
-        <div class="deskDrawers reveal delay4">
+        <div class="deskBottom reveal delay4">
           <article class="drawerCard">
             <div class="drawerHandle"></div>
             <h3>interactive web experiments</h3>
