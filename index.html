@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <!-- INTRO / LOADER -->
   <div id="loader">
     <div class="introBg">
       <div class="introGlow introGlow1"></div>
@@ -54,6 +55,7 @@
     <canvas id="physicsCanvas"></canvas>
   </div>
 
+  <!-- HOME BACKGROUND -->
   <div class="homeBg">
     <div class="bgBlob blob1"></div>
     <div class="bgBlob blob2"></div>
@@ -70,6 +72,7 @@
     </div>
   </div>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="heroCenter">
       <span class="heroTiny">welcome to</span>
@@ -82,14 +85,9 @@
         <svg class="heartSvg" viewBox="0 0 600 540" aria-hidden="true">
           <defs>
             <linearGradient id="heartFill" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#fff2fa" stop-opacity="0.94" />
-              <stop offset="55%" stop-color="#ffd6ec" stop-opacity="0.82" />
-              <stop offset="100%" stop-color="#ffb4db" stop-opacity="0.58" />
-            </linearGradient>
-
-            <linearGradient id="heartStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#fff9fd" />
-              <stop offset="100%" stop-color="#ff95c9" />
+              <stop offset="0%" stop-color="#ffc9e6" stop-opacity="1" />
+              <stop offset="55%" stop-color="#ff9fd3" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#ff6fb3" stop-opacity="0.75" />
             </linearGradient>
 
             <filter id="heartGlow" x="-40%" y="-40%" width="180%" height="180%">
@@ -110,8 +108,8 @@
                C529 55, 581 132, 550 226
                C510 345, 332 468, 300 496 Z"
             fill="url(#heartFill)"
-            stroke="url(#heartStroke)"
-            stroke-width="8"
+            stroke="#ff6fb3"
+            stroke-width="10"
             filter="url(#heartGlow)">
           </path>
 
