@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat - PinkyDevil</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/chat.css" />
+</head>
+<body>
+
+  <div class="checkerBackground"></div>
+
+  <div class="pageShell">
+
+    <nav class="topNav reveal">
+      <a href="../index.html" class="navLogoWrap">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
+
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
+        <a href="chat.html" class="navButton active">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
+        <a href="../index.html" class="navButton">home</a>
+      </div>
+    </nav>
+
+    <main class="chatFrame reveal delay1">
+
+      <section class="chatHeader">
+        <div class="headerPattern"></div>
+        <h1 class="siteTitle glowText">Public Chat</h1>
+        <p class="pageSubtitle">
+          hang out, leave messages, and be cute in the PinkyDevil chat room 💗
+        </p>
+      </section>
+
+      <section class="chatMain reveal delay2">
+
+        <div class="chatEmbedCard">
+          <div class="sectionTop">
+            <h2 class="glowTextSmall">live chat room</h2>
+            <span class="softPill">cbox</span>
+          </div>
+
+          <div class="chatEmbedWrap">
+            <!-- replace YOUR_CBOX_EMBED_URL with your actual cbox embed URL -->
+            <iframe
+              src="YOUR_CBOX_EMBED_URL"
+              title="PinkyDevil public chat"
+              frameborder="0"
+              width="100%"
+              height="100%">
+            </iframe>
+          </div>
+        </div>
+
+        <aside class="chatSide">
+
+          <div class="chatCard floatingCard">
+            <div class="sectionTop">
+              <h2 class="glowTextSmall">chat vibe</h2>
+              <span class="softPill">friendly</span>
+            </div>
+
+            <p>
+              say hi, leave a cute message, talk about streams, music, projects,
+              or just vibe for a bit 💗
+            </p>
+          </div>
+
+          <div class="chatCard">
+            <div class="sectionTop">
+              <h2 class="glowTextSmall">little reminders</h2>
+              <span class="softPill">rules</span>
+            </div>
+
+            <ul class="chatRules">
+              <li>be nice and respectful</li>
+              <li>no hate or weirdness</li>
+              <li>keep the vibe comfy</li>
+              <li>have fun and be yourself</li>
+            </ul>
+          </div>
+
+          <div class="chatCard floatingCard">
+            <div class="sectionTop">
+              <h2 class="glowTextSmall">quick links</h2>
+              <span class="softPill">explore</span>
+            </div>
+
+            <div class="quickButtons">
+              <a href="../index.html" class="quickBtn q-home">home</a>
+              <a href="streams.html" class="quickBtn q-streams">streams</a>
+              <a href="music.html" class="quickBtn q-music">music</a>
+              <a href="fursona.html" class="quickBtn q-fursona">fursona</a>
+              <a href="donated.html" class="quickBtn q-donate">donated</a>
+            </div>
+          </div>
+
+        </aside>
+
+      </section>
+
+      <section class="chatNotes reveal delay3">
+        <div class="notesCard">
+          <h2 class="glowTextSmall">later upgrades</h2>
+          <p>
+            later we can upgrade this page with custom chat styling, glow reactions,
+            message highlight effects, and a more unique panel around the chat embed 💗
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="siteFooter reveal delay4">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="chat.html">chat</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
+</body>
+</html>
