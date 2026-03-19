@@ -25,6 +25,7 @@
         <a href="streams.html" class="navButton">streams</a>
         <a href="music.html" class="navButton active">music</a>
         <a href="fursona.html" class="navButton">fursona</a>
+        <a href="art.html" class="navButton">art</a>
         <a href="chat.html" class="navButton">chat</a>
         <a href="donated.html" class="navButton">donated</a>
         <a href="../index.html" class="navButton">home</a>
@@ -33,11 +34,8 @@
 
     <main class="musicFrame reveal delay1">
 
-      <!-- 💗 HERO BANNER -->
       <section class="musicHero">
-
         <img src="../images/eye-banner.png" class="heroImage" alt="Music banner" />
-
         <div class="heroOverlay"></div>
 
         <div class="heroContent">
@@ -46,10 +44,8 @@
             songs i made, music i love, and sounds that fit my little world 💗
           </p>
         </div>
-
       </section>
 
-      <!-- FEATURED -->
       <section class="featuredSection reveal delay2">
         <div class="sectionTop">
           <h2 class="glowTextSmall">featured song</h2>
@@ -60,7 +56,9 @@
           <div class="featuredVideoWrap">
             <iframe
               src="https://www.youtube.com/embed/VIDEO_ID"
+              title="Featured song"
               frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
           </div>
@@ -68,18 +66,18 @@
           <div class="featuredInfo">
             <h3>My Featured Song</h3>
             <p>
-              this is your main song highlight 💗
+              this is the main song i want people to see first when they visit my music page.
+              replace this with your real song title, description, or what it means to you 💗
             </p>
 
             <div class="featuredButtons">
-              <a href="#" class="musicBtn btn-watch">watch</a>
+              <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener noreferrer" class="musicBtn btn-watch">watch on youtube</a>
               <a href="#" class="musicBtn btn-more">more soon</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- GRID -->
       <section class="musicListSection reveal delay3">
         <div class="sectionTop">
           <h2 class="glowTextSmall">music i like</h2>
@@ -88,24 +86,76 @@
 
         <div class="musicGrid">
 
-          <div class="musicCard">
-            <h3>Song One</h3>
-            <p>cute vibe</p>
+          <article class="musicCard">
+            <div class="musicCardTop">
+              <span class="musicTag">favorite</span>
+              <span class="musicType">youtube</span>
+            </div>
+            <h3 class="musicTitle">Song One</h3>
+            <p class="musicText">cute vibe</p>
             <a href="#" class="musicCardBtn">listen</a>
-          </div>
+          </article>
 
-          <div class="musicCard">
-            <h3>Song Two</h3>
-            <p>chill energy</p>
+          <article class="musicCard">
+            <div class="musicCardTop">
+              <span class="musicTag">chill</span>
+              <span class="musicType">youtube</span>
+            </div>
+            <h3 class="musicTitle">Song Two</h3>
+            <p class="musicText">chill energy</p>
             <a href="#" class="musicCardBtn">listen</a>
-          </div>
+          </article>
 
-          <div class="musicCard">
-            <h3>Song Three</h3>
-            <p>late night</p>
+          <article class="musicCard">
+            <div class="musicCardTop">
+              <span class="musicTag">late night</span>
+              <span class="musicType">youtube</span>
+            </div>
+            <h3 class="musicTitle">Song Three</h3>
+            <p class="musicText">late night coding vibe</p>
             <a href="#" class="musicCardBtn">listen</a>
-          </div>
+          </article>
 
+          <article class="musicCard">
+            <div class="musicCardTop">
+              <span class="musicTag">soft</span>
+              <span class="musicType">youtube</span>
+            </div>
+            <h3 class="musicTitle">Song Four</h3>
+            <p class="musicText">soft and dreamy</p>
+            <a href="#" class="musicCardBtn">listen</a>
+          </article>
+
+          <article class="musicCard">
+            <div class="musicCardTop">
+              <span class="musicTag">stream</span>
+              <span class="musicType">youtube</span>
+            </div>
+            <h3 class="musicTitle">Song Five</h3>
+            <p class="musicText">perfect stream energy</p>
+            <a href="#" class="musicCardBtn">listen</a>
+          </article>
+
+          <article class="musicCard">
+            <div class="musicCardTop">
+              <span class="musicTag">cute</span>
+              <span class="musicType">youtube</span>
+            </div>
+            <h3 class="musicTitle">Song Six</h3>
+            <p class="musicText">pink and sparkly mood</p>
+            <a href="#" class="musicCardBtn">listen</a>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="musicNotesSection reveal delay4">
+        <div class="notesCard">
+          <h2 class="glowTextSmall">future upgrades</h2>
+          <p>
+            future upgrades: album art, hover previews, audio players, categories,
+            and a cute custom mini player bar to make everything feel extra polished 💗
+          </p>
         </div>
       </section>
 
@@ -129,6 +179,5 @@
       });
     });
   </script>
-
 </body>
 </html>
