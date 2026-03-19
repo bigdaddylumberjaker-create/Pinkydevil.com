@@ -6,7 +6,7 @@
 }
 
 /* ========================= */
-/* ROOM BACKGROUND */
+/* BACKGROUND */
 /* ========================= */
 
 .roomBg {
@@ -15,46 +15,46 @@
   overflow: hidden;
   z-index: -1;
   background:
-    radial-gradient(circle at top, rgba(255,255,255,0.34), transparent 26%),
-    linear-gradient(180deg, #fff8fc 0%, #ffeef8 38%, #ffe3f2 100%);
+    radial-gradient(circle at top, rgba(255,255,255,0.28), transparent 24%),
+    linear-gradient(180deg, #fff8fc 0%, #ffeaf6 42%, #ffddea 100%);
 }
 
-.wallGlow {
+.bgGlow {
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.45;
-  animation: wallFloat 14s ease-in-out infinite;
+  opacity: 0.42;
+  animation: bgFloat 14s ease-in-out infinite;
 }
 
-.glow1 {
+.bgGlow1 {
   width: 320px;
   height: 320px;
-  background: rgba(255, 166, 210, 0.28);
-  top: 10%;
+  background: rgba(255, 150, 205, 0.24);
   left: 8%;
+  top: 10%;
 }
 
-.glow2 {
+.bgGlow2 {
   width: 360px;
   height: 360px;
-  background: rgba(205, 190, 255, 0.24);
-  top: 18%;
-  right: 12%;
+  background: rgba(207, 180, 255, 0.18);
+  right: 10%;
+  top: 14%;
   animation-delay: 2s;
 }
 
-.glow3 {
+.bgGlow3 {
   width: 380px;
   height: 380px;
-  background: rgba(255, 224, 240, 0.44);
-  bottom: -4%;
+  background: rgba(255, 205, 230, 0.34);
   left: 50%;
+  bottom: -6%;
   transform: translateX(-50%);
   animation-delay: 4s;
 }
 
-@keyframes wallFloat {
+@keyframes bgFloat {
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
@@ -63,63 +63,64 @@
   }
 }
 
-.wallGrid {
+.wallPattern {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
-  background-size: 46px 46px;
-  opacity: 0.09;
+    linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.08;
 }
 
-.floatingDecor {
+.spark {
   position: absolute;
   pointer-events: none;
   user-select: none;
   opacity: 0.28;
-  animation: decorFloat 8s ease-in-out infinite;
+  animation: sparkFloat 8s ease-in-out infinite;
 }
 
-.decorHeart1 {
+.spark1 {
   left: 10%;
   top: 24%;
-  font-size: 32px;
+  font-size: 34px;
   color: #ff9ccc;
 }
 
-.decorHeart2 {
+.spark2 {
   right: 14%;
   top: 18%;
   font-size: 28px;
-  color: #ffb3d7;
+  color: #ffb8dc;
   animation-delay: 1.8s;
 }
 
-.decorStar1 {
-  left: 20%;
-  bottom: 18%;
-  font-size: 18px;
-  color: #dca6ff;
-}
-
-.decorStar2 {
-  right: 20%;
-  bottom: 24%;
-  font-size: 22px;
-  color: #ff8fc5;
-  animation-delay: 1s;
-}
-
-.decorStar3 {
+.spark3 {
   right: 34%;
-  top: 34%;
-  font-size: 16px;
+  top: 35%;
+  font-size: 18px;
   color: #ffc8e6;
+  animation-delay: 0.8s;
+}
+
+.spark4 {
+  left: 18%;
+  bottom: 18%;
+  font-size: 24px;
+  color: #e3a1ff;
+  animation-delay: 1.4s;
+}
+
+.spark5 {
+  right: 20%;
+  bottom: 26%;
+  font-size: 24px;
+  color: #ff91c0;
   animation-delay: 2.2s;
 }
 
-@keyframes decorFloat {
+@keyframes sparkFloat {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
@@ -140,8 +141,8 @@
   gap: 14px;
   padding: 12px 14px;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.30);
-  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(255,255,255,0.58);
   box-shadow:
     0 16px 36px rgba(255, 154, 206, 0.12),
     inset 0 0 0 1px rgba(255,255,255,0.18);
@@ -156,8 +157,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.32);
-  border: 1px solid rgba(255,255,255,0.46);
+  background: rgba(255,255,255,0.34);
+  border: 1px solid rgba(255,255,255,0.48);
   flex-shrink: 0;
 }
 
@@ -182,7 +183,7 @@
   color: #9a4f7d;
   font-weight: 700;
   background: rgba(255,255,255,0.26);
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.54);
   border-radius: 999px;
   padding: 12px 18px;
   transition: 0.24s ease;
@@ -191,7 +192,7 @@
 .navButton:hover,
 .navButton.active {
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(255, 144, 195, 0.78), rgba(211, 176, 255, 0.72));
+  background: linear-gradient(135deg, rgba(255, 140, 195, 0.82), rgba(211, 176, 255, 0.76));
   box-shadow:
     0 0 20px rgba(255, 166, 210, 0.22),
     inset 0 0 10px rgba(255,255,255,0.12);
@@ -204,17 +205,17 @@
 
 .roomHeader {
   max-width: 1100px;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 12px auto;
   text-align: center;
-  padding: 18px 10px 8px;
+  padding: 14px 10px 4px;
 }
 
 .roomTiny {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.38);
-  border: 1px solid rgba(255,255,255,0.58);
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(255,255,255,0.60);
   color: #c15d94;
   font-size: 13px;
   font-weight: 700;
@@ -223,27 +224,27 @@
 }
 
 .roomTitle {
-  margin: 16px 0 10px 0;
+  margin: 14px 0 8px 0;
   font-size: clamp(52px, 8vw, 100px);
   line-height: 0.95;
-  background: linear-gradient(180deg, #ff8dc3 0%, #ff5fae 100%);
+  background: linear-gradient(180deg, #ff86bf 0%, #ff4ca5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 12px rgba(255, 120, 180, 0.22));
+  filter: drop-shadow(0 0 12px rgba(255, 120, 180, 0.24));
 }
 
 .roomSubtitle {
   margin: 0 auto;
   max-width: 760px;
-  color: #ba5d8f;
+  color: #b85789;
   font-size: 18px;
   line-height: 1.8;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ========================= */
-/* DESKTOP */
+/* DESKTOP SCENE */
 /* ========================= */
 
 .desktopScene {
@@ -253,23 +254,36 @@
 
 .deskSurface {
   border-radius: 38px;
-  padding: 28px 28px 34px;
+  padding: 26px 26px 32px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.10));
-  border: 1px solid rgba(255,255,255,0.42);
+    linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.11));
+  border: 1px solid rgba(255,255,255,0.46);
   box-shadow:
     0 20px 48px rgba(255, 154, 206, 0.10),
-    inset 0 0 0 1px rgba(255,255,255,0.12);
+    inset 0 0 0 1px rgba(255,255,255,0.14);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-.deskTopRow {
+.deskTopBand {
+  position: relative;
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr) 240px;
+  grid-template-columns: 260px minmax(0, 1fr) 220px;
   gap: 22px;
   align-items: start;
   margin-bottom: 22px;
+}
+
+.deskLampGlow {
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: 380px;
+  height: 140px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255, 170, 215, 0.22), transparent 68%);
+  filter: blur(28px);
+  pointer-events: none;
 }
 
 .deskShelf {
@@ -279,32 +293,32 @@
   margin-bottom: 22px;
 }
 
-.deskDrawers {
+.deskBottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
 
 /* ========================= */
-/* SHARED CARDS */
+/* SHARED CARD STYLE */
 /* ========================= */
 
-.windowCard,
-.miniWindowCard,
-.stickyCard,
-.drawerCard,
-.noteCard {
+.mainMonitor,
+.appCard,
+.stickyWidget,
+.noteCard,
+.drawerCard {
   box-shadow:
     0 18px 34px rgba(255, 154, 206, 0.12),
     inset 0 0 0 1px rgba(255,255,255,0.12);
 }
 
-.windowCard,
-.miniWindowCard {
+.mainMonitor,
+.appCard {
   border-radius: 26px;
   overflow: hidden;
-  background: rgba(255,255,255,0.34);
-  border: 1px solid rgba(255,255,255,0.54);
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(255,255,255,0.60);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -314,8 +328,8 @@
   align-items: center;
   gap: 12px;
   padding: 12px 14px;
-  background: rgba(255,255,255,0.20);
-  border-bottom: 1px solid rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.34);
 }
 
 .windowDots {
@@ -327,7 +341,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.66);
+  background: rgba(255,255,255,0.72);
 }
 
 .windowTitle {
@@ -340,23 +354,19 @@
 /* MAIN MONITOR */
 /* ========================= */
 
-.mainMonitor {
-  width: 100%;
-}
-
 .monitorScreen {
   position: relative;
-  padding: 30px;
-  min-height: 340px;
+  padding: 28px;
+  min-height: 300px;
   background:
-    radial-gradient(circle at center, rgba(255,255,255,0.10), transparent 44%),
-    linear-gradient(180deg, rgba(255, 233, 244, 0.58), rgba(255, 213, 233, 0.48));
+    radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 44%),
+    linear-gradient(180deg, rgba(255, 233, 244, 0.72), rgba(255, 213, 233, 0.60));
 }
 
-.monitorGlow {
+.monitorShine {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 141, 195, 0.16), transparent 58%);
+  background: radial-gradient(circle at center, rgba(255, 141, 195, 0.18), transparent 58%);
   pointer-events: none;
 }
 
@@ -370,8 +380,8 @@
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(255,255,255,0.58);
+  background: rgba(255,255,255,0.46);
+  border: 1px solid rgba(255,255,255,0.62);
   color: #bf5f95;
   font-size: 12px;
   font-weight: 700;
@@ -380,8 +390,8 @@
 }
 
 .monitorContent h2 {
-  margin: 14px 0 12px 0;
-  font-size: 40px;
+  margin: 14px 0 10px 0;
+  font-size: 34px;
   color: #b84e82;
   line-height: 1.05;
 }
@@ -394,7 +404,7 @@
   font-size: 16px;
 }
 
-.monitorStats {
+.monitorTags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -402,17 +412,17 @@
   margin-top: 18px;
 }
 
-.monitorStats span {
+.monitorTags span {
   padding: 9px 12px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.40);
-  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.58);
   color: #9a587d;
   font-size: 12px;
   font-weight: 700;
 }
 
-.windowButtons {
+.monitorButtons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -428,7 +438,7 @@
   font-weight: 700;
   background: #fff0f8;
   color: #a94b7e;
-  border: 1px solid rgba(255,255,255,0.72);
+  border: 1px solid rgba(255,255,255,0.74);
   box-shadow: 0 8px 18px rgba(255, 154, 206, 0.10);
   transition: 0.22s ease;
 }
@@ -450,43 +460,58 @@
 }
 
 /* ========================= */
-/* SIDE NOTES */
+/* LEFT / RIGHT WIDGETS */
 /* ========================= */
 
-.stickyCard {
-  min-height: 220px;
-  padding: 22px 20px 20px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #ffe9f4 0%, #ffdcec 100%);
-  border: 1px solid rgba(255,255,255,0.7);
-  transform: rotate(-2deg);
+.sideWidget {
+  min-height: 210px;
 }
 
-.stickyEmoji {
+.stickyWidget {
+  padding: 22px 20px 20px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffe6f2 0%, #ffd7ea 100%);
+  border: 1px solid rgba(255,255,255,0.74);
+  transform: rotate(-2deg);
+  position: relative;
+}
+
+.widgetPin {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.74);
+  box-shadow: 0 0 10px rgba(255, 154, 206, 0.14);
+}
+
+.widgetEmoji {
   font-size: 22px;
 }
 
-.stickyCard h3 {
+.stickyWidget h3 {
   margin: 14px 0 10px 0;
   color: #b84f82;
   font-size: 28px;
 }
 
-.stickyCard p {
+.stickyWidget p {
   margin: 0;
   color: #8d5273;
-  line-height: 1.8;
+  line-height: 1.82;
 }
 
-.noteCard {
+.statusWidget {
   padding: 20px 18px;
   border-radius: 24px;
   background: linear-gradient(180deg, #fff4fb 0%, #ffe7f5 100%);
-  border: 1px solid rgba(255,255,255,0.74);
+  border: 1px solid rgba(255,255,255,0.76);
   transform: rotate(-2deg);
 }
 
-.noteLabel {
+.statusLabel {
   display: inline-block;
   margin-bottom: 10px;
   color: #c15e93;
@@ -496,39 +521,47 @@
   letter-spacing: 0.4px;
 }
 
-.noteCard p {
+.statusWidget p {
   margin: 0;
   color: #8e5575;
-  line-height: 1.8;
+  line-height: 1.85;
+}
+
+.statusStars {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  color: #ff8fc5;
+  font-size: 14px;
 }
 
 /* ========================= */
-/* MINI WINDOWS */
+/* SHELF APPS */
 /* ========================= */
 
-.miniWindowBody {
+.appBody {
   padding: 18px 18px 20px;
 }
 
-.miniWindowBody h3 {
+.appBody h3 {
   margin: 12px 0 10px 0;
   color: #b54f83;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.08;
 }
 
-.miniWindowBody p {
+.appBody p {
   margin: 0;
   color: #8b5574;
-  line-height: 1.8;
+  line-height: 1.82;
 }
 
 .miniTag {
   display: inline-block;
   padding: 7px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(255,255,255,0.56);
+  background: rgba(255,255,255,0.44);
+  border: 1px solid rgba(255,255,255,0.58);
   color: #b85a8f;
   font-size: 12px;
   font-weight: 700;
@@ -550,8 +583,8 @@
 .drawerCard {
   padding: 24px 22px 22px;
   border-radius: 26px;
-  background: rgba(255,255,255,0.34);
-  border: 1px solid rgba(255,255,255,0.56);
+  background: rgba(255,255,255,0.36);
+  border: 1px solid rgba(255,255,255,0.60);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -560,7 +593,7 @@
   width: 84px;
   height: 8px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.58);
+  background: rgba(255,255,255,0.62);
   margin: 0 auto 16px auto;
 }
 
@@ -574,7 +607,7 @@
 .drawerCard p {
   margin: 0;
   color: #8d5374;
-  line-height: 1.8;
+  line-height: 1.82;
 }
 
 .drawerTags {
@@ -587,8 +620,8 @@
 .drawerTags span {
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.40);
-  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.54);
   color: #99577b;
   font-size: 12px;
   font-weight: 700;
@@ -662,7 +695,7 @@
 /* ========================= */
 
 @media (max-width: 1200px) {
-  .deskTopRow {
+  .deskTopBand {
     grid-template-columns: 1fr;
   }
 
@@ -670,7 +703,7 @@
     grid-template-columns: 1fr;
   }
 
-  .deskDrawers {
+  .deskBottom {
     grid-template-columns: 1fr;
   }
 }
@@ -702,13 +735,13 @@
   }
 
   .monitorContent h2,
-  .miniWindowBody h3,
-  .stickyCard h3,
+  .appBody h3,
+  .stickyWidget h3,
   .drawerCard h3 {
     font-size: 24px;
   }
 
-  .windowButtons {
+  .monitorButtons {
     flex-direction: column;
   }
 }
