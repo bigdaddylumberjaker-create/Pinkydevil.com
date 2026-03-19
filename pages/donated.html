@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donated - PinkyDevil</title>
 
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/donated.css" />
+</head>
+<body>
+
+  <div class="checkerBackground"></div>
+
+  <div class="pageShell">
+
+    <nav class="topNav reveal">
+      <a href="../index.html" class="navLogoWrap">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
+
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton active">donated</a>
+        <a href="../index.html" class="navButton">home</a>
+      </div>
+    </nav>
+
+    <main class="donatedFrame reveal delay1">
+
+      <section class="donatedHeader">
+        <div class="headerPattern"></div>
+        <h1 class="siteTitle glowText">Donated</h1>
+        <p class="pageSubtitle">
+          thank you to everyone who supports me, my streams, and my little pink world 💗
+        </p>
+      </section>
+
+      <section class="heroThanks reveal delay2">
+        <div class="thanksCard bigThanksCard">
+          <div class="heartFloat">♡</div>
+          <h2 class="glowTextSmall">thank you so much</h2>
+          <p>
+            every bit of support means a lot to me. whether you donate, share my stuff,
+            hang out in chat, or just cheer me on — it really helps more than you know 💗
+          </p>
+
+          <div class="donationButtons">
+            <a href="#" class="donationBtn btn-donate-main">donation link here</a>
+            <a href="streams.html" class="donationBtn btn-donate-alt">see stream page</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="supportGrid reveal delay3">
+
+        <div class="supportCard floatingCard">
+          <div class="cardTop">
+            <span class="supportTag">support</span>
+            <span class="supportTag alt">cute</span>
+          </div>
+          <h3>why it helps</h3>
+          <p>
+            donations help me improve the site, stream more, work on fun projects,
+            and keep building everything into something bigger and cuter.
+          </p>
+        </div>
+
+        <div class="supportCard floatingCard">
+          <div class="cardTop">
+            <span class="supportTag">love</span>
+            <span class="supportTag alt">community</span>
+          </div>
+          <h3>more than money</h3>
+          <p>
+            support is not just financial. kind words, showing up to streams,
+            and sharing my pages also mean a lot to me.
+          </p>
+        </div>
+
+        <div class="supportCard floatingCard">
+          <div class="cardTop">
+            <span class="supportTag">future</span>
+            <span class="supportTag alt">plans</span>
+          </div>
+          <h3>future upgrades</h3>
+          <p>
+            later this page can show supporter tiers, donation goals,
+            thank-you effects, and cute animated milestone bars.
+          </p>
+        </div>
+
+      </section>
+
+      <section class="supporterSection reveal delay4">
+        <div class="sectionTop">
+          <h2 class="glowTextSmall">supporter wall</h2>
+          <span class="softPill">thank you</span>
+        </div>
+
+        <div class="supporterWall">
+          <div class="supporterChip">your name here</div>
+          <div class="supporterChip">future supporter</div>
+          <div class="supporterChip">pink legend</div>
+          <div class="supporterChip">cute helper</div>
+          <div class="supporterChip">stream angel</div>
+          <div class="supporterChip">website fairy</div>
+        </div>
+      </section>
+
+      <section class="goalsSection reveal delay4">
+        <div class="sectionTop">
+          <h2 class="glowTextSmall">support goals</h2>
+          <span class="softPill">later</span>
+        </div>
+
+        <div class="goalList">
+          <div class="goalCard">
+            <div class="goalLabelRow">
+              <span>site upgrades</span>
+              <span>0 / 100</span>
+            </div>
+            <div class="goalBar">
+              <div class="goalFill fill1"></div>
+            </div>
+          </div>
+
+          <div class="goalCard">
+            <div class="goalLabelRow">
+              <span>stream visuals</span>
+              <span>0 / 100</span>
+            </div>
+            <div class="goalBar">
+              <div class="goalFill fill2"></div>
+            </div>
+          </div>
+
+          <div class="goalCard">
+            <div class="goalLabelRow">
+              <span>music / creative stuff</span>
+              <span>0 / 100</span>
+            </div>
+            <div class="goalBar">
+              <div class="goalFill fill3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="siteFooter reveal delay4">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="donated.html">donated</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
+</body>
+</html>
