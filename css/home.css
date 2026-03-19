@@ -62,8 +62,12 @@
 }
 
 @keyframes floatGlow {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(24px, -20px) scale(1.1); }
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -20px) scale(1.1);
+  }
 }
 
 .ring {
@@ -77,9 +81,22 @@
   box-shadow: 0 0 20px rgba(255, 182, 224, 0.08);
 }
 
-.ring1 { width: 260px; height: 260px; }
-.ring2 { width: 420px; height: 420px; animation-delay: 1.6s; }
-.ring3 { width: 620px; height: 620px; animation-delay: 3.2s; }
+.ring1 {
+  width: 260px;
+  height: 260px;
+}
+
+.ring2 {
+  width: 420px;
+  height: 420px;
+  animation-delay: 1.6s;
+}
+
+.ring3 {
+  width: 620px;
+  height: 620px;
+  animation-delay: 3.2s;
+}
 
 @keyframes ringPulse {
   0% {
@@ -110,21 +127,35 @@
 .aurora1 {
   top: 10%;
   left: -10%;
-  background: linear-gradient(90deg, rgba(255,182,224,0), rgba(255,182,224,0.6), rgba(255,230,245,0));
+  background: linear-gradient(
+    90deg,
+    rgba(255,182,224,0),
+    rgba(255,182,224,0.6),
+    rgba(255,230,245,0)
+  );
   transform: rotate(-12deg);
 }
 
 .aurora2 {
   bottom: 12%;
   right: -8%;
-  background: linear-gradient(90deg, rgba(255,170,210,0), rgba(255,200,230,0.5), rgba(255,170,210,0));
+  background: linear-gradient(
+    90deg,
+    rgba(255,170,210,0),
+    rgba(255,200,230,0.5),
+    rgba(255,170,210,0)
+  );
   transform: rotate(10deg);
   animation-delay: 2s;
 }
 
 @keyframes auroraMove {
-  0%, 100% { transform: translateX(0) translateY(0) rotate(-10deg) scale(1); }
-  50% { transform: translateX(30px) translateY(-10px) rotate(-6deg) scale(1.06); }
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(-10deg) scale(1);
+  }
+  50% {
+    transform: translateX(30px) translateY(-10px) rotate(-6deg) scale(1.06);
+  }
 }
 
 .lightBeam {
@@ -132,14 +163,21 @@
   top: -20%;
   width: 24vw;
   height: 140vh;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,182,224,0.03), transparent 75%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.10),
+    rgba(255,182,224,0.03),
+    transparent 75%
+  );
   filter: blur(16px);
   transform: rotate(18deg);
   opacity: 0.22;
   animation: beamShift 9s ease-in-out infinite;
 }
 
-.beam1 { left: 12%; }
+.beam1 {
+  left: 12%;
+}
 
 .beam2 {
   right: 10%;
@@ -148,8 +186,14 @@
 }
 
 @keyframes beamShift {
-  0%, 100% { opacity: 0.14; transform: translateY(0) rotate(18deg); }
-  50% { opacity: 0.28; transform: translateY(-18px) rotate(14deg); }
+  0%, 100% {
+    opacity: 0.14;
+    transform: translateY(0) rotate(18deg);
+  }
+  50% {
+    opacity: 0.28;
+    transform: translateY(-18px) rotate(14deg);
+  }
 }
 
 .sparkles {
@@ -193,13 +237,25 @@
 .st5 { left: 58%; top: 72%; animation-delay: 3s; }
 
 @keyframes starBlink {
-  0%, 100% { opacity: 0.2; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.25); }
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.22; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.45); }
+  0%, 100% {
+    opacity: 0.22;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.45);
+  }
 }
 
 .loaderCenter {
@@ -221,9 +277,15 @@
 }
 
 @keyframes logoFloat {
-  0% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-14px) scale(1.04); }
-  100% { transform: translateY(0px) scale(1); }
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.04);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
 }
 
 #enterButton {
@@ -308,8 +370,12 @@
 }
 
 @keyframes blobFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(18px, -18px) scale(1.06); }
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18px, -18px) scale(1.06);
+  }
 }
 
 .bgGrid {
@@ -345,8 +411,14 @@
 .h6 { left: 54%; top: 82%; font-size: 32px; animation-delay: 1.8s; }
 
 @keyframes floatMiniHeart {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
-  50% { transform: translateY(-8px) rotate(4deg); opacity: 0.32; }
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+    opacity: 0.32;
+  }
 }
 
 /* ========================= */
@@ -358,7 +430,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 34px 20px 44px;
+  padding: 70px 20px 44px;
   opacity: 0;
   transform: translateY(50px);
   transition: 1s;
@@ -394,18 +466,19 @@
 }
 
 .heroMainTitle {
-  margin: 14px 0 10px 0;
+  margin: 18px 0 14px 0;
   font-size: clamp(58px, 9vw, 104px);
   line-height: 0.95;
-  color: #ff6fb3;
-  text-shadow:
-    0 0 12px rgba(255, 120, 180, 0.6),
-    0 0 28px rgba(255, 120, 180, 0.25),
-    0 2px 0 rgba(255,255,255,0.6);
+  background: linear-gradient(180deg, #ff8fc5 0%, #ff4fa4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 14px rgba(255, 120, 180, 0.35));
 }
 
 .heroLead {
-  margin: 0 auto 28px;
+  margin: 0 auto 18px;
   max-width: 700px;
   color: #b94d85;
   line-height: 1.8;
@@ -415,29 +488,33 @@
 
 .heartScene {
   position: relative;
-  width: min(780px, 92vw);
+  width: min(720px, 88vw);
   aspect-ratio: 600 / 540;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 8px;
   animation:
     heartFloat 4.5s ease-in-out infinite,
-    heartGlowPulse 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 28px rgba(255, 120, 180, 0.25));
+    heartGlowPulse 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 34px rgba(255, 120, 180, 0.32));
 }
 
 @keyframes heartFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes heartGlowPulse {
   0%, 100% {
-    filter: drop-shadow(0 0 22px rgba(255, 120, 180, 0.25));
+    filter: drop-shadow(0 0 20px rgba(255, 120, 180, 0.22));
   }
   50% {
-    filter: drop-shadow(0 0 40px rgba(255, 120, 180, 0.45));
+    filter: drop-shadow(0 0 52px rgba(255, 120, 180, 0.55));
   }
 }
 
@@ -452,20 +529,20 @@
 .heartContent {
   position: relative;
   z-index: 2;
-  width: 64%;
-  max-width: 460px;
+  width: 62%;
+  max-width: 430px;
   text-align: center;
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.30);
-  border-radius: 28px;
+  padding: 18px 18px 16px;
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 26px;
   backdrop-filter: blur(12px);
   box-shadow:
-    0 12px 30px rgba(255, 120, 180, 0.18),
-    inset 0 0 12px rgba(255,255,255,0.2);
+    0 10px 26px rgba(255, 120, 180, 0.16),
+    inset 0 0 10px rgba(255,255,255,0.18);
 }
 
 .heartMiniLine {
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   color: #c86c9d;
   font-size: 14px;
   letter-spacing: 0.5px;
