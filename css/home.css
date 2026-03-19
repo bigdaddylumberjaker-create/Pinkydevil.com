@@ -1,3 +1,7 @@
+/* ========================= */
+/* INTRO / LOADER */
+/* ========================= */
+
 #loader {
   position: fixed;
   inset: 0;
@@ -136,6 +140,7 @@
 }
 
 .beam1 { left: 12%; }
+
 .beam2 {
   right: 10%;
   transform: rotate(-18deg);
@@ -147,7 +152,10 @@
   50% { opacity: 0.28; transform: translateY(-18px) rotate(14deg); }
 }
 
-.sparkles { position: absolute; inset: 0; }
+.sparkles {
+  position: absolute;
+  inset: 0;
+}
 
 .spark {
   position: absolute;
@@ -250,6 +258,10 @@
   pointer-events: none;
 }
 
+/* ========================= */
+/* HOME BACKGROUND */
+/* ========================= */
+
 .homeBg {
   position: fixed;
   inset: 0;
@@ -337,6 +349,10 @@
   50% { transform: translateY(-8px) rotate(4deg); opacity: 0.32; }
 }
 
+/* ========================= */
+/* HERO */
+/* ========================= */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -381,16 +397,17 @@
   margin: 14px 0 10px 0;
   font-size: clamp(58px, 9vw, 104px);
   line-height: 0.95;
-  color: #fff7fb;
+  color: #ff6fb3;
   text-shadow:
-    0 0 14px rgba(255, 182, 224, 0.30),
-    0 0 28px rgba(255, 182, 224, 0.14);
+    0 0 12px rgba(255, 120, 180, 0.6),
+    0 0 28px rgba(255, 120, 180, 0.25),
+    0 2px 0 rgba(255,255,255,0.6);
 }
 
 .heroLead {
   margin: 0 auto 18px;
   max-width: 700px;
-  color: #c86c9d;
+  color: #b94d85;
   line-height: 1.8;
   font-size: 18px;
   font-weight: 600;
@@ -398,7 +415,7 @@
 
 .heartScene {
   position: relative;
-  width: min(780px, 94vw);
+  width: min(880px, 96vw);
   aspect-ratio: 600 / 540;
   display: flex;
   justify-content: center;
@@ -426,7 +443,11 @@
   width: 64%;
   max-width: 460px;
   text-align: center;
-  padding-top: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(255, 120, 180, 0.2);
 }
 
 .heartMiniLine {
