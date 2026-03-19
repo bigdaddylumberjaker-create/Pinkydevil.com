@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- INTRO / LOADER -->
   <div id="loader">
     <div class="introBg">
       <div class="introGlow introGlow1"></div>
@@ -55,12 +54,10 @@
     <canvas id="physicsCanvas"></canvas>
   </div>
 
-  <!-- HOME BACKGROUND -->
   <div class="homeBg">
     <div class="bgBlob blob1"></div>
     <div class="bgBlob blob2"></div>
     <div class="bgBlob blob3"></div>
-
     <div class="bgGrid"></div>
 
     <div class="bgHearts">
@@ -73,46 +70,32 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="heroShell">
-
-      <div class="heroIntroText">
-        <span class="heroTiny">welcome to</span>
-        <h1 class="heroMainTitle">PinkyDevil</h1>
-        <p class="heroLead">
-          a dreamy little pink universe for streams, projects, music, art, and cute chaos 💗
-        </p>
-      </div>
+    <div class="heroCenter">
+      <span class="heroTiny">welcome to</span>
+      <h1 class="heroMainTitle">PinkyDevil</h1>
+      <p class="heroLead">
+        a dreamy little pink universe for streams, projects, music, art, and cute chaos 💗
+      </p>
 
       <div class="heartScene">
-
         <svg class="heartSvg" viewBox="0 0 600 540" aria-hidden="true">
           <defs>
             <linearGradient id="heartFill" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#fff0f8" stop-opacity="0.92" />
-              <stop offset="50%" stop-color="#ffd2ea" stop-opacity="0.62" />
-              <stop offset="100%" stop-color="#ff9fd3" stop-opacity="0.34" />
+              <stop offset="0%" stop-color="#fff2fa" stop-opacity="0.94" />
+              <stop offset="55%" stop-color="#ffd6ec" stop-opacity="0.82" />
+              <stop offset="100%" stop-color="#ffb4db" stop-opacity="0.58" />
             </linearGradient>
 
             <linearGradient id="heartStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#fff8fc" />
-              <stop offset="100%" stop-color="#ffb6e0" />
+              <stop offset="0%" stop-color="#fff9fd" />
+              <stop offset="100%" stop-color="#ff95c9" />
             </linearGradient>
 
             <filter id="heartGlow" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="10" result="blur1"></feGaussianBlur>
-              <feColorMatrix
-                in="blur1"
-                type="matrix"
-                values="1 0 0 0 0
-                        0 0.72 0 0 0
-                        0 0.88 0 0 0
-                        0 0 0 1 0"
-                result="pinkGlow">
-              </feColorMatrix>
               <feMerge>
-                <feMergeNode in="pinkGlow"></feMergeNode>
+                <feMergeNode in="blur1"></feMergeNode>
                 <feMergeNode in="SourceGraphic"></feMergeNode>
               </feMerge>
             </filter>
@@ -159,19 +142,6 @@
           </div>
         </div>
       </div>
-
-      <div class="heroSideNotes">
-        <div class="heroNoteCard floatingNote">
-          <span class="noteLabel">now building</span>
-          <p>cute layouts, stream tools, and a prettier little web world</p>
-        </div>
-
-        <div class="heroNoteCard floatingNote delayFloat">
-          <span class="noteLabel">main vibe</span>
-          <p>pink, dreamy, interactive, cozy, chaotic, and personal</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
