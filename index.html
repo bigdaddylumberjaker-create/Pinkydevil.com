@@ -8,7 +8,83 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
 
+  <style>
+    /* Intro cloud layer */
+    #loader {
+      isolation: isolate;
+    }
+
+    .introBg {
+      z-index: 0;
+    }
+
+    #cloudIntro {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    #cloudIntro canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
+    .loaderCenter {
+      position: relative;
+      z-index: 3;
+    }
+
+    #physicsCanvas {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #loader::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 38%),
+        radial-gradient(circle at center, rgba(255, 130, 190, 0.08), transparent 62%),
+        linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.22));
+      mix-blend-mode: screen;
+    }
+
+    .loaderCenter::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      max-width: 90vw;
+      max-height: 90vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 166, 214, 0.18), transparent 62%);
+      filter: blur(24px);
+      z-index: -1;
+      animation: introCorePulse 5s ease-in-out infinite;
+    }
+
+    @keyframes introCorePulse {
+      0%, 100% {
+        transform: scale(0.96);
+        opacity: 0.55;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 0.9;
+      }
+    }
+  </style>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
 </head>
 <body>
 
@@ -46,6 +122,9 @@
         <span class="star st5">✦</span>
       </div>
     </div>
+
+    <!-- 3D cloud / fog layer -->
+    <div id="cloudIntro" aria-hidden="true"></div>
 
     <div class="loaderCenter">
       <img src="images/logo.png" id="logoIntro" alt="PinkyDevil logo" />
