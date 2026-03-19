@@ -1,14 +1,134 @@
-<section class="musicHero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music - PinkyDevil</title>
 
-  <img src="../images/eye-banner.png" class="heroImage" alt="Music banner" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/music.css" />
+</head>
+<body>
 
-  <div class="heroOverlay"></div>
+  <div class="checkerBackground"></div>
 
-  <div class="heroContent">
-    <h1 class="siteTitle glowText">Music</h1>
-    <p class="pageSubtitle">
-      songs i made, music i love, and sounds that fit my little world 💗
-    </p>
+  <div class="pageShell">
+
+    <nav class="topNav reveal">
+      <a href="../index.html" class="navLogoWrap">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
+
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton active">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
+        <a href="../index.html" class="navButton">home</a>
+      </div>
+    </nav>
+
+    <main class="musicFrame reveal delay1">
+
+      <!-- 💗 HERO BANNER -->
+      <section class="musicHero">
+
+        <img src="../images/eye-banner.png" class="heroImage" alt="Music banner" />
+
+        <div class="heroOverlay"></div>
+
+        <div class="heroContent">
+          <h1 class="siteTitle glowText">Music</h1>
+          <p class="pageSubtitle">
+            songs i made, music i love, and sounds that fit my little world 💗
+          </p>
+        </div>
+
+      </section>
+
+      <!-- FEATURED -->
+      <section class="featuredSection reveal delay2">
+        <div class="sectionTop">
+          <h2 class="glowTextSmall">featured song</h2>
+          <span class="softPill">my music</span>
+        </div>
+
+        <div class="featuredCard">
+          <div class="featuredVideoWrap">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="featuredInfo">
+            <h3>My Featured Song</h3>
+            <p>
+              this is your main song highlight 💗
+            </p>
+
+            <div class="featuredButtons">
+              <a href="#" class="musicBtn btn-watch">watch</a>
+              <a href="#" class="musicBtn btn-more">more soon</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRID -->
+      <section class="musicListSection reveal delay3">
+        <div class="sectionTop">
+          <h2 class="glowTextSmall">music i like</h2>
+          <span class="softPill">click to listen</span>
+        </div>
+
+        <div class="musicGrid">
+
+          <div class="musicCard">
+            <h3>Song One</h3>
+            <p>cute vibe</p>
+            <a href="#" class="musicCardBtn">listen</a>
+          </div>
+
+          <div class="musicCard">
+            <h3>Song Two</h3>
+            <p>chill energy</p>
+            <a href="#" class="musicCardBtn">listen</a>
+          </div>
+
+          <div class="musicCard">
+            <h3>Song Three</h3>
+            <p>late night</p>
+            <a href="#" class="musicCardBtn">listen</a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="siteFooter reveal delay4">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="music.html">music</a>
+      </div>
+    </footer>
+
   </div>
 
-</section>
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".reveal").forEach((el, i) => {
+        setTimeout(() => el.classList.add("show"), 120 + i * 110);
+      });
+    });
+  </script>
+
+</body>
+</html>
