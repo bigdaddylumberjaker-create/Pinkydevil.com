@@ -405,7 +405,7 @@
 }
 
 .heroLead {
-  margin: 0 auto 18px;
+  margin: 0 auto 28px;
   max-width: 700px;
   color: #b94d85;
   line-height: 1.8;
@@ -415,18 +415,30 @@
 
 .heartScene {
   position: relative;
-  width: min(880px, 96vw);
+  width: min(780px, 92vw);
   aspect-ratio: 600 / 540;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: heartFloat 4.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 28px rgba(255, 182, 224, 0.20));
+  margin-top: 30px;
+  animation:
+    heartFloat 4.5s ease-in-out infinite,
+    heartGlowPulse 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 28px rgba(255, 120, 180, 0.25));
 }
 
 @keyframes heartFloat {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
+}
+
+@keyframes heartGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 22px rgba(255, 120, 180, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(255, 120, 180, 0.45));
+  }
 }
 
 .heartSvg {
@@ -443,11 +455,13 @@
   width: 64%;
   max-width: 460px;
   text-align: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(255, 120, 180, 0.2);
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 28px;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 12px 30px rgba(255, 120, 180, 0.18),
+    inset 0 0 12px rgba(255,255,255,0.2);
 }
 
 .heartMiniLine {
@@ -480,7 +494,12 @@
 }
 
 .heroButtons .btn:hover {
-  transform: translateY(-2px) scale(1.04);
+  transform: translateY(-3px) scale(1.05);
+  filter: brightness(1.05);
+}
+
+.heroButtons .btn:active {
+  transform: scale(0.97);
 }
 
 .btn-about { background: #fff0f8; color: #a94b7e; }
