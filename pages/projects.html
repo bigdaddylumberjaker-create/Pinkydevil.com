@@ -10,7 +10,19 @@
 </head>
 <body>
 
-  <div class="checkerBackground"></div>
+  <div class="roomBg">
+    <div class="wallGlow glow1"></div>
+    <div class="wallGlow glow2"></div>
+    <div class="wallGlow glow3"></div>
+
+    <div class="floatingDecor decorHeart1">♡</div>
+    <div class="floatingDecor decorHeart2">♡</div>
+    <div class="floatingDecor decorStar1">✦</div>
+    <div class="floatingDecor decorStar2">✦</div>
+    <div class="floatingDecor decorStar3">✦</div>
+
+    <div class="wallGrid"></div>
+  </div>
 
   <div class="pageShell">
 
@@ -31,239 +43,154 @@
       </div>
     </nav>
 
-    <main class="projectsFrame reveal delay1">
+    <header class="roomHeader reveal delay1">
+      <span class="roomTiny">my creative space</span>
+      <h1 class="roomTitle">Projects</h1>
+      <p class="roomSubtitle">
+        welcome to my little magic desktop — where ideas, tools, experiments, and cute chaos all live together 💗
+      </p>
+    </header>
 
-      <section class="projectsHero">
-        <div class="heroGlow heroGlow1"></div>
-        <div class="heroGlow heroGlow2"></div>
-        <div class="heroPattern"></div>
+    <main class="desktopScene reveal delay2">
 
-        <div class="heroText">
-          <span class="heroTiny">my little lab</span>
-          <h1 class="siteTitle glowText">Projects</h1>
-          <p class="pageSubtitle">
-            experiments, website ideas, stream tools, code stuff, music-related things,
-            and cute little builds I keep improving over time 💗
+      <section class="deskSurface">
+
+        <article class="windowCard mainMonitor reveal delay2">
+          <div class="windowBar">
+            <div class="windowDots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="windowTitle">featured_project.exe</span>
+          </div>
+
+          <div class="monitorScreen">
+            <div class="monitorGlow"></div>
+            <div class="monitorContent">
+              <span class="miniLabel">featured</span>
+              <h2>PinkyDevil.com</h2>
+              <p>
+                my personal website project and little world on the internet.
+                i’m building it to feel cute, interactive, dreamy, and way more personal than a normal portfolio.
+              </p>
+
+              <div class="monitorStats">
+                <span>main focus</span>
+                <span>cute + interactive</span>
+                <span>always evolving</span>
+              </div>
+
+              <div class="windowButtons">
+                <a href="../index.html" class="deskBtn">open home</a>
+                <a href="about.html" class="deskBtn alt">learn more</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="stickyCard stickyLeft reveal delay3 floatingCard">
+          <span class="stickyEmoji">💗</span>
+          <h3>what lives here</h3>
+          <p>
+            this page is for the things i’m building, testing, polishing, and dreaming up.
           </p>
-        </div>
+        </article>
 
-        <div class="heroStats">
-          <div class="statCard floatingCard">
-            <span class="statLabel">main focus</span>
-            <strong>pinkydevil.com</strong>
+        <article class="windowCard miniWindow windowTopRight reveal delay3 floatingCard">
+          <div class="windowBar">
+            <div class="windowDots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="windowTitle">roblox_tools.txt</span>
           </div>
 
-          <div class="statCard floatingCard delayFloat">
-            <span class="statLabel">style</span>
-            <strong>cute + interactive</strong>
-          </div>
-
-          <div class="statCard floatingCard">
-            <span class="statLabel">status</span>
-            <strong>always evolving</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="projectsIntro reveal delay2">
-        <div class="introPanel">
-          <div class="introIcon">♡</div>
-          <div class="introText">
-            <h2 class="glowTextSmall">what lives here</h2>
+          <div class="miniWindowBody">
+            <span class="miniTag">active</span>
+            <h3>Bloxstrap / FastFlags Stuff</h3>
             <p>
-              this page is for the things I’m building, testing, polishing, and dreaming up.
-              some are active, some are ideas, and some are still becoming what I want them to be.
+              experiments, tweaks, notes, and custom setups around Roblox launch behavior and flags.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="projectGrid">
-
-        <article class="projectCard reveal delay2 accentPink">
-          <div class="projectTop">
-            <div class="projectTags">
-              <span class="projectTag">website</span>
-              <span class="projectState">active</span>
-            </div>
-            <span class="projectIcon">✦</span>
-          </div>
-
-          <h2 class="projectTitle">PinkyDevil.com</h2>
-          <p class="projectText">
-            my personal website project and little world on the internet.
-            this is where I’m building pages, layouts, interactive effects, and cute design ideas.
-          </p>
-
-          <div class="projectMeta">
-            <span>layout</span>
-            <span>branding</span>
-            <span>animation</span>
-          </div>
-
-          <div class="projectButtons">
-            <a href="../index.html" class="projectButton">open site</a>
-            <a href="about.html" class="projectButton alt">about it</a>
+            <a href="#" class="deskBtn small">open</a>
           </div>
         </article>
 
-        <article class="projectCard reveal delay3 accentPurple">
-          <div class="projectTop">
-            <div class="projectTags">
-              <span class="projectTag">roblox</span>
-              <span class="projectState">active</span>
+        <article class="windowCard miniWindow windowMidLeft reveal delay4 floatingCard">
+          <div class="windowBar">
+            <div class="windowDots">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <span class="projectIcon">✦</span>
+            <span class="windowTitle">stream_visuals.ui</span>
           </div>
 
-          <h2 class="projectTitle">Bloxstrap / FastFlags Stuff</h2>
-          <p class="projectText">
-            experiments, tweaks, notes, and custom setups around Roblox launch behavior,
-            flags, and extra control over how things feel.
-          </p>
-
-          <div class="projectMeta">
-            <span>flags</span>
-            <span>tweaks</span>
-            <span>testing</span>
-          </div>
-
-          <div class="projectButtons">
-            <a href="#" class="projectButton">view</a>
-            <a href="#" class="projectButton alt">details</a>
+          <div class="miniWindowBody">
+            <span class="miniTag mint">building</span>
+            <h3>Stream Visuals &amp; Tools</h3>
+            <p>
+              overlays, widgets, page layouts, live status tools, and all the little stream polish things.
+            </p>
+            <a href="streams.html" class="deskBtn small">visit</a>
           </div>
         </article>
 
-        <article class="projectCard reveal delay4 accentMint">
-          <div class="projectTop">
-            <div class="projectTags">
-              <span class="projectTag">streams</span>
-              <span class="projectState">building</span>
+        <article class="windowCard miniWindow windowBottomRight reveal delay4 floatingCard">
+          <div class="windowBar">
+            <div class="windowDots">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <span class="projectIcon">✦</span>
+            <span class="windowTitle">music_notes.mp3</span>
           </div>
 
-          <h2 class="projectTitle">Stream Visuals & Tools</h2>
-          <p class="projectText">
-            overlays, stream widgets, page layouts, live status tools, and all the little details
-            that make my streaming setup feel more alive.
-          </p>
-
-          <div class="projectMeta">
-            <span>overlay</span>
-            <span>live tools</span>
-            <span>ui</span>
-          </div>
-
-          <div class="projectButtons">
-            <a href="streams.html" class="projectButton">visit page</a>
-            <a href="#" class="projectButton alt">ideas</a>
+          <div class="miniWindowBody">
+            <span class="miniTag peach">growing</span>
+            <h3>Sax / Music Projects</h3>
+            <p>
+              recordings, ideas, practice-related stuff, and music projects that can grow into their own showcase.
+            </p>
+            <a href="music.html" class="deskBtn small">listen</a>
           </div>
         </article>
 
-        <article class="projectCard reveal delay2 accentPeach">
-          <div class="projectTop">
-            <div class="projectTags">
-              <span class="projectTag">music</span>
-              <span class="projectState">growing</span>
-            </div>
-            <span class="projectIcon">✦</span>
-          </div>
-
-          <h2 class="projectTitle">Sax / Music Projects</h2>
-          <p class="projectText">
-            songs, recordings, music page ideas, featured videos, and all the music-related pieces
-            I want to show off in a prettier way.
+        <article class="drawerCard reveal delay3">
+          <div class="drawerHandle"></div>
+          <h3>interactive web experiments</h3>
+          <p>
+            hover effects, intros, particles, cute motion ideas, and playful little systems that make websites feel alive.
           </p>
-
-          <div class="projectMeta">
-            <span>songs</span>
-            <span>recordings</span>
-            <span>showcase</span>
-          </div>
-
-          <div class="projectButtons">
-            <a href="music.html" class="projectButton">music page</a>
-            <a href="#" class="projectButton alt">more</a>
-          </div>
-        </article>
-
-        <article class="projectCard reveal delay3 accentBlue">
-          <div class="projectTop">
-            <div class="projectTags">
-              <span class="projectTag">web</span>
-              <span class="projectState">concept</span>
-            </div>
-            <span class="projectIcon">✦</span>
-          </div>
-
-          <h2 class="projectTitle">Interactive Web Experiments</h2>
-          <p class="projectText">
-            hover systems, intros, background effects, micro-animations, particles,
-            and playful code ideas that make pages feel magical instead of flat.
-          </p>
-
-          <div class="projectMeta">
-            <span>motion</span>
-            <span>hover</span>
+          <div class="drawerTags">
             <span>effects</span>
-          </div>
-
-          <div class="projectButtons">
-            <a href="#" class="projectButton">preview</a>
-            <a href="#" class="projectButton alt">notes</a>
+            <span>motion</span>
+            <span>fun</span>
           </div>
         </article>
 
-        <article class="projectCard reveal delay4 accentGold">
-          <div class="projectTop">
-            <div class="projectTags">
-              <span class="projectTag">future</span>
-              <span class="projectState">secret</span>
-            </div>
-            <span class="projectIcon">✦</span>
-          </div>
-
-          <h2 class="projectTitle">Secret Pinky Project</h2>
-          <p class="projectText">
-            a placeholder for the next big thing.
-            maybe cute, maybe chaotic, maybe both. this stays here until it becomes real.
+        <article class="drawerCard reveal delay4">
+          <div class="drawerHandle"></div>
+          <h3>future mystery project</h3>
+          <p>
+            a slot for my next idea. i like keeping one secret spot open so the page always feels alive and unfinished in a fun way.
           </p>
-
-          <div class="projectMeta">
-            <span>mystery</span>
-            <span>future</span>
+          <div class="drawerTags">
+            <span>soon</span>
+            <span>hidden</span>
             <span>???</span>
           </div>
+        </article>
 
-          <div class="projectButtons">
-            <a href="#" class="projectButton">soon</a>
-            <a href="#" class="projectButton alt">???</a>
-          </div>
+        <article class="plushNote reveal delay4 floatingCard">
+          <span class="plushLabel">status note</span>
+          <p>
+            i keep improving things over time instead of rushing them. that’s part of the magic.
+          </p>
         </article>
 
       </section>
-
-      <section class="bottomPanels reveal delay4">
-        <div class="bottomPanel floatingCard">
-          <h2 class="glowTextSmall">how I build</h2>
-          <p>
-            I like making things more expressive over time — starting from a simple idea,
-            then layering in polish, glow, layout, and little details until it feels like me.
-          </p>
-        </div>
-
-        <div class="bottomPanel floatingCard delayFloat">
-          <h2 class="glowTextSmall">future upgrades</h2>
-          <ul class="futureList">
-            <li>project thumbnails</li>
-            <li>hover previews</li>
-            <li>filters by type</li>
-            <li>animated popups</li>
-          </ul>
-        </div>
-      </section>
-
     </main>
 
     <footer class="siteFooter reveal delay4">
