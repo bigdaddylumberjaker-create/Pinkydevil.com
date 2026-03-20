@@ -2,93 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Streams - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/streams.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/streams.css" />
 </head>
 <body>
+  <div class="streamsBg">
+    <div class="streamsGlow glow1"></div>
+    <div class="streamsGlow glow2"></div>
+    <div class="streamsGlow glow3"></div>
 
-<div class="streamsBg"></div>
+    <div class="streamsSpark spark1">✦</div>
+    <div class="streamsSpark spark2">✦</div>
+    <div class="streamsSpark spark3">♡</div>
+    <div class="streamsSpark spark4">✦</div>
+    <div class="streamsSpark spark5">♡</div>
 
-<div class="pageShell">
+    <div class="streamsGrid"></div>
+  </div>
 
-  <!-- NAV -->
-  <nav class="topNav">
-    <a href="../index.html" class="navLogoWrap">
-      <img src="../images/logo.png" class="navLogo"/>
-    </a>
+  <div class="pageShell">
+    <nav class="topNav">
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
 
-    <div class="navLinks">
-      <a href="about.html" class="navButton">about</a>
-      <a href="projects.html" class="navButton">projects</a>
-      <a href="streams.html" class="navButton active">streams</a>
-      <a href="music.html" class="navButton">music</a>
-      <a href="fursona.html" class="navButton">fursona</a>
-      <a href="art.html" class="navButton">art</a>
-      <a href="chat.html" class="navButton">chat</a>
-      <a href="donated.html" class="navButton">donated</a>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="streamsHeader">
-    <span class="streamsTiny">streaming room</span>
-    <h1 class="streamsTitle">Streams</h1>
-    <p class="streamsSubtitle">
-      live stream status, preview, and cute streaming vibes 💗
-    </p>
-  </header>
-
-  <!-- MAIN -->
-  <main class="streamsScene">
-
-    <div class="mainMonitor" id="mainMonitorCard">
-
-      <div class="windowBar">
-        <span class="windowTitle">live_monitor.exe</span>
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton active">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
+        <a href="art.html" class="navButton">art</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
       </div>
+    </nav>
 
-      <div class="monitorScreen">
-
-        <div class="streamTopBar">
-          <span id="liveBadge" class="liveBadge offline">offline</span>
-          <span id="streamStatusText">checking...</span>
-        </div>
-
-        <div class="videoFrame">
-          <iframe
-            id="streamEmbed"
-            src="https://player.twitch.tv/?channel=pinkydevi&parent=bigdaddylumberjaker-create.github.io&muted=true"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="monitorFooter">
-          <span id="streamViewerText">viewer info unavailable</span>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="statusWidget">
-      <h3 id="streamStatusTitle">offline</h3>
-      <p id="streamStatusDescription">
-        stream not live right now
+    <header class="streamsHeader">
+      <span class="streamsTiny">streaming room</span>
+      <h1 class="streamsTitle">Streams</h1>
+      <p class="streamsSubtitle">
+        live stream status, preview, and cute streaming vibes 💗
       </p>
-    </div>
+    </header>
 
-    <div class="thumbnailWrap">
-      <img id="streamThumbnail" src="../images/stream-placeholder.png"/>
-    </div>
+    <main class="streamsScene">
+      <section class="streamRoom">
 
-  </main>
+        <aside class="sideCard leftCard">
+          <span class="cardTag">stream vibe</span>
+          <h3>cute, live, and cozy</h3>
+          <p>
+            this page is meant to feel like stepping into my stream setup instead of opening a basic profile page.
+          </p>
+        </aside>
 
-</div>
+        <section class="centerColumn">
+          <article class="mainMonitor" id="mainMonitorCard">
+            <div class="windowBar">
+              <div class="windowDots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="windowTitle">live_monitor.exe</span>
+            </div>
 
-<!-- IMPORTANT: no main.js -->
-<script src="../js/streams-live.js"></script>
+            <div class="monitorScreen">
+              <div class="monitorGlow"></div>
 
+              <div class="streamTopBar">
+                <div class="liveCluster">
+                  <span id="liveBadge" class="liveBadge offline">offline</span>
+                  <span id="streamStatusText" class="statusText">checking stream status...</span>
+                </div>
+
+                <div class="streamQuickLinks">
+                  <a href="https://www.twitch.tv/pinkydevi" target="_blank" rel="noopener noreferrer" class="deskBtn">twitch</a>
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="deskBtn alt">youtube</a>
+                </div>
+              </div>
+
+              <div class="videoFrameWrap">
+                <div class="videoFrame">
+                  <iframe
+                    id="streamEmbed"
+                    src="https://player.twitch.tv/?channel=pinkydevi&parent=bigdaddylumberjaker-create.github.io&muted=true"
+                    allowfullscreen
+                    scrolling="no"
+                    frameborder="0"
+                    allow="autoplay; fullscreen">
+                  </iframe>
+                </div>
+              </div>
+
+              <div class="monitorFooter">
+                <div class="monitorPills">
+                  <span>twitch: pinkydevi</span>
+                  <span>discord: tv.man</span>
+                  <span id="streamViewerText">viewer info unavailable</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <section class="deskWidgets">
+            <article class="widgetCard">
+              <div class="widgetTop">
+                <span class="widgetTag">schedule</span>
+                <span class="softPill">timeline</span>
+              </div>
+
+              <div class="scheduleList">
+                <div class="scheduleItem">
+                  <span class="scheduleDot"></span>
+                  <div>
+                    <h4>stream slot one</h4>
+                    <p>add your usual stream day / time here</p>
+                  </div>
+                </div>
+
+                <div class="scheduleItem">
+                  <span class="scheduleDot"></span>
+                  <div>
+                    <h4>stream slot two</h4>
+                    <p>another usual day / time block</p>
+                  </div>
+                </div>
+
+                <div class="scheduleItem">
+                  <span class="scheduleDot"></span>
+                  <div>
+                    <h4>special / surprise streams</h4>
+                    <p>for bonus or random live sessions</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="widgetCard">
+              <div class="widgetTop">
+                <span class="widgetTag">chat panel</span>
+                <span class="softPill">community</span>
+              </div>
+
+              <div class="chatPreview">
+                <p>
+                  want live chat on stream days too? this links to your chat page for the full community vibe.
+                </p>
+                <a href="chat.html" class="deskBtn small">open chat page</a>
+              </div>
+            </article>
+
+            <article class="widgetCard">
+              <div class="widgetTop">
+                <span class="widgetTag">stream setup</span>
+                <span class="softPill">about</span>
+              </div>
+
+              <div class="setupNotes">
+                <p>
+                  later this room can hold your overlay preview, recent clips, stream goals, and highlight cards.
+                </p>
+                <div class="setupPills">
+                  <span>overlay preview</span>
+                  <span>goals</span>
+                  <span>highlights</span>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <aside class="rightColumn">
+          <article class="sideCard">
+            <span class="cardTag">stream status</span>
+            <h3 id="streamStatusTitle">currently offline</h3>
+            <p id="streamStatusDescription">
+              no live session detected right now, but this panel updates automatically when the stream goes live.
+            </p>
+
+            <div class="liveMeta">
+              <div class="metaLine">
+                <span class="metaLabel">game</span>
+                <span id="streamGameText" class="metaValue">not live</span>
+              </div>
+              <div class="metaLine">
+                <span class="metaLabel">started</span>
+                <span id="streamStartedText" class="metaValue">—</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="sideCard">
+            <span class="cardTag">thumbnail preview</span>
+            <div class="thumbnailWrap">
+              <img
+                id="streamThumbnail"
+                class="streamThumbnail"
+                src="../images/stream-placeholder.png"
+                alt="Stream preview thumbnail"
+              />
+            </div>
+          </article>
+        </aside>
+
+      </section>
+    </main>
+
+    <footer class="siteFooter">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="streams.html">streams</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/streams-live.js"></script>
 </body>
 </html>
