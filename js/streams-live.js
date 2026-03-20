@@ -1,6 +1,6 @@
 (async () => {
 
-  const ENDPOINT = "https://REPLACE-WITH-YOUR-WORKER.workers.dev";
+  const ENDPOINT = "https://pinky-twitch-status.bigdaddylumberjaker.workers.dev/";
 
   const liveBadge = document.getElementById("liveBadge");
   const statusText = document.getElementById("streamStatusText");
