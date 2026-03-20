@@ -130,6 +130,81 @@
 }
 
 /* ========================= */
+/* NAV (local so it can't break) */
+/* ========================= */
+
+.topNav {
+  max-width: 1320px;
+  margin: 0 auto 18px auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(255,255,255,0.58);
+  box-shadow:
+    0 16px 36px rgba(255, 154, 206, 0.12),
+    inset 0 0 0 1px rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.navLogoWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.34);
+  border: 1px solid rgba(255,255,255,0.48);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.navLogo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+.navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.navButton {
+  flex: 1 1 120px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #9a4f7d;
+  font-weight: 700;
+  background: rgba(255,255,255,0.26);
+  border: 1px solid rgba(255,255,255,0.54);
+  border-radius: 999px;
+  padding: 12px 18px;
+  transition: 0.24s ease;
+}
+
+.navButton:hover,
+.navButton.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 140, 195, 0.82), rgba(211, 176, 255, 0.76));
+  box-shadow:
+    0 0 20px rgba(255, 166, 210, 0.22),
+    inset 0 0 10px rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+/* ========================= */
 /* HEADER */
 /* ========================= */
 
@@ -174,7 +249,7 @@
 }
 
 /* ========================= */
-/* SCENE */
+/* ROOM */
 /* ========================= */
 
 .streamsScene {
@@ -195,10 +270,6 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-
-/* ========================= */
-/* TOP ROOM */
-/* ========================= */
 
 .sideNote,
 .statusWidget,
@@ -266,6 +337,16 @@
   border: 1px solid rgba(255,255,255,0.60);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.mainMonitor.liveMode {
+  border-color: rgba(255, 92, 167, 0.72);
+  box-shadow:
+    0 0 0 1px rgba(255, 110, 180, 0.22),
+    0 0 28px rgba(255, 92, 167, 0.18),
+    0 18px 34px rgba(255, 154, 206, 0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
 }
 
 .windowBar {
@@ -360,15 +441,9 @@
 @keyframes pulseLive {
   0%, 100% {
     transform: scale(1);
-    box-shadow:
-      0 0 18px rgba(255, 80, 150, 0.36),
-      0 0 34px rgba(255, 80, 150, 0.18);
   }
   50% {
     transform: scale(1.04);
-    box-shadow:
-      0 0 28px rgba(255, 80, 150, 0.52),
-      0 0 46px rgba(255, 80, 150, 0.24);
   }
 }
 
@@ -445,10 +520,45 @@
   -webkit-backdrop-filter: blur(14px);
 }
 
-.quickLinksGrid {
+.liveMeta {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 10px;
+  margin-top: 14px;
+}
+
+.metaLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.metaLabel {
+  color: #c15e93;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: lowercase;
+}
+
+.metaValue {
+  color: #8d5374;
+  font-weight: 700;
+  text-align: right;
+}
+
+.thumbnailWrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.56);
+  background: rgba(255,255,255,0.26);
+  aspect-ratio: 16 / 9;
+}
+
+.streamThumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ========================= */
@@ -502,6 +612,7 @@
 }
 
 .scheduleItem h4 {
+  margin: 0 0 6px 0;
   font-size: 20px;
 }
 
@@ -555,6 +666,26 @@
 /* ========================= */
 /* BUTTONS */
 /* ========================= */
+
+.softPill,
+.deskBtn,
+.quickBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.softPill {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.58);
+  color: #a86087;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
 
 .deskBtn,
 .quickBtn {
@@ -627,6 +758,10 @@
 @media (max-width: 760px) {
   .pageShell {
     padding: 14px;
+  }
+
+  .navButton {
+    flex: 1 1 calc(50% - 8px);
   }
 
   .streamsTitle {
