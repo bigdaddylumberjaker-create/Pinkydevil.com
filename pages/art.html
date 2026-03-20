@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Art Showcase - PinkyDevil</title>
+  <title>Art - PinkyDevil</title>
 
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/art.css" />
 </head>
 <body>
 
-  <div class="checkerBackground"></div>
+  <div class="artBg">
+    <div class="artGlow glow1"></div>
+    <div class="artGlow glow2"></div>
+    <div class="artGlow glow3"></div>
+
+    <div class="artSpark spark1">✦</div>
+    <div class="artSpark spark2">✦</div>
+    <div class="artSpark spark3">♡</div>
+    <div class="artSpark spark4">✦</div>
+    <div class="artSpark spark5">♡</div>
+
+    <div class="artGrid"></div>
+  </div>
 
   <div class="pageShell">
 
@@ -31,112 +43,128 @@
       </div>
     </nav>
 
-    <main class="artFrame reveal delay1">
+    <header class="artHeader reveal delay1">
+      <span class="artTiny">dreamy gallery room</span>
+      <h1 class="artTitle">Art Showcase</h1>
+      <p class="artSubtitle">
+        a little gallery world for favorite pieces, pretty things, and art that feels special enough to frame 💗
+      </p>
+    </header>
 
-      <section class="artHeader">
-        <div class="headerPattern"></div>
-        <h1 class="siteTitle glowText">Art Showcase</h1>
-        <p class="pageSubtitle">
-          a little gallery space for art, favorites, and pretty things i want people to stop and admire 💗
-        </p>
-      </section>
+    <main class="artScene reveal delay2">
 
-      <section class="featuredArtSection reveal delay2">
-        <div class="sectionTop">
-          <h2 class="glowTextSmall">featured piece</h2>
-          <span class="softPill">spotlight</span>
-        </div>
+      <section class="galleryRoom">
 
-        <div class="featuredArtCard">
-          <div class="featuredImageWrap">
-            <img src="../images/art/featured-art.png" alt="Featured artwork" class="featuredArtImage" />
-          </div>
+        <article class="frameNote noteLeft reveal delay2 floatingCard">
+          <span class="noteTag">gallery note</span>
+          <h3>why this page exists</h3>
+          <p>
+            i wanted a page where art feels displayed and appreciated instead of just dumped into a normal grid.
+          </p>
+        </article>
 
-          <div class="featuredInfo">
-            <h3>Featured Artwork</h3>
-            <p>
-              this is the main piece you want people to notice first. later you can replace this text
-              with the artwork title, artist credit, date, or a note about why this piece matters to you.
-            </p>
-
-            <div class="artInfoTags">
-              <span class="artTag">favorite</span>
-              <span class="artTag">featured</span>
-              <span class="artTag">pretty</span>
+        <article class="featuredFrame reveal delay2">
+          <div class="frameOuter">
+            <div class="frameInner">
+              <img src="../images/art/featured-art.png" alt="Featured artwork" class="featuredArtImage">
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="gallerySection reveal delay3">
-        <div class="sectionTop">
-          <h2 class="glowTextSmall">gallery wall</h2>
-          <span class="softPill">showcase</span>
-        </div>
+          <div class="frameInfo">
+            <span class="featureTag">featured piece</span>
+            <h2>Featured Artwork</h2>
+            <p>
+              this is the main piece people see first when they step into the gallery.
+              later you can replace this text with the title, artist credit, or why the piece matters to you.
+            </p>
 
-        <div class="galleryGrid">
+            <div class="framePills">
+              <span>favorite</span>
+              <span>featured</span>
+              <span>pretty</span>
+            </div>
+          </div>
+        </article>
 
-          <article class="artCard tall">
-            <img src="../images/art/art1.png" alt="Artwork 1" class="galleryImage" />
-            <div class="artOverlay">
+        <article class="frameNote noteRight reveal delay3 floatingCard">
+          <span class="noteTag">future idea</span>
+          <h3>more gallery magic</h3>
+          <p>
+            later this can become a full interactive art room with lightboxes, zoom, hover captions, and more.
+          </p>
+        </article>
+
+        <div class="sideFrames reveal delay3">
+          <article class="smallFrame rotateLeft">
+            <div class="smallFrameOuter">
+              <img src="../images/art/art1.png" alt="Artwork 1" class="smallFrameImage">
+            </div>
+            <div class="smallFrameLabel">
               <h3>Artwork One</h3>
               <p>soft pink vibes</p>
             </div>
           </article>
 
-          <article class="artCard wide">
-            <img src="../images/art/art2.png" alt="Artwork 2" class="galleryImage" />
-            <div class="artOverlay">
+          <article class="smallFrame rotateRight">
+            <div class="smallFrameOuter">
+              <img src="../images/art/art2.png" alt="Artwork 2" class="smallFrameImage">
+            </div>
+            <div class="smallFrameLabel">
               <h3>Artwork Two</h3>
               <p>featured mood</p>
             </div>
           </article>
 
-          <article class="artCard">
-            <img src="../images/art/art3.png" alt="Artwork 3" class="galleryImage" />
-            <div class="artOverlay">
+          <article class="smallFrame rotateLeft">
+            <div class="smallFrameOuter">
+              <img src="../images/art/art3.png" alt="Artwork 3" class="smallFrameImage">
+            </div>
+            <div class="smallFrameLabel">
               <h3>Artwork Three</h3>
               <p>cute style</p>
             </div>
           </article>
 
-          <article class="artCard">
-            <img src="../images/art/art4.png" alt="Artwork 4" class="galleryImage" />
-            <div class="artOverlay">
+          <article class="smallFrame rotateRight">
+            <div class="smallFrameOuter">
+              <img src="../images/art/art4.png" alt="Artwork 4" class="smallFrameImage">
+            </div>
+            <div class="smallFrameLabel">
               <h3>Artwork Four</h3>
-              <p>dreamy</p>
+              <p>dreamy feeling</p>
             </div>
           </article>
+        </div>
 
-          <article class="artCard wide">
-            <img src="../images/art/art5.png" alt="Artwork 5" class="galleryImage" />
-            <div class="artOverlay">
+        <section class="bottomGallery reveal delay4">
+          <article class="bottomCard wideCard">
+            <div class="bottomImageWrap">
+              <img src="../images/art/art5.png" alt="Artwork 5" class="bottomImage">
+            </div>
+            <div class="bottomInfo">
+              <span class="bottomTag">wall piece</span>
               <h3>Artwork Five</h3>
-              <p>gallery favorite</p>
+              <p>
+                a wider gallery piece that helps the room feel more complete and gives the layout more variety.
+              </p>
             </div>
           </article>
 
-          <article class="artCard tall">
-            <img src="../images/art/art6.png" alt="Artwork 6" class="galleryImage" />
-            <div class="artOverlay">
+          <article class="bottomCard tallCard">
+            <div class="bottomImageWrap">
+              <img src="../images/art/art6.png" alt="Artwork 6" class="bottomImage">
+            </div>
+            <div class="bottomInfo">
+              <span class="bottomTag">extra frame</span>
               <h3>Artwork Six</h3>
-              <p>soft and shiny</p>
+              <p>
+                another framed piece for the lower gallery area.
+              </p>
             </div>
           </article>
+        </section>
 
-        </div>
       </section>
-
-      <section class="artNotesSection reveal delay4">
-        <div class="notesCard">
-          <h2 class="glowTextSmall">future upgrades</h2>
-          <p>
-            later we can upgrade this page with clickable lightboxes, full-size gallery viewing,
-            art categories, hover captions, artist credits, and a more animated showcase flow 💗
-          </p>
-        </div>
-      </section>
-
     </main>
 
     <footer class="siteFooter reveal delay4">
