@@ -47,23 +47,22 @@
       <span class="streamsTiny">streaming room</span>
       <h1 class="streamsTitle">Streams</h1>
       <p class="streamsSubtitle">
-        a little live setup world for stream status, schedule, links, chat, and all the glowy streaming energy 💗
+        my little live setup room for stream status, schedule, links, and stream energy 💗
       </p>
     </header>
 
     <main class="streamsScene reveal delay2">
-
       <section class="streamRoom">
 
         <article class="sideNote leftNote reveal delay2 floatingCard">
           <span class="noteTag">stream vibe</span>
           <h3>cute, live, and cozy</h3>
           <p>
-            i want this page to feel like you stepped into my stream setup instead of just opening a normal profile page.
+            this page is meant to feel like stepping into my stream setup instead of opening a basic profile page.
           </p>
         </article>
 
-        <article class="mainMonitor reveal delay2">
+        <article class="mainMonitor reveal delay2" id="mainMonitorCard">
           <div class="windowBar">
             <div class="windowDots">
               <span></span>
@@ -112,21 +111,34 @@
         </article>
 
         <article class="statusStack reveal delay3">
-          <div class="statusWidget floatingCard">
+          <div class="statusWidget floatingCard" id="statusWidgetMain">
             <span class="widgetTag">stream status</span>
             <h3 id="streamStatusTitle">currently offline</h3>
             <p id="streamStatusDescription">
               no live session detected right now, but this panel updates automatically when the stream goes live.
             </p>
+
+            <div class="liveMeta">
+              <div class="metaLine">
+                <span class="metaLabel">game</span>
+                <span id="streamGameText" class="metaValue">not live</span>
+              </div>
+              <div class="metaLine">
+                <span class="metaLabel">started</span>
+                <span id="streamStartedText" class="metaValue">—</span>
+              </div>
+            </div>
           </div>
 
           <div class="statusWidget floatingCard delayFloat">
-            <span class="widgetTag">quick links</span>
-            <div class="quickLinksGrid">
-              <a href="https://www.twitch.tv/pinkydevi" target="_blank" class="quickBtn">twitch</a>
-              <a href="https://www.youtube.com/" target="_blank" class="quickBtn alt">youtube</a>
-              <a href="https://discord.com/" target="_blank" class="quickBtn">discord</a>
-              <a href="donated.html" class="quickBtn alt">donate</a>
+            <span class="widgetTag">thumbnail preview</span>
+            <div class="thumbnailWrap">
+              <img
+                id="streamThumbnail"
+                class="streamThumbnail"
+                src="../images/stream-placeholder.png"
+                alt="Stream preview thumbnail"
+              />
             </div>
           </div>
         </article>
@@ -173,7 +185,7 @@
 
             <div class="chatPreview">
               <p>
-                want live chat on stream days too? you can link your chat page here or embed a chat widget later.
+                want live chat on stream days too? this links to your chat page for the full community vibe.
               </p>
               <a href="chat.html" class="deskBtn small">open chat page</a>
             </div>
@@ -187,7 +199,7 @@
 
             <div class="setupNotes">
               <p>
-                this room can later hold your overlay preview, stream goals, recent highlights, favorite categories, and more.
+                later this room can hold your overlay preview, recent clips, stream goals, and highlight cards.
               </p>
               <div class="setupPills">
                 <span>overlay preview</span>
@@ -205,7 +217,7 @@
               <span class="softPill">future upgrade</span>
             </div>
             <p>
-              later we can push this even further with animated lights, a stream overlay showcase, recent clips, and a proper “LIVE” room mode when you’re online.
+              later we can make this page even more alive with animated room lights, clip showcases, stream goals, and a stronger LIVE mode glow.
             </p>
           </article>
 
@@ -237,15 +249,5 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/streams-live.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 110);
-      });
-    });
-  </script>
 </body>
 </html>
