@@ -15,6 +15,7 @@
 
     .introBg {
       z-index: 0;
+      pointer-events: none;
     }
 
     #cloudIntro {
@@ -29,18 +30,31 @@
       width: 100% !important;
       height: 100% !important;
       display: block;
+      pointer-events: none !important;
     }
 
     .loaderCenter {
       position: relative;
-      z-index: 3;
+      z-index: 50;
+      pointer-events: auto;
+    }
+
+    #logoIntro {
+      pointer-events: none;
+    }
+
+    #enterButton {
+      position: relative;
+      z-index: 9999;
+      pointer-events: auto !important;
+      cursor: pointer;
     }
 
     #physicsCanvas {
       position: absolute;
       inset: 0;
       z-index: 2;
-      pointer-events: none;
+      pointer-events: none !important;
     }
 
     #loader::after {
@@ -52,22 +66,23 @@
       background:
         radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 34%),
         radial-gradient(circle at center, rgba(255, 120, 190, 0.10), transparent 62%),
-        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.24));
+        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.22));
       mix-blend-mode: screen;
     }
 
     .loaderCenter::before {
       content: "";
       position: absolute;
-      width: 580px;
-      height: 580px;
-      max-width: 94vw;
-      max-height: 94vw;
+      width: 560px;
+      height: 560px;
+      max-width: 92vw;
+      max-height: 92vw;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 166, 214, 0.22), transparent 62%);
-      filter: blur(30px);
+      background: radial-gradient(circle, rgba(255, 166, 214, 0.20), transparent 62%);
+      filter: blur(28px);
       z-index: -1;
       animation: introCorePulse 5s ease-in-out infinite;
+      pointer-events: none;
     }
 
     @keyframes introCorePulse {
@@ -77,19 +92,58 @@
       }
       50% {
         transform: scale(1.08);
-        opacity: 0.94;
+        opacity: 0.92;
       }
     }
   </style>
 
+  <script>
+    window.onIntroEnter = function () {
+      const loader = document.getElementById("loader");
+      const hero = document.querySelector(".hero");
+      const logo = document.getElementById("logoIntro");
+      const button = document.getElementById("enterButton");
+
+      if (!loader || loader.dataset.exiting === "1") return;
+      loader.dataset.exiting = "1";
+
+      if (logo) {
+        logo.style.transition = "transform 0.7s ease, opacity 0.7s ease";
+        logo.style.transform = "translateY(-14px) scale(0.95)";
+        logo.style.opacity = "0.22";
+      }
+
+      if (button) {
+        button.disabled = true;
+        button.style.transform = "scale(0.96)";
+        button.style.opacity = "0.5";
+      }
+
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+
+      if (hero) {
+        setTimeout(() => {
+          hero.classList.add("visible");
+        }, 180);
+      }
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 950);
+    };
+
+    window.addEventListener("keydown", (event) => {
+      const loader = document.getElementById("loader");
+      if (!loader || loader.style.display === "none") return;
+      if (event.key === "Enter") {
+        window.onIntroEnter();
+      }
+    });
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/postprocessing/EffectComposer.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/postprocessing/RenderPass.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/postprocessing/ShaderPass.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/postprocessing/FilmPass.js"></script>
 </head>
 <body>
 
@@ -131,7 +185,13 @@
 
     <div class="loaderCenter">
       <img src="images/logo.png" id="logoIntro" alt="PinkyDevil logo" />
-      <button id="enterButton">enter</button>
+      <button
+        id="enterButton"
+        type="button"
+        onclick="window.onIntroEnter()"
+      >
+        enter
+      </button>
     </div>
 
     <canvas id="physicsCanvas"></canvas>
