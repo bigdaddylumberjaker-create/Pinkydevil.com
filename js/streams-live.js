@@ -1,7 +1,7 @@
 (() => {
   const STATUS_ENDPOINTS = [
     "../api/twitch-status",
-    "https://pinkydevi-status.your-worker-subdomain.workers.dev"
+    "https://pinky-twitch-status.bigdaddylumberjaker.workers.dev/"
   ];
 
   const liveBadge = document.getElementById("liveBadge");
