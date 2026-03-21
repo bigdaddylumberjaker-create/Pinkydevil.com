@@ -250,10 +250,6 @@
 }
 
 .musicRoom {
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr) 260px;
-  gap: 20px;
-  align-items: start;
   border-radius: 38px;
   padding: 28px 24px;
   background:
@@ -266,41 +262,49 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
-.centerColumn {
+.musicColumns {
   display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 250px;
   gap: 20px;
+  align-items: start;
+  margin-top: 22px;
 }
 
-.rightColumn {
+.leftColumn,
+.rightColumn,
+.centerColumn {
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 /* shared cards */
 
-.sideNote,
-.sidePanel,
-.musicBannerCard,
-.featuredTrackCard,
-.musicCard {
+.noteCard,
+.heroBannerCard,
+.featuredCard,
+.albumCard,
+.vinylCard {
   box-shadow:
     0 18px 34px rgba(255, 154, 206, 0.12),
     inset 0 0 0 1px rgba(255,255,255,0.12);
 }
 
-.sideNote,
-.sidePanel {
+.noteCard,
+.vinylCard {
   padding: 20px 18px;
   border-radius: 24px;
   background: linear-gradient(180deg, #fff4fb 0%, #ffe7f5 100%);
   border: 1px solid rgba(255,255,255,0.76);
 }
 
-.leftNote {
+.tiltedLeft {
   transform: rotate(-2deg);
 }
 
-.noteTag,
+.tiltedRight {
+  transform: rotate(2deg);
+}
+
 .cardTag,
 .trackTag {
   display: inline-block;
@@ -312,22 +316,21 @@
   letter-spacing: 0.4px;
 }
 
-.sideNote h3,
-.sidePanel h3,
-.musicCard h3 {
+.noteCard h3,
+.albumCard h3,
+.featuredText h3 {
   margin: 0 0 10px;
   color: #b44f82;
   line-height: 1.08;
 }
 
-.sideNote h3,
-.sidePanel h3 {
+.noteCard h3 {
   font-size: 26px;
 }
 
-.sideNote p,
-.sidePanel p,
-.musicCard p {
+.noteCard p,
+.albumCard p,
+.featuredText p {
   margin: 0;
   color: #8d5374;
   line-height: 1.82;
@@ -342,44 +345,44 @@
 
 /* banner */
 
-.musicBannerCard {
+.heroBannerCard {
   border-radius: 28px;
   overflow: hidden;
   background: rgba(255,255,255,0.38);
   border: 1px solid rgba(255,255,255,0.60);
 }
 
-.bannerFrame {
+.heroBannerFrame {
   position: relative;
-  min-height: 320px;
+  min-height: 300px;
 }
 
-.musicBannerImage {
+.heroBannerImage {
   width: 100%;
-  height: 320px;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
 
-.bannerOverlay {
+.heroBannerOverlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(30, 0, 20, 0.12), rgba(30, 0, 20, 0.48)),
+    linear-gradient(180deg, rgba(30, 0, 20, 0.10), rgba(30, 0, 20, 0.48)),
     radial-gradient(circle at center, rgba(255, 120, 190, 0.14), transparent 60%);
 }
 
-.bannerText {
+.heroBannerContent {
   position: absolute;
   left: 24px;
   right: 24px;
-  bottom: 22px;
+  bottom: 20px;
   z-index: 2;
   color: white;
   text-shadow: 0 4px 18px rgba(0,0,0,0.24);
 }
 
-.bannerMini {
+.heroMini {
   display: inline-block;
   padding: 8px 12px;
   border-radius: 999px;
@@ -392,78 +395,48 @@
   margin-bottom: 10px;
 }
 
-.bannerText h2 {
+.heroBannerContent h2 {
   margin: 0 0 8px;
-  font-size: clamp(34px, 4vw, 54px);
-  line-height: 0.95;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 0.96;
 }
 
-.bannerText p {
+.heroBannerContent p {
   margin: 0;
   max-width: 520px;
   line-height: 1.7;
   color: rgba(255,255,255,0.92);
 }
 
-/* featured track */
+/* featured */
 
-.featuredTrackCard {
+.featuredCard {
+  padding: 22px;
   border-radius: 28px;
-  overflow: hidden;
   background: rgba(255,255,255,0.40);
   border: 1px solid rgba(255,255,255,0.60);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
-.windowBar {
+.featuredTop,
+.albumTop {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  background: rgba(255,255,255,0.22);
-  border-bottom: 1px solid rgba(255,255,255,0.34);
+  margin-bottom: 14px;
 }
 
-.windowDots {
-  display: flex;
-  gap: 6px;
-}
-
-.windowDots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.72);
-}
-
-.windowTitle {
-  color: #9d5d86;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.featuredTrackBody {
+.featuredLayout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 22px;
-  background:
-    radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 44%),
-    linear-gradient(180deg, rgba(255, 233, 244, 0.72), rgba(255, 213, 233, 0.60));
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 18px;
+  align-items: start;
 }
 
-.featuredText h2 {
-  margin: 0 0 10px;
-  font-size: 38px;
-  color: #b84e82;
-  line-height: 1.03;
-}
-
-.featuredText p {
-  margin: 0;
-  color: #8e5374;
-  line-height: 1.9;
+.featuredText h3 {
+  font-size: 44px;
 }
 
 .trackPills {
@@ -496,56 +469,100 @@
   margin-top: 20px;
 }
 
-.featuredVideoWrap {
+.featuredEmbedWrap {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.featuredVideoFrame {
+.featuredEmbedFrame {
   width: 100%;
+  max-width: 360px;
   border-radius: 22px;
   overflow: hidden;
   background: rgba(255,255,255,0.22);
   border: 1px solid rgba(255,255,255,0.54);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,0.08),
     0 16px 30px rgba(255, 154, 206, 0.10);
 }
 
-.featuredVideoFrame iframe {
+.featuredEmbedFrame iframe {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* music grid */
+/* album shelf */
 
-.musicGridSection {
+.albumShelf {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 
-.musicCard {
+.albumCard {
   padding: 22px 20px 20px;
   border-radius: 24px;
-  background: rgba(255,255,255,0.38);
   border: 1px solid rgba(255,255,255,0.60);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
-.musicCardTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
+.albumCard.pink {
+  background: linear-gradient(180deg, rgba(255,240,248,0.92), rgba(255,228,240,0.82));
 }
 
-.musicCard h3 {
+.albumCard.lavender {
+  background: linear-gradient(180deg, rgba(246,240,255,0.92), rgba(236,228,255,0.82));
+}
+
+.albumCard.peach {
+  background: linear-gradient(180deg, rgba(255,245,235,0.92), rgba(255,234,220,0.82));
+}
+
+.albumCard.blue {
+  background: linear-gradient(180deg, rgba(240,247,255,0.92), rgba(228,240,255,0.82));
+}
+
+.albumCard h3 {
   font-size: 28px;
+}
+
+/* vinyl */
+
+.vinylCard {
+  text-align: center;
+}
+
+.vinylOuter {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #2c1630 0 18px, #111 18px 28px, #3d1b3e 28px 46px, #201022 46px 64px, #411f42 64px 84px, #161016 84px);
+  box-shadow:
+    0 0 24px rgba(255, 120, 190, 0.18),
+    inset 0 0 20px rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.vinylInner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffd3ea;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.vinylCard p {
+  margin: 0;
+  color: #8d5374;
+  font-weight: 700;
 }
 
 /* buttons */
@@ -609,19 +626,24 @@
 /* responsive */
 
 @media (max-width: 1280px) {
-  .musicRoom {
+  .musicColumns {
     grid-template-columns: 1fr;
   }
 
-  .leftNote {
+  .tiltedLeft,
+  .tiltedRight {
     transform: none;
   }
 }
 
 @media (max-width: 980px) {
-  .featuredTrackBody,
-  .musicGridSection {
+  .featuredLayout,
+  .albumShelf {
     grid-template-columns: 1fr;
+  }
+
+  .featuredText h3 {
+    font-size: 34px;
   }
 }
 
@@ -647,10 +669,15 @@
     border-radius: 28px;
   }
 
-  .featuredText h2,
-  .musicCard h3,
-  .sideNote h3,
-  .sidePanel h3 {
+  .heroBannerImage,
+  .heroBannerFrame {
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .heroBannerContent h2,
+  .noteCard h3,
+  .albumCard h3 {
     font-size: 24px;
   }
 
