@@ -10,12 +10,24 @@
 </head>
 <body>
 
-  <div class="checkerBackground"></div>
+  <div class="fursonaBg">
+    <div class="fursonaGlow glow1"></div>
+    <div class="fursonaGlow glow2"></div>
+    <div class="fursonaGlow glow3"></div>
+
+    <div class="fursonaSpark spark1">✦</div>
+    <div class="fursonaSpark spark2">✦</div>
+    <div class="fursonaSpark spark3">♡</div>
+    <div class="fursonaSpark spark4">✦</div>
+    <div class="fursonaSpark spark5">♡</div>
+
+    <div class="fursonaGrid"></div>
+  </div>
 
   <div class="pageShell">
 
-    <nav class="topNav reveal">
-      <a href="../index.html" class="navLogoWrap">
+    <nav class="topNav">
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
 
@@ -31,39 +43,95 @@
       </div>
     </nav>
 
-    <main class="fursonaFrame reveal delay1">
+    <header class="fursonaHeader">
+      <span class="fursonaTiny">dreamy character shrine</span>
+      <h1 class="fursonaTitle">Fursona</h1>
+      <p class="fursonaSubtitle">
+        a soft little shrine space for my fursona, character vibe, and the energy that fits my world 💗
+      </p>
+    </header>
 
-      <section class="fursonaHeader">
-        <div class="headerPattern"></div>
-        <h1 class="siteTitle glowText">Fursona</h1>
-        <p class="pageSubtitle">a dedicated little shrine for the cutest creature energy 💗</p>
+    <main class="fursonaScene">
+      <section class="shrineRoom">
+
+        <aside class="noteColumn">
+          <article class="noteCard tiltedLeft">
+            <span class="cardTag">character vibe</span>
+            <h3>soft, cute, dreamy</h3>
+            <p>
+              this page is meant to feel like a little shrine dedicated to the character energy that belongs in my world.
+            </p>
+          </article>
+
+          <article class="noteCard">
+            <span class="cardTag">little note</span>
+            <h3>one main centerpiece</h3>
+            <p>
+              instead of lots of art everywhere, this page focuses on one main fursona piece so it feels more special and intentional.
+            </p>
+          </article>
+        </aside>
+
+        <section class="centerShrine">
+
+          <article class="mainShrineCard">
+            <div class="shrineHalo"></div>
+
+            <div class="mainArtFrame">
+              <div class="mainArtInner">
+                <img
+                  src="../images/fursona-main.png"
+                  alt="Main fursona art"
+                  class="mainFursonaArt"
+                />
+              </div>
+            </div>
+
+            <div class="shrineInfo">
+              <span class="featureTag">main fursona art</span>
+              <h2>Pinky’s Fursona</h2>
+              <p>
+                this is the main featured piece for the page — the center of the little character shrine.
+                later you can replace this text with the fursona name, a small description, or little lore notes.
+              </p>
+
+              <div class="identityPills">
+                <span>pink coded</span>
+                <span>soft vibe</span>
+                <span>featured</span>
+              </div>
+            </div>
+          </article>
+
+        </section>
+
+        <aside class="infoColumn">
+          <article class="infoCard">
+            <span class="cardTag">design notes</span>
+            <h3>character energy</h3>
+            <ul class="infoList">
+              <li>cute and soft</li>
+              <li>dreamy pink vibe</li>
+              <li>personal little mascot energy</li>
+            </ul>
+          </article>
+
+          <article class="infoCard">
+            <span class="cardTag">future upgrades</span>
+            <h3>more shrine magic</h3>
+            <ul class="infoList">
+              <li>name + bio block</li>
+              <li>small lore section</li>
+              <li>animated sparkles</li>
+              <li>extra shrine decorations</li>
+            </ul>
+          </article>
+        </aside>
+
       </section>
-
-      <section class="fursonaShowcase reveal delay2">
-        <div class="gifCard bigCard">
-          <h2 class="glowTextSmall">main gif</h2>
-          <img src="../images/fursona1.gif" alt="Fursona gif 1" class="fursonaGif">
-        </div>
-
-        <div class="gifCard bigCard">
-          <h2 class="glowTextSmall">second gif</h2>
-          <img src="../images/fursona2.gif" alt="Fursona gif 2" class="fursonaGif">
-        </div>
-      </section>
-
-      <section class="fursonaText reveal delay3">
-        <div class="textCard">
-          <h2 class="glowTextSmall">vibe</h2>
-          <p>
-            soft, expressive, cute, pink-coded, and very much part of the whole identity of this site.
-            this page is here so people can actually stop and appreciate the art instead of it just being hidden somewhere.
-          </p>
-        </div>
-      </section>
-
     </main>
 
-    <footer class="siteFooter reveal delay4">
+    <footer class="siteFooter">
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
@@ -72,17 +140,5 @@
     </footer>
 
   </div>
-
-  <script src="../js/main.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 120);
-      });
-    });
-  </script>
 </body>
 </html>
