@@ -10,12 +10,24 @@
 </head>
 <body>
 
-  <div class="checkerBackground"></div>
+  <div class="chatBg">
+    <div class="chatGlow glow1"></div>
+    <div class="chatGlow glow2"></div>
+    <div class="chatGlow glow3"></div>
+
+    <div class="chatSpark spark1">✦</div>
+    <div class="chatSpark spark2">✦</div>
+    <div class="chatSpark spark3">♡</div>
+    <div class="chatSpark spark4">✦</div>
+    <div class="chatSpark spark5">♡</div>
+
+    <div class="chatGrid"></div>
+  </div>
 
   <div class="pageShell">
 
-    <nav class="topNav reveal">
-      <a href="../index.html" class="navLogoWrap">
+    <nav class="topNav">
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
 
@@ -31,96 +43,104 @@
       </div>
     </nav>
 
-    <main class="chatFrame reveal delay1">
+    <header class="chatHeader">
+      <span class="chatTiny">dreamy community room</span>
+      <h1 class="chatTitle">Chat</h1>
+      <p class="chatSubtitle">
+        a little hangout room for messages, community vibes, and cute chaos 💗
+      </p>
+    </header>
 
-      <section class="chatHeader">
-        <div class="headerPattern"></div>
-        <h1 class="siteTitle glowText">Public Chat</h1>
-        <p class="pageSubtitle">
-          hang out, leave messages, and be cute in the PinkyDevil chat room 💗
-        </p>
-      </section>
+    <main class="chatScene">
+      <section class="communityRoom">
 
-      <section class="chatMain reveal delay2">
-
-        <div class="chatEmbedCard">
-          <div class="sectionTop">
-            <h2 class="glowTextSmall">live chat room</h2>
-            <span class="softPill">cbox</span>
-          </div>
-
-          <div class="chatEmbedWrap">
-            <iframe
-              src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
-              title="PinkyDevil public chat"
-              frameborder="0"
-              allowtransparency="yes"
-              allow="autoplay"
-              scrolling="auto">
-            </iframe>
-          </div>
-        </div>
-
-        <aside class="chatSide">
-
-          <div class="chatCard floatingCard">
-            <div class="sectionTop">
-              <h2 class="glowTextSmall">chat vibe</h2>
-              <span class="softPill">friendly</span>
-            </div>
-
+        <aside class="leftColumn">
+          <article class="noteCard tiltedLeft">
+            <span class="cardTag">community vibe</span>
+            <h3>cozy, silly, friendly</h3>
             <p>
-              say hi, leave a cute message, talk about streams, music, projects,
-              or just vibe for a bit 💗
+              this page is meant to feel like a little room where people can stop by, say hi, and hang out in my world.
             </p>
-          </div>
+          </article>
 
-          <div class="chatCard">
-            <div class="sectionTop">
-              <h2 class="glowTextSmall">little reminders</h2>
-              <span class="softPill">rules</span>
+          <article class="noteCard">
+            <span class="cardTag">little note</span>
+            <h3>say hi nicely</h3>
+            <p>
+              keep it kind, cute, and respectful so the space stays fun and comfy for everyone.
+            </p>
+          </article>
+        </aside>
+
+        <section class="centerColumn">
+
+          <article class="chatHeroCard">
+            <div class="chatHeroGlow"></div>
+            <div class="chatHeroContent">
+              <span class="heroMini">community room online</span>
+              <h2>Come Hang Out</h2>
+              <p>
+                leave a message, say hi, or just vibe for a bit in the little PinkyDevil chat room.
+              </p>
+            </div>
+          </article>
+
+          <article class="chatEmbedCard">
+            <div class="windowBar">
+              <div class="windowDots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="windowTitle">community_chat.exe</span>
             </div>
 
-            <ul class="chatRules">
-              <li>be nice and respectful</li>
-              <li>no hate or weirdness</li>
-              <li>keep the vibe comfy</li>
-              <li>have fun and be yourself</li>
+            <div class="chatEmbedWrap">
+              <iframe
+                src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
+                width="100%"
+                height="560"
+                allowtransparency="yes"
+                allow="autoplay"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                scrolling="auto"
+                title="PinkyDevil community chat">
+              </iframe>
+            </div>
+          </article>
+
+        </section>
+
+        <aside class="rightColumn">
+          <article class="infoCard">
+            <span class="cardTag">room energy</span>
+            <h3>what this page is for</h3>
+            <ul class="infoList">
+              <li>saying hi</li>
+              <li>community messages</li>
+              <li>cute little chaos</li>
+              <li>hanging out</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="chatCard floatingCard">
-            <div class="sectionTop">
-              <h2 class="glowTextSmall">quick links</h2>
-              <span class="softPill">explore</span>
-            </div>
-
-            <div class="quickButtons">
-              <a href="../index.html" class="quickBtn q-home">home</a>
-              <a href="streams.html" class="quickBtn q-streams">streams</a>
-              <a href="music.html" class="quickBtn q-music">music</a>
-              <a href="fursona.html" class="quickBtn q-fursona">fursona</a>
-              <a href="donated.html" class="quickBtn q-donate">donated</a>
-            </div>
-          </div>
-
+          <article class="infoCard">
+            <span class="cardTag">future upgrades</span>
+            <h3>more community magic</h3>
+            <ul class="infoList">
+              <li>custom chat decorations</li>
+              <li>stream day room mode</li>
+              <li>extra glow effects</li>
+              <li>community highlights</li>
+            </ul>
+          </article>
         </aside>
 
       </section>
-
-      <section class="chatNotes reveal delay3">
-        <div class="notesCard">
-          <h2 class="glowTextSmall">later upgrades</h2>
-          <p>
-            later we can upgrade this page with custom chat styling, glow reactions,
-            message highlight effects, and a more unique panel around the chat embed 💗
-          </p>
-        </div>
-      </section>
-
     </main>
 
-    <footer class="siteFooter reveal delay4">
+    <footer class="siteFooter">
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
@@ -129,17 +149,5 @@
     </footer>
 
   </div>
-
-  <script src="../js/main.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 110);
-      });
-    });
-  </script>
 </body>
 </html>
