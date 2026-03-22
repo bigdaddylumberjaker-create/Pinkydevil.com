@@ -1,160 +1,165 @@
-.pageShell {
-  position: relative;
-  min-height: 100vh;
-  padding: 24px;
-  z-index: 1;
-}
-
 /* ========================= */
-/* BACKGROUND */
+/* PAGE BASE */
 /* ========================= */
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "Trebuchet MS", "Verdana", sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: linear-gradient(180deg, #fff8fc 0%, #ffeef8 40%, #ffddea 100%);
   color: #8f5273;
 }
 
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
 .streamsHeader {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 48px 20px 18px;
   text-align: center;
+  padding: 50px 20px 20px;
 }
 
 .streamsTiny {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.4);
   color: #c15d94;
-  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.4px;
-  text-transform: lowercase;
 }
 
 .streamsTitle {
-  margin: 14px 0 8px;
-  font-size: clamp(52px, 8vw, 100px);
-  line-height: 0.95;
-  background: linear-gradient(180deg, #ff86bf 0%, #ff4ca5 100%);
+  font-size: clamp(50px, 8vw, 100px);
+  margin: 10px 0;
+  background: linear-gradient(180deg, #ff8cc9, #ff4fa4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 12px rgba(255, 120, 180, 0.24));
 }
 
 .streamsSubtitle {
-  margin: 0 auto;
-  max-width: 760px;
   color: #b85789;
-  font-size: 18px;
-  line-height: 1.8;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ========================= */
-/* MAIN LAYOUT */
+/* MAIN GRID */
 /* ========================= */
 
 .streamsMain {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 18px 24px 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.75fr);
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
-  align-items: start;
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
 }
 
-.streamPlayer,
-.streamChat {
-  border-radius: 28px;
+/* ========================= */
+/* LEFT SIDE */
+/* ========================= */
+
+.streamLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* player */
+
+.streamPlayer {
+  border-radius: 24px;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.18));
-  border: 1px solid rgba(255,255,255,0.62);
-  box-shadow:
-    0 18px 34px rgba(255, 154, 206, 0.12),
-    inset 0 0 0 1px rgba(255,255,255,0.14);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  position: relative;
-}
-
-.streamPlayer::before,
-.streamChat::before {
-  content: "";
-  display: block;
-  height: 46px;
-  background: rgba(255,255,255,0.22);
-  border-bottom: 1px solid rgba(255,255,255,0.30);
-}
-
-.streamPlayer::after,
-.streamChat::after {
-  content: "";
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  width: 34px;
-  height: 10px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.82) 0 4px, transparent 5px) 0 0 / 12px 10px no-repeat,
-    radial-gradient(circle, rgba(255,255,255,0.82) 0 4px, transparent 5px) 11px 0 / 12px 10px no-repeat,
-    radial-gradient(circle, rgba(255,255,255,0.82) 0 4px, transparent 5px) 22px 0 / 12px 10px no-repeat;
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-.streamPlayer iframe,
-.streamChat iframe {
-  display: block;
-  width: 100%;
-  border: 0;
-  background: #fff;
+  background: rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 15px 30px rgba(255,150,200,0.1);
 }
 
 .streamPlayer iframe {
-  aspect-ratio: 16 / 9;
-  min-height: 540px;
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+/* info */
+
+.streamInfo {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.4);
+}
+
+.streamInfo h3 {
+  margin: 0 0 10px;
+}
+
+.streamMeta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.streamMeta span {
+  background: rgba(255,255,255,0.6);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* schedule */
+
+.streamSchedule {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.4);
+}
+
+.scheduleItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+/* ========================= */
+/* RIGHT SIDE */
+/* ========================= */
+
+.streamRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* chat */
+
+.streamChat {
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.3);
 }
 
 .streamChat iframe {
-  min-height: 586px;
+  width: 100%;
+  height: 600px;
+  border: none;
 }
 
-/* ========================= */
-/* BUTTONS */
-/* ========================= */
+/* buttons */
 
 .streamLinks {
-  max-width: 1320px;
-  margin: 18px auto 0;
-  padding: 0 24px 34px;
   display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .streamBtn {
-  text-decoration: none;
+  flex: 1;
+  padding: 14px;
   text-align: center;
-  padding: 14px 20px;
-  border-radius: 18px;
-  font-weight: 800;
+  border-radius: 16px;
   background: #fff0f8;
   color: #a94b7e;
-  border: 1px solid rgba(255,255,255,0.78);
-  box-shadow:
-    0 10px 20px rgba(255, 154, 206, 0.10),
-    inset 0 0 0 1px rgba(255,255,255,0.12);
-  transition: 0.22s ease;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s;
 }
 
 .streamBtn.alt {
@@ -163,64 +168,23 @@ body {
 }
 
 .streamBtn:hover {
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* ========================= */
-/* RESPONSIVE */
+/* MOBILE */
 /* ========================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .streamsMain {
     grid-template-columns: 1fr;
   }
 
   .streamPlayer iframe {
-    min-height: 440px;
+    height: 300px;
   }
 
   .streamChat iframe {
-    min-height: 520px;
-  }
-}
-
-@media (max-width: 760px) {
-  .streamsHeader {
-    padding: 34px 14px 12px;
-  }
-
-  .streamsTitle {
-    font-size: clamp(44px, 12vw, 72px);
-  }
-
-  .streamsSubtitle {
-    font-size: 16px;
-  }
-
-  .streamsMain {
-    padding: 16px 14px 0;
-    gap: 16px;
-  }
-
-  .streamLinks {
-    padding: 0 14px 28px;
-    gap: 10px;
-  }
-
-  .streamBtn {
-    width: 100%;
-  }
-
-  .streamPlayer,
-  .streamChat {
-    border-radius: 22px;
-  }
-
-  .streamPlayer iframe {
-    min-height: 260px;
-  }
-
-  .streamChat iframe {
-    min-height: 420px;
+    height: 400px;
   }
 }
