@@ -2,329 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PinkyDevil</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/home.css" />
-
-  <style>
-    #loader {
-      isolation: isolate;
-    }
-
-    .introBg {
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    #cloudIntro {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    #cloudIntro canvas {
-      width: 100% !important;
-      height: 100% !important;
-      display: block;
-      pointer-events: none !important;
-    }
-
-    .loaderCenter {
-      position: relative;
-      z-index: 50;
-      pointer-events: auto;
-    }
-
-    #logoIntro {
-      pointer-events: none;
-    }
-
-    #enterButton {
-      position: relative;
-      z-index: 9999;
-      pointer-events: auto !important;
-      cursor: pointer;
-    }
-
-    #physicsCanvas {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none !important;
-    }
-
-    #loader::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 34%),
-        radial-gradient(circle at center, rgba(255, 120, 190, 0.10), transparent 62%),
-        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.22));
-      mix-blend-mode: screen;
-    }
-
-    .loaderCenter::before {
-      content: "";
-      position: absolute;
-      width: 560px;
-      height: 560px;
-      max-width: 92vw;
-      max-height: 92vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 166, 214, 0.20), transparent 62%);
-      filter: blur(28px);
-      z-index: -1;
-      animation: introCorePulse 5s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes introCorePulse {
-      0%, 100% {
-        transform: scale(0.96);
-        opacity: 0.55;
-      }
-      50% {
-        transform: scale(1.08);
-        opacity: 0.92;
-      }
-    }
-  </style>
-
-  <script>
-    window.onIntroEnter = function () {
-      const loader = document.getElementById("loader");
-      const hero = document.querySelector(".hero");
-      const logo = document.getElementById("logoIntro");
-      const button = document.getElementById("enterButton");
-
-      if (!loader || loader.dataset.exiting === "1") return;
-      loader.dataset.exiting = "1";
-
-      if (logo) {
-        logo.style.transition = "transform 0.7s ease, opacity 0.7s ease";
-        logo.style.transform = "translateY(-14px) scale(0.95)";
-        logo.style.opacity = "0.22";
-      }
-
-      if (button) {
-        button.disabled = true;
-        button.style.transform = "scale(0.96)";
-        button.style.opacity = "0.5";
-      }
-
-      loader.style.opacity = "0";
-      loader.style.pointerEvents = "none";
-
-      if (hero) {
-        setTimeout(() => {
-          hero.classList.add("visible");
-        }, 180);
-      }
-
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 950);
-    };
-
-    window.addEventListener("keydown", (event) => {
-      const loader = document.getElementById("loader");
-      if (!loader || loader.style.display === "none") return;
-      if (event.key === "Enter") {
-        window.onIntroEnter();
-      }
-    });
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/home.css"/>
+  <link rel="stylesheet" href="css/global-vfx.css"/>
 </head>
 <body>
 
-  <div id="loader">
-    <div class="introBg">
-      <div class="introGlow introGlow1"></div>
-      <div class="introGlow introGlow2"></div>
-      <div class="introGlow introGlow3"></div>
+<!-- 🌌 GLOBAL BG -->
+<div class="vfxBg">
+  <div class="vfxStars"></div>
+</div>
 
-      <div class="aurora aurora1"></div>
-      <div class="aurora aurora2"></div>
-
-      <div class="lightBeam beam1"></div>
-      <div class="lightBeam beam2"></div>
-
-      <div class="ring ring1"></div>
-      <div class="ring ring2"></div>
-      <div class="ring ring3"></div>
-
-      <div class="sparkles">
-        <span class="spark s1"></span>
-        <span class="spark s2"></span>
-        <span class="spark s3"></span>
-        <span class="spark s4"></span>
-        <span class="spark s5"></span>
-        <span class="spark s6"></span>
-        <span class="spark s7"></span>
-        <span class="spark s8"></span>
-
-        <span class="star st1">✦</span>
-        <span class="star st2">✦</span>
-        <span class="star st3">✦</span>
-        <span class="star st4">✦</span>
-        <span class="star st5">✦</span>
-      </div>
-    </div>
-
-    <div id="cloudIntro" aria-hidden="true"></div>
-
-    <div class="loaderCenter">
-      <img src="images/logo.png" id="logoIntro" alt="PinkyDevil logo" />
-      <button id="enterButton" type="button" onclick="window.onIntroEnter()">enter</button>
-    </div>
-
-    <canvas id="physicsCanvas"></canvas>
-  </div>
-
-  <div class="homeBg">
-    <div class="homeNebula nebula1"></div>
-    <div class="homeNebula nebula2"></div>
-    <div class="homeNebula nebula3"></div>
-
-    <div class="homeCloud cloud1"></div>
-    <div class="homeCloud cloud2"></div>
-    <div class="homeCloud cloud3"></div>
-    <div class="homeCloud cloud4"></div>
-
-    <div class="homeStars">
-      <span class="homeStar hs1">✦</span>
-      <span class="homeStar hs2">✦</span>
-      <span class="homeStar hs3">✦</span>
-      <span class="homeStar hs4">✦</span>
-      <span class="homeStar hs5">✦</span>
-      <span class="homeStar hs6">✦</span>
-      <span class="homeStar hs7">✦</span>
-      <span class="homeStar hs8">✦</span>
-      <span class="homeStar hs9">✦</span>
-      <span class="homeStar hs10">✦</span>
-    </div>
-
-    <div class="homeHearts">
-      <span class="miniHeart h1">♡</span>
-      <span class="miniHeart h2">♡</span>
-      <span class="miniHeart h3">♡</span>
-      <span class="miniHeart h4">♡</span>
-      <span class="miniHeart h5">♡</span>
-      <span class="miniHeart h6">♡</span>
-    </div>
-  </div>
+<div class="pageFade">
 
   <section class="hero">
-    <div class="heroCenter">
-      <span class="heroTiny">welcome to</span>
-      <h1 class="heroMainTitle">PinkyDevil</h1>
-      <p class="heroLead">
-        a cute pink fluffy cloud world full of streams, music, projects, art, and dreamy little chaos 💗
-      </p>
+    <h1 class="heroMainTitle">PinkyDevil</h1>
 
-      <div class="homePortal">
-        <div class="heartStage">
-          <svg class="heartSvg" viewBox="0 0 600 540" aria-hidden="true">
-            <defs>
-              <linearGradient id="heartFill" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ffd1ea" stop-opacity="1" />
-                <stop offset="56%" stop-color="#ff9fd3" stop-opacity="0.94" />
-                <stop offset="100%" stop-color="#ff6fb3" stop-opacity="0.84" />
-              </linearGradient>
-
-              <filter id="heartGlow" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="11" result="blur1"></feGaussianBlur>
-                <feMerge>
-                  <feMergeNode in="blur1"></feMergeNode>
-                  <feMergeNode in="SourceGraphic"></feMergeNode>
-                </feMerge>
-              </filter>
-            </defs>
-
-            <path
-              d="M300 496
-                 C268 468, 90 345, 50 226
-                 C19 132, 71 55, 154 40
-                 C222 28, 271 66, 300 110
-                 C329 66, 378 28, 446 40
-                 C529 55, 581 132, 550 226
-                 C510 345, 332 468, 300 496 Z"
-              fill="url(#heartFill)"
-              stroke="#ff6fb3"
-              stroke-width="10"
-              filter="url(#heartGlow)">
-            </path>
-
-            <path
-              d="M300 470
-                 C272 446, 121 340, 87 236
-                 C60 152, 103 89, 171 77
-                 C227 67, 267 100, 300 145
-                 C333 100, 373 67, 429 77
-                 C497 89, 540 152, 513 236
-                 C479 340, 328 446, 300 470 Z"
-              fill="rgba(255,255,255,0.14)">
-            </path>
-          </svg>
-
-          <div class="heartCenterText">
-            <span class="heartMini">main portal</span>
-            <h2>enter my world</h2>
-            <p>pick a page and explore the cute little universe ✦</p>
-          </div>
-        </div>
-
-        <div class="portalButtons">
-          <div class="portalButtonsInner">
-            <span class="portalMini">pick a page</span>
-
-            <div class="heroButtons">
-              <a href="pages/about.html" class="btn btn-about">About</a>
-              <a href="pages/projects.html" class="btn btn-projects">Projects</a>
-              <a href="pages/streams.html" class="btn btn-streams">Streams</a>
-              <a href="pages/music.html" class="btn btn-music">Music</a>
-              <a href="pages/fursona.html" class="btn btn-fursona">Fursona</a>
-              <a href="pages/art.html" class="btn btn-art">Art</a>
-              <a href="pages/chat.html" class="btn btn-chat">Chat</a>
-              <a href="pages/donated.html" class="btn btn-donated">Donated</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="homeInfoRow">
-          <div class="homeInfoCard">
-            <span class="sideTag">vibe</span>
-            <h3>pink, dreamy, fluffy</h3>
-            <p>soft clouds, pink stars, and cute little spaces that feel personal instead of plain.</p>
-          </div>
-
-          <div class="homeInfoCard">
-            <span class="sideTag">inside</span>
-            <h3>streams, art, music</h3>
-            <p>all the pages are little portals into different corners of the PinkyDevil world.</p>
-          </div>
-
-          <div class="homeInfoCard">
-            <span class="sideTag">energy</span>
-            <h3>cute little chaos</h3>
-            <p>a dreamy pink universe for hanging out, exploring pages, and showing what makes your site yours.</p>
-          </div>
-        </div>
-      </div>
+    <div class="heroButtons">
+      <a href="pages/about.html" class="btn vfxBtn">About</a>
+      <a href="pages/projects.html" class="btn vfxBtn">Projects</a>
+      <a href="pages/streams.html" class="btn vfxBtn">Streams</a>
+      <a href="pages/music.html" class="btn vfxBtn">Music</a>
+      <a href="pages/fursona.html" class="btn vfxBtn">Fursona</a>
+      <a href="pages/art.html" class="btn vfxBtn">Art</a>
+      <a href="pages/chat.html" class="btn vfxBtn">Chat</a>
+      <a href="pages/donated.html" class="btn vfxBtn">Donated</a>
     </div>
+
   </section>
 
-  <script src="js/main.js"></script>
-  <script src="js/intro.js"></script>
+</div>
+
+<script src="js/global-vfx.js"></script>
 </body>
 </html>
