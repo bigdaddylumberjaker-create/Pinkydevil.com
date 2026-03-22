@@ -1,106 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fursona - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/fursona.css"/>
-  <link rel="stylesheet" href="../css/global-vfx.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/fursona.css" />
 </head>
 <body>
 
-<div class="vfxBg">
-  <div class="vfxStars"></div>
-</div>
+  <div class="fursonaBg">
+    <div class="fursonaGlow glow1"></div>
+    <div class="fursonaGlow glow2"></div>
+    <div class="fursonaGlow glow3"></div>
 
-<div class="pageFade">
+    <div class="fursonaSpark spark1">✦</div>
+    <div class="fursonaSpark spark2">✦</div>
+    <div class="fursonaSpark spark3">♡</div>
+    <div class="fursonaSpark spark4">✦</div>
+    <div class="fursonaSpark spark5">♡</div>
 
-  <!-- HEADER -->
-  <section class="fursonaHeader">
-    <span class="fursonaTiny">character shrine</span>
-    <h1 class="fursonaTitle">Fursona</h1>
-    <p class="fursonaSubtitle">
-      a soft little shrine space for my character, vibe, and design 💗
-    </p>
-  </section>
+    <div class="fursonaGrid"></div>
+  </div>
 
-  <!-- MAIN -->
-  <section class="fursonaMain">
+  <div class="pageShell">
 
-    <!-- LEFT NOTES -->
-    <div class="fursonaLeft">
-      <div class="fursonaNote tiltedLeft">
-        <h3>character vibe</h3>
-        <p>
-          soft, cute, dreamy, and full of pink little energy.
-        </p>
+    <nav class="topNav">
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
+
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton active">fursona</a>
+        <a href="art.html" class="navButton">art</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
       </div>
+    </nav>
 
-      <div class="fursonaNote">
-        <h3>main piece</h3>
-        <p>
-          this page is built around one main art piece so it feels more like a shrine than a gallery.
-        </p>
+    <header class="fursonaHeader">
+      <span class="fursonaTiny">dreamy character shrine</span>
+      <h1 class="fursonaTitle">Fursona</h1>
+      <p class="fursonaSubtitle">
+        a soft little shrine space for my fursona, design, and character vibe 💗
+      </p>
+    </header>
+
+    <main class="fursonaScene">
+      <section class="shrineRoom">
+
+        <aside class="noteColumn">
+          <article class="noteCard tiltedLeft">
+            <span class="cardTag">character vibe</span>
+            <h3>soft, cute, dreamy</h3>
+            <p>
+              this page is meant to feel like a little shrine dedicated to the character energy that belongs in my world.
+            </p>
+          </article>
+
+          <article class="noteCard">
+            <span class="cardTag">reference sheet</span>
+            <h3>full design view</h3>
+            <p>
+              this page is using one full reference image, so the layout is designed to frame it nicely instead of stretching it too huge.
+            </p>
+          </article>
+        </aside>
+
+        <section class="centerShrine">
+          <article class="mainShrineCard">
+            <div class="shrineHalo"></div>
+
+            <div class="mainArtFrame">
+              <div class="mainArtInner">
+                <img
+                  src="../images/fursona-main.png"
+                  alt="Main fursona reference sheet"
+                  class="mainFursonaArt"
+                />
+              </div>
+            </div>
+
+            <div class="shrineInfo">
+              <span class="featureTag">main fursona reference</span>
+              <h2>Pinky’s Fursona</h2>
+              <p>
+                this is the main featured reference sheet for the page. later, if you want, we can split it into a front-view card and a back-view card, but this version keeps the full design clean and centered.
+              </p>
+
+              <div class="identityPills">
+                <span>pink coded</span>
+                <span>reference sheet</span>
+                <span>main design</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <aside class="infoColumn">
+          <article class="infoCard">
+            <span class="cardTag">design notes</span>
+            <h3>character energy</h3>
+            <ul class="infoList">
+              <li>cute and soft</li>
+              <li>dreamy pink vibe</li>
+              <li>personal mascot energy</li>
+            </ul>
+          </article>
+
+          <article class="infoCard">
+            <span class="cardTag">future upgrades</span>
+            <h3>more shrine magic</h3>
+            <ul class="infoList">
+              <li>name + bio block</li>
+              <li>small lore section</li>
+              <li>split front/back cards</li>
+              <li>extra shrine decorations</li>
+            </ul>
+          </article>
+        </aside>
+
+      </section>
+    </main>
+
+    <footer class="siteFooter">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="fursona.html">fursona</a>
       </div>
-    </div>
+    </footer>
 
-    <!-- CENTER SHRINE -->
-    <div class="fursonaCenter">
-      <div class="fursonaShrine">
-        <div class="fursonaHalo"></div>
-
-        <div class="fursonaFrame">
-          <img
-            src="../images/fursona-main.png"
-            alt="Main fursona art"
-            class="fursonaImage"
-          />
-        </div>
-
-        <div class="fursonaInfo">
-          <span class="fursonaTag">main fursona art</span>
-          <h2>Pinky’s Fursona</h2>
-          <p>
-            this is the main centerpiece of the page. later, if you want, we can add a name, bio, little lore notes, or a few tiny detail badges.
-          </p>
-
-          <div class="fursonaPills">
-            <span>pink coded</span>
-            <span>soft vibe</span>
-            <span>main design</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT INFO -->
-    <div class="fursonaRight">
-      <div class="fursonaCard">
-        <h3>design notes</h3>
-        <ul>
-          <li>cute and soft</li>
-          <li>dreamy pink energy</li>
-          <li>personal mascot vibe</li>
-        </ul>
-      </div>
-
-      <div class="fursonaCard">
-        <h3>future upgrades</h3>
-        <ul>
-          <li>name + bio</li>
-          <li>small lore section</li>
-          <li>extra shrine sparkles</li>
-          <li>tiny detail cards</li>
-        </ul>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-
-<script src="../js/global-vfx.js"></script>
+  </div>
 </body>
 </html>
