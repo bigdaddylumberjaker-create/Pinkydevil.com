@@ -1,1 +1,91 @@
+/* ========================= */
+/* 🌌 GLOBAL DREAMY BACKGROUND */
+/* ========================= */
 
+.vfxBg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.vfxStars {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,180,220,0.4) 0px, transparent 2px),
+    radial-gradient(circle at 70% 40%, rgba(255,200,240,0.35) 0px, transparent 2px),
+    radial-gradient(circle at 50% 80%, rgba(255,170,230,0.3) 0px, transparent 2px);
+  background-size: 200px 200px;
+  animation: starsMove 30s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes starsMove {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-200px); }
+}
+
+/* floating sparkles */
+
+.vfxSparkle {
+  position: absolute;
+  color: #ff9cd2;
+  opacity: 0.4;
+  animation: sparkleFloat 6s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%,100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-10px); opacity: 0.7; }
+}
+
+/* ========================= */
+/* 🎬 PAGE FADE INTRO */
+/* ========================= */
+
+.pageFade {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+.pageFade.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ========================= */
+/* 🎵 BUTTON HOVER SOUND */
+/* ========================= */
+
+.vfxBtn {
+  cursor: pointer;
+}
+
+/* ========================= */
+/* 🖼️ ART CREDIT HOVER */
+/* ========================= */
+
+.artCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.artCredit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  background: rgba(255, 160, 210, 0.9);
+  color: white;
+  transform: translateY(100%);
+  transition: 0.25s ease;
+}
+
+.artCard:hover .artCredit {
+  transform: translateY(0);
+}
