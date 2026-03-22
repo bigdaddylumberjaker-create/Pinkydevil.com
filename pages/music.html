@@ -3,21 +3,88 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music</title>
+  <title>Music - PinkyDevil</title>
 
   <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/music.css"/>
   <link rel="stylesheet" href="../css/global-vfx.css"/>
 </head>
 <body>
 
-<div class="vfxBg"><div class="vfxStars"></div></div>
+<!-- 🌌 BG -->
+<div class="vfxBg">
+  <div class="vfxStars"></div>
+</div>
 
 <div class="pageFade">
 
-  <h1>Music</h1>
+  <!-- HEADER -->
+  <section class="musicHeader">
+    <span class="musicTiny">music room</span>
+    <h1 class="musicTitle">Music</h1>
+    <p class="musicSubtitle">
+      soft sounds, chaotic vibes, and everything in between 🎧💗
+    </p>
+  </section>
+
+  <!-- MAIN -->
+  <section class="musicMain">
+
+    <!-- LEFT -->
+    <div class="musicLeft">
+
+      <!-- FEATURE -->
+      <div class="musicFeatured">
+        <h3>featured track</h3>
+
+        <div class="musicPlayer">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="featured music"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- YOUR MUSIC -->
+      <div class="musicList">
+        <h3>my music</h3>
+
+        <div class="musicItem">
+          <span>song 1</span>
+          <p>soft pink vibes</p>
+        </div>
+
+        <div class="musicItem">
+          <span>song 2</span>
+          <p>late night energy</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="musicRight">
+
+      <!-- MUSIC WHEEL -->
+      <div class="musicWheelWrap">
+        <div class="musicWheel"></div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="musicLinks">
+        <a href="#" class="musicBtn vfxBtn">spotify</a>
+        <a href="#" class="musicBtn alt vfxBtn">soundcloud</a>
+      </div>
+
+    </div>
+
+  </section>
 
 </div>
 
 <script src="../js/global-vfx.js"></script>
+
 </body>
 </html>
