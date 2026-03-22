@@ -1,168 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/about.css" />
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/global-vfx.css"/>
 </head>
 <body>
 
-  <div class="aboutBg">
-    <div class="aboutGlow glow1"></div>
-    <div class="aboutGlow glow2"></div>
-    <div class="aboutGlow glow3"></div>
+<div class="vfxBg"><div class="vfxStars"></div></div>
 
-    <div class="aboutSpark spark1">✦</div>
-    <div class="aboutSpark spark2">✦</div>
-    <div class="aboutSpark spark3">♡</div>
-    <div class="aboutSpark spark4">✦</div>
-    <div class="aboutSpark spark5">♡</div>
+<div class="pageFade">
 
-    <div class="aboutGrid"></div>
-  </div>
+  <h1>About Me</h1>
+  <p>Hi I'm PinkyDevil 💗</p>
 
-  <div class="pageShell">
+</div>
 
-    <nav class="topNav reveal">
-      <a href="../index.html" class="navLogoWrap">
-        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
-      </a>
-
-      <div class="navLinks">
-        <a href="about.html" class="navButton active">about</a>
-        <a href="projects.html" class="navButton">projects</a>
-        <a href="streams.html" class="navButton">streams</a>
-        <a href="music.html" class="navButton">music</a>
-        <a href="fursona.html" class="navButton">fursona</a>
-        <a href="art.html" class="navButton">art</a>
-        <a href="chat.html" class="navButton">chat</a>
-        <a href="donated.html" class="navButton">donated</a>
-      </div>
-    </nav>
-
-    <header class="aboutHeader reveal delay1">
-      <span class="aboutTiny">little profile world</span>
-      <h1 class="aboutTitle">About Me</h1>
-      <p class="aboutSubtitle">
-        a dreamy little space about who i am, what i love, and the kind of world i’m trying to build online 💗
-      </p>
-    </header>
-
-    <main class="aboutScene reveal delay2">
-
-      <section class="identityStage">
-
-        <article class="memoryCard cardLeftTop reveal delay2 floatingCard">
-          <span class="memoryTag">who i am</span>
-          <h3>Pinky / PinkyDevil</h3>
-          <p>
-            i’m a pink-loving, dreamy, creative little gremlin building a world that feels personal,
-            cute, glowy, and alive instead of generic.
-          </p>
-        </article>
-
-        <article class="memoryCard cardRightTop reveal delay3 floatingCard">
-          <span class="memoryTag">main vibe</span>
-          <h3>cute + personal</h3>
-          <p>
-            i want my site to feel like stepping into my space, not just opening a normal portfolio.
-          </p>
-        </article>
-
-        <div class="centerShrine reveal delay2">
-          <div class="shrineHalo"></div>
-          <div class="shrineCore">
-            <div class="portraitFrame">
-              <img src="../images/about-drawing.png" alt="PinkyDevil art" class="portraitImage">
-            </div>
-
-            <div class="identityPills">
-              <span>pink coded</span>
-              <span>streamer</span>
-              <span>music</span>
-              <span>creative</span>
-            </div>
-          </div>
-        </div>
-
-        <article class="memoryCard cardLeftBottom reveal delay3 floatingCard">
-          <span class="memoryTag">things i love</span>
-          <h3>music, games, cute design</h3>
-          <p>
-            music, FPS games, puzzle games, furry stuff, soft colors, playful effects,
-            and making websites feel magical.
-          </p>
-        </article>
-
-        <article class="memoryCard cardRightBottom reveal delay4 floatingCard">
-          <span class="memoryTag">what i’m building</span>
-          <h3>my own little world</h3>
-          <p>
-            pages for streams, music, projects, art, fursona stuff, community things,
-            and everything that makes the site feel like me.
-          </p>
-        </article>
-
-      </section>
-
-      <section class="storySection reveal delay4">
-        <article class="storyPanel mainStory">
-          <div class="panelTop">
-            <h2>my little corner of the internet</h2>
-            <span class="softPill">story</span>
-          </div>
-
-          <p>
-            this site is where all my ideas, pages, creative stuff, and personality get stitched together.
-            i like experimenting until things feel more and more like me instead of copying what everyone else does.
-          </p>
-
-          <p>
-            the big dream is to make something expressive, atmospheric, and memorable — a website with motion,
-            softness, glow, and little details that make people feel like they found a real person’s world.
-          </p>
-        </article>
-
-        <article class="storyPanel miniStory floatingCard">
-          <div class="panelTop">
-            <h2>future energy</h2>
-            <span class="softPill">later</span>
-          </div>
-
-          <ul class="futureList">
-            <li>more custom page scenes</li>
-            <li>better art-centered layouts</li>
-            <li>extra motion + sparkle details</li>
-            <li>more unique PinkyDevil identity</li>
-          </ul>
-        </article>
-      </section>
-
-    </main>
-
-    <footer class="siteFooter reveal delay4">
-      <div>© PinkyDevil</div>
-      <div class="footerLinks">
-        <a href="../index.html">home</a>
-        <a href="about.html">about</a>
-      </div>
-    </footer>
-
-  </div>
-
-  <script src="../js/main.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 110);
-      });
-    });
-  </script>
+<script src="../js/global-vfx.js"></script>
 </body>
 </html>
