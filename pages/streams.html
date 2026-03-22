@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Streams</title>
+  <title>Streams - PinkyDevil</title>
 
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="stylesheet" href="../css/streams.css"/>
@@ -11,11 +11,55 @@
 </head>
 <body>
 
-<div class="vfxBg"><div class="vfxStars"></div></div>
+<!-- 🌌 GLOBAL BG -->
+<div class="vfxBg">
+  <div class="vfxStars"></div>
+</div>
 
 <div class="pageFade">
 
-  <h1>Streams</h1>
+  <!-- HEADER -->
+  <section class="streamsHeader">
+    <span class="streamsTiny">live space</span>
+    <h1 class="streamsTitle">Streams</h1>
+    <p class="streamsSubtitle">
+      come hang out, chat, and vibe in my stream room 💗
+    </p>
+  </section>
+
+  <!-- MAIN STREAM AREA -->
+  <section class="streamsMain">
+
+    <!-- STREAM PLAYER -->
+    <div class="streamPlayer">
+      <iframe
+        src="https://player.twitch.tv/?channel=pinkydevii&parent=localhost"
+        frameborder="0"
+        allowfullscreen="true"
+        scrolling="no">
+      </iframe>
+    </div>
+
+    <!-- LIVE CHAT -->
+    <div class="streamChat">
+      <iframe
+        src="https://www.twitch.tv/embed/pinkydevii/chat?parent=localhost"
+        frameborder="0">
+      </iframe>
+    </div>
+
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="streamLinks">
+    <a href="https://twitch.tv/pinkydevii" target="_blank" class="streamBtn vfxBtn">
+      Watch on Twitch
+    </a>
+
+    <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" class="streamBtn alt vfxBtn">
+      YouTube
+    </a>
+  </section>
 
 </div>
 
