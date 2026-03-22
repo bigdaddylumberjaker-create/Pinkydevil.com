@@ -1,99 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/chat.css"/>
-  <link rel="stylesheet" href="../css/global-vfx.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/chat.css" />
 </head>
 <body>
 
-<div class="vfxBg">
-  <div class="vfxStars"></div>
-</div>
+  <div class="chatBg">
+    <div class="chatGlow glow1"></div>
+    <div class="chatGlow glow2"></div>
+    <div class="chatGlow glow3"></div>
 
-<div class="pageFade">
+    <div class="chatSpark spark1">✦</div>
+    <div class="chatSpark spark2">✦</div>
+    <div class="chatSpark spark3">♡</div>
+    <div class="chatSpark spark4">✦</div>
+    <div class="chatSpark spark5">♡</div>
 
-  <!-- HEADER -->
-  <section class="chatHeader">
-    <span class="chatTiny">community room</span>
-    <h1 class="chatTitle">Chat</h1>
-    <p class="chatSubtitle">
-      a cozy little place to hang out, talk, and leave cute messages 💗
-    </p>
-  </section>
+    <div class="chatGrid"></div>
+  </div>
 
-  <!-- MAIN -->
-  <section class="chatMain">
+  <div class="pageShell">
 
-    <div class="chatLeft">
-      <div class="chatIntroCard">
-        <h3>community vibe</h3>
-        <p>
-          this page is meant to feel like a soft little hangout room where people can stop by, say hi, and chill.
-        </p>
+    <nav class="topNav">
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
+
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
+        <a href="art.html" class="navButton">art</a>
+        <a href="chat.html" class="navButton active">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
       </div>
+    </nav>
 
-      <div class="chatRulesCard">
-        <h3>little room rules</h3>
-        <ul>
-          <li>be kind</li>
-          <li>keep it cute</li>
-          <li>respect people</li>
-          <li>no weird behavior</li>
-        </ul>
+    <header class="chatHeader">
+      <span class="chatTiny">dreamy community room</span>
+      <h1 class="chatTitle">Chat</h1>
+      <p class="chatSubtitle">
+        a little hangout room for messages, community vibes, and cute chaos 💗
+      </p>
+    </header>
+
+    <main class="chatScene">
+      <section class="communityRoom">
+
+        <aside class="leftColumn">
+          <article class="noteCard tiltedLeft">
+            <span class="cardTag">community vibe</span>
+            <h3>cozy, silly, friendly</h3>
+            <p>
+              this page is meant to feel like a little room where people can stop by, say hi, and hang out in my world.
+            </p>
+          </article>
+
+          <article class="noteCard">
+            <span class="cardTag">little note</span>
+            <h3>say hi nicely</h3>
+            <p>
+              keep it kind, cute, and respectful so the space stays fun and comfy for everyone.
+            </p>
+          </article>
+        </aside>
+
+        <section class="centerColumn">
+
+          <article class="chatHeroCard">
+            <div class="chatHeroGlow"></div>
+            <div class="chatHeroContent">
+              <span class="heroMini">community room online</span>
+              <h2>Come Hang Out</h2>
+              <p>
+                leave a message, say hi, or just vibe for a bit in the little PinkyDevil chat room.
+              </p>
+            </div>
+          </article>
+
+          <article class="chatEmbedCard">
+            <div class="windowBar">
+              <div class="windowDots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="windowTitle">community_chat.exe</span>
+            </div>
+
+            <div class="chatEmbedWrap">
+              <iframe
+                src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
+                width="100%"
+                height="560"
+                allowtransparency="yes"
+                allow="autoplay"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                scrolling="auto"
+                title="PinkyDevil community chat">
+              </iframe>
+            </div>
+          </article>
+
+        </section>
+
+        <aside class="rightColumn">
+          <article class="infoCard">
+            <span class="cardTag">room energy</span>
+            <h3>what this page is for</h3>
+            <ul class="infoList">
+              <li>saying hi</li>
+              <li>community messages</li>
+              <li>cute little chaos</li>
+              <li>hanging out</li>
+            </ul>
+          </article>
+
+          <article class="infoCard">
+            <span class="cardTag">future upgrades</span>
+            <h3>more community magic</h3>
+            <ul class="infoList">
+              <li>custom chat decorations</li>
+              <li>stream day room mode</li>
+              <li>extra glow effects</li>
+              <li>community highlights</li>
+            </ul>
+          </article>
+        </aside>
+
+      </section>
+    </main>
+
+    <footer class="siteFooter">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="chat.html">chat</a>
       </div>
-    </div>
+    </footer>
 
-    <div class="chatCenter">
-      <div class="chatEmbedCard">
-        <div class="chatEmbedTop">
-          <span class="chatDot"></span>
-          <span class="chatDot"></span>
-          <span class="chatDot"></span>
-          <p>community_chat.exe</p>
-        </div>
-
-        <div class="chatEmbedWrap">
-          <iframe
-            src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
-            width="100%"
-            height="560"
-            allowtransparency="yes"
-            allow="autoplay"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            scrolling="auto"
-            title="PinkyDevil Chat">
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="chatRight">
-      <div class="chatNoteCard">
-        <h3>what this page is for</h3>
-        <p>
-          saying hi, leaving messages, hanging out, and adding a little life to the site.
-        </p>
-      </div>
-
-      <div class="chatFutureCard">
-        <h3>future upgrades</h3>
-        <p>
-          later we can add stream-day decorations, glow effects, cute icons, and community highlights.
-        </p>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-
-<script src="../js/global-vfx.js"></script>
+  </div>
 </body>
 </html>
