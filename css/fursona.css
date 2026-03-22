@@ -1,195 +1,245 @@
-/* ========================= */
-/* BASE */
-/* ========================= */
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(180deg, #fff8fc 0%, #ffeef8 40%, #ffddea 100%);
-  color: #8f5273;
-}
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
-
-.fursonaHeader {
-  text-align: center;
-  padding: 50px 20px 20px;
-}
-
-.fursonaTiny {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.4);
-  color: #c15d94;
-  font-weight: 700;
-}
-
-.fursonaTitle {
-  font-size: clamp(50px, 8vw, 100px);
-  margin: 10px 0;
-  background: linear-gradient(180deg, #ff8cc9, #ff4fa4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.fursonaSubtitle {
-  color: #b85789;
-  font-weight: 600;
-}
-
-/* ========================= */
-/* MAIN LAYOUT */
-/* ========================= */
-
-.fursonaMain {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1400px;
-  margin: auto;
-}
-
-/* ========================= */
-/* LEFT */
-/* ========================= */
-
-.fursonaLeft {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.fursonaNote {
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.4);
-}
-
-.tiltedLeft {
-  transform: rotate(-2deg);
-}
-
-/* ========================= */
-/* CENTER SHRINE */
-/* ========================= */
-
-.fursonaCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fursonaShrine {
+.pageShell {
   position: relative;
+  min-height: 100vh;
+  padding: 28px;
+  z-index: 1;
+}
+
+.topNav {
+  max-width: 1300px;
+  margin: 0 auto 18px auto;
+  background: rgba(26, 24, 47, 0.92);
+  border: 2px solid rgba(255, 196, 230, 0.16);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255, 214, 240, 0.05) inset,
+    0 12px 30px rgba(0, 0, 0, 0.28);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+}
+
+.navLogoWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 214, 240, 0.06);
+  border: 1px solid rgba(255, 214, 240, 0.12);
+  flex-shrink: 0;
+}
+
+.navLogo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.navButton {
+  flex: 1 1 120px;
   text-align: center;
+  text-decoration: none;
+  color: #f4dff0;
+  background: rgba(255, 214, 240, 0.04);
+  border: 1px solid rgba(255, 214, 240, 0.14);
+  border-radius: 999px;
+  padding: 12px 18px;
+  transition: 0.25s ease;
 }
 
-/* glow halo */
-
-.fursonaHalo {
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,180,230,0.3), transparent 70%);
-  filter: blur(40px);
-  z-index: 0;
-  animation: pulseHalo 4s ease-in-out infinite;
+.navButton:hover,
+.navButton.active {
+  color: white;
+  background: linear-gradient(135deg, rgba(255, 190, 228, 0.28), rgba(255, 153, 209, 0.16));
+  box-shadow: 0 0 18px rgba(255, 182, 224, 0.18);
+  transform: translateY(-2px);
 }
-
-@keyframes pulseHalo {
-  0%,100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-/* image frame */
 
 .fursonaFrame {
-  position: relative;
-  z-index: 1;
-  border-radius: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: rgba(31, 34, 63, 0.95);
+  border: 2px solid rgba(255, 214, 240, 0.12);
+  border-radius: 30px;
   overflow: hidden;
-  background: rgba(255,255,255,0.4);
-  padding: 10px;
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(255,255,255,0.03) inset;
 }
 
-.fursonaImage {
-  width: 100%;
-  max-width: 420px;
-  display: block;
-  border-radius: 18px;
+.fursonaHeader {
+  position: relative;
+  padding: 54px 24px 34px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(255, 214, 240, 0.08);
+  background:
+    linear-gradient(180deg, rgba(33, 36, 67, 0.95), rgba(29, 31, 56, 0.98));
 }
 
-/* info */
-
-.fursonaInfo {
-  margin-top: 16px;
+.headerPattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 214, 240, 0.08) 0,
+    rgba(255, 214, 240, 0.08) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+  opacity: 0.5;
 }
 
-.fursonaTag {
-  font-size: 12px;
-  color: #c15d94;
-  font-weight: 700;
+.siteTitle {
+  position: relative;
+  margin: 0;
+  font-size: clamp(46px, 8vw, 88px);
+  color: #f6b8df;
+  text-shadow:
+    0 0 10px rgba(246, 184, 223, 0.35),
+    0 0 25px rgba(246, 184, 223, 0.18);
 }
 
-.fursonaInfo h2 {
-  margin: 6px 0;
-  color: #b44f82;
+.pageSubtitle {
+  position: relative;
+  margin: 12px auto 0;
+  max-width: 720px;
+  color: #ece8f8;
+  line-height: 1.7;
 }
 
-.fursonaPills {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.fursonaPills span {
-  background: rgba(255,255,255,0.6);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-}
-
-/* ========================= */
-/* RIGHT */
-/* ========================= */
-
-.fursonaRight {
-  display: flex;
-  flex-direction: column;
+.fursonaShowcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+  padding: 24px;
 }
 
-.fursonaCard {
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.4);
+.gifCard,
+.textCard {
+  background: rgba(18, 21, 42, 0.88);
+  border: 1px solid rgba(255, 214, 240, 0.12);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.02) inset,
+    0 12px 24px rgba(0,0,0,0.22);
 }
 
-.fursonaCard ul {
-  padding-left: 16px;
+.gifCard h2,
+.textCard h2 {
+  margin: 0 0 14px 0;
+  color: #f7bfdc;
 }
 
-/* ========================= */
-/* MOBILE */
-/* ========================= */
+.fursonaGif {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 0 22px rgba(255, 182, 224, 0.18);
+}
 
-@media (max-width: 900px) {
-  .fursonaMain {
+.fursonaText {
+  padding: 0 24px 24px;
+}
+
+.textCard p {
+  margin: 0;
+  color: #ece8f8;
+  line-height: 1.8;
+}
+
+.glowText {
+  animation: softGlow 3s ease-in-out infinite;
+}
+
+.glowTextSmall {
+  text-shadow:
+    0 0 8px rgba(247, 191, 220, 0.25),
+    0 0 16px rgba(247, 191, 220, 0.12);
+}
+
+@keyframes softGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px rgba(246, 184, 223, 0.22),
+      0 0 18px rgba(246, 184, 223, 0.12);
+  }
+  50% {
+    text-shadow:
+      0 0 14px rgba(246, 184, 223, 0.38),
+      0 0 28px rgba(246, 184, 223, 0.18);
+  }
+}
+
+.siteFooter {
+  max-width: 1300px;
+  margin: 16px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #ebe0f1;
+  opacity: 0.92;
+  font-size: 15px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 14px;
+}
+
+.footerLinks a {
+  color: #f0c4df;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay1 { transition-delay: 0.12s; }
+.delay2 { transition-delay: 0.24s; }
+.delay3 { transition-delay: 0.36s; }
+.delay4 { transition-delay: 0.48s; }
+
+@media (max-width: 760px) {
+  .pageShell {
+    padding: 14px;
+  }
+
+  .navButton {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .fursonaShowcase {
     grid-template-columns: 1fr;
   }
 
-  .tiltedLeft {
-    transform: none;
-  }
-
-  .fursonaImage {
-    max-width: 100%;
+  .siteFooter {
+    flex-direction: column;
   }
 }
