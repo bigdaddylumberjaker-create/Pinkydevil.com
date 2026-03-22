@@ -1,90 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Music - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/music.css"/>
-  <link rel="stylesheet" href="../css/global-vfx.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/music.css" />
 </head>
 <body>
 
-<!-- 🌌 BG -->
-<div class="vfxBg">
-  <div class="vfxStars"></div>
-</div>
+  <div class="musicBg">
+    <div class="musicGlow glow1"></div>
+    <div class="musicGlow glow2"></div>
+    <div class="musicGlow glow3"></div>
 
-<div class="pageFade">
+    <div class="musicSpark spark1">✦</div>
+    <div class="musicSpark spark2">✦</div>
+    <div class="musicSpark spark3">♡</div>
+    <div class="musicSpark spark4">✦</div>
+    <div class="musicSpark spark5">♡</div>
 
-  <!-- HEADER -->
-  <section class="musicHeader">
-    <span class="musicTiny">music room</span>
-    <h1 class="musicTitle">Music</h1>
-    <p class="musicSubtitle">
-      soft sounds, chaotic vibes, and everything in between 🎧💗
-    </p>
-  </section>
+    <div class="musicGrid"></div>
+  </div>
 
-  <!-- MAIN -->
-  <section class="musicMain">
+  <div class="pageShell">
 
-    <!-- LEFT -->
-    <div class="musicLeft">
+    <nav class="topNav">
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
 
-      <!-- FEATURE -->
-      <div class="musicFeatured">
-        <h3>featured track</h3>
-
-        <div class="musicPlayer">
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="featured music"
-            allowfullscreen>
-          </iframe>
-        </div>
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton active">music</a>
+        <a href="fursona.html" class="navButton">fursona</a>
+        <a href="art.html" class="navButton">art</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
       </div>
+    </nav>
 
-      <!-- YOUR MUSIC -->
-      <div class="musicList">
-        <h3>my music</h3>
+    <header class="musicHeader">
+      <span class="musicTiny">dreamy music room</span>
+      <h1 class="musicTitle">Music</h1>
+      <p class="musicSubtitle">
+        songs i made, music i love, and sounds that fit my little world 💗
+      </p>
+    </header>
 
-        <div class="musicItem">
-          <span>song 1</span>
-          <p>soft pink vibes</p>
-        </div>
+    <main class="musicScene">
+      <section class="musicRoom">
 
-        <div class="musicItem">
-          <span>song 2</span>
-          <p>late night energy</p>
-        </div>
+        <aside class="sideNote leftNote">
+          <span class="noteTag">music vibe</span>
+          <h3>soft, emotional, sparkly</h3>
+          <p>
+            i want this page to feel like stepping into a dreamy little room full of sound, mood, and favorite songs.
+          </p>
+        </aside>
 
+        <section class="centerColumn">
+
+          <article class="musicBannerCard">
+            <div class="bannerFrame">
+              <img src="../images/music-eye-banner.png" alt="Music page eye banner" class="musicBannerImage" />
+              <div class="bannerOverlay"></div>
+              <div class="bannerText">
+                <span class="bannerMini">now playing in my world</span>
+                <h2>Dreamy Sound Space</h2>
+                <p>
+                  music that feels soft, glowy, emotional, and a little magical.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="featuredTrackCard">
+            <div class="windowBar">
+              <div class="windowDots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="windowTitle">featured_track.mp3</span>
+            </div>
+
+            <div class="featuredTrackBody">
+              <div class="featuredText">
+                <span class="trackTag">featured song</span>
+                <h2>Your Featured Song</h2>
+                <p>
+                  put your main song or favorite video here so it becomes the emotional centerpiece of the page.
+                  you can swap this text later with the real song title, story, or why it matters to you.
+                </p>
+
+                <div class="trackPills">
+                  <span>original</span>
+                  <span>featured</span>
+                  <span>favorite</span>
+                </div>
+
+                <div class="trackButtons">
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="musicBtn">
+                    watch on youtube
+                  </a>
+                  <a href="#music-grid" class="musicBtn alt">
+                    see more music
+                  </a>
+                </div>
+              </div>
+
+              <div class="featuredVideoWrap">
+                <div class="featuredVideoFrame">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Featured music video"
+                    allowfullscreen
+                    loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <section class="musicGridSection" id="music-grid">
+            <article class="musicCard">
+              <div class="musicCardTop">
+                <span class="cardTag">track one</span>
+                <span class="softPill">favorite</span>
+              </div>
+              <h3>Song / Track One</h3>
+              <p>
+                add a short little note about this song, the feeling, or why you love it.
+              </p>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="musicCardBtn">
+                open
+              </a>
+            </article>
+
+            <article class="musicCard">
+              <div class="musicCardTop">
+                <span class="cardTag">track two</span>
+                <span class="softPill">mood</span>
+              </div>
+              <h3>Song / Track Two</h3>
+              <p>
+                another song slot for something dreamy, intense, pretty, or personal.
+              </p>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="musicCardBtn alt">
+                open
+              </a>
+            </article>
+
+            <article class="musicCard">
+              <div class="musicCardTop">
+                <span class="cardTag">track three</span>
+                <span class="softPill">energy</span>
+              </div>
+              <h3>Song / Track Three</h3>
+              <p>
+                use this space for another favorite song, cover, remix, or piece you want to show.
+              </p>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="musicCardBtn">
+                open
+              </a>
+            </article>
+
+            <article class="musicCard">
+              <div class="musicCardTop">
+                <span class="cardTag">track four</span>
+                <span class="softPill">soft</span>
+              </div>
+              <h3>Song / Track Four</h3>
+              <p>
+                a soft extra slot for music you love or want people to discover.
+              </p>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="musicCardBtn alt">
+                open
+              </a>
+            </article>
+          </section>
+
+        </section>
+
+        <aside class="rightColumn">
+          <article class="sidePanel">
+            <span class="noteTag">little note</span>
+            <h3>what belongs here</h3>
+            <p>
+              songs i made, songs i love, sax stuff, favorite videos, and sounds that feel like me.
+            </p>
+          </article>
+
+          <article class="sidePanel">
+            <span class="noteTag">future upgrades</span>
+            <h3>more music room magic</h3>
+            <ul class="futureList">
+              <li>album art cards</li>
+              <li>hover previews</li>
+              <li>audio players</li>
+              <li>categories</li>
+              <li>custom mini player bar</li>
+            </ul>
+          </article>
+        </aside>
+
+      </section>
+    </main>
+
+    <footer class="siteFooter">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="music.html">music</a>
       </div>
+    </footer>
 
-    </div>
-
-    <!-- RIGHT -->
-    <div class="musicRight">
-
-      <!-- MUSIC WHEEL -->
-      <div class="musicWheelWrap">
-        <div class="musicWheel"></div>
-      </div>
-
-      <!-- LINKS -->
-      <div class="musicLinks">
-        <a href="#" class="musicBtn vfxBtn">spotify</a>
-        <a href="#" class="musicBtn alt vfxBtn">soundcloud</a>
-      </div>
-
-    </div>
-
-  </section>
-
-</div>
-
-<script src="../js/global-vfx.js"></script>
-
+  </div>
 </body>
 </html>
