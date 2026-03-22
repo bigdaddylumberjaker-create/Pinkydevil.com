@@ -1,5 +1,5 @@
 /* ========================= */
-/* 🌌 GLOBAL DREAMY BACKGROUND */
+/* GLOBAL DREAMY VFX */
 /* ========================= */
 
 .vfxBg {
@@ -14,22 +14,22 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,180,220,0.4) 0px, transparent 2px),
+    radial-gradient(circle at 20% 30%, rgba(255,180,220,0.40) 0px, transparent 2px),
     radial-gradient(circle at 70% 40%, rgba(255,200,240,0.35) 0px, transparent 2px),
-    radial-gradient(circle at 50% 80%, rgba(255,170,230,0.3) 0px, transparent 2px);
-  background-size: 200px 200px;
+    radial-gradient(circle at 50% 80%, rgba(255,170,230,0.30) 0px, transparent 2px),
+    radial-gradient(circle at 15% 75%, rgba(255,220,245,0.28) 0px, transparent 2px),
+    radial-gradient(circle at 82% 18%, rgba(255,190,235,0.32) 0px, transparent 2px);
+  background-size: 220px 220px, 260px 260px, 300px 300px, 240px 240px, 280px 280px;
   animation: starsMove 30s linear infinite;
   opacity: 0.45;
 }
 
 @keyframes starsMove {
   0% { transform: translateY(0px); }
-  100% { transform: translateY(-200px); }
+  100% { transform: translateY(-220px); }
 }
 
-/* ========================= */
-/* ✨ FLOATING SPARKLES */
-/* ========================= */
+/* floating sparkles */
 
 .vfxSparkle {
   position: absolute;
@@ -38,27 +38,30 @@
   animation: sparkleFloat 6s ease-in-out infinite;
   pointer-events: none;
   user-select: none;
+  text-shadow:
+    0 0 10px rgba(255, 160, 215, 0.35),
+    0 0 18px rgba(255, 182, 224, 0.18);
 }
 
 @keyframes sparkleFloat {
-  0%,100% {
+  0%, 100% {
     transform: translateY(0);
-    opacity: 0.3;
+    opacity: 0.28;
   }
   50% {
     transform: translateY(-10px);
-    opacity: 0.7;
+    opacity: 0.72;
   }
 }
 
-/* ========================= */
-/* 🎬 PAGE FADE */
-/* ========================= */
+/* page fade */
 
 .pageFade {
   opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  transition: 0.9s cubic-bezier(.2,.8,.2,1);
+  transform: translateY(24px) scale(0.985);
+  transition:
+    opacity 0.9s cubic-bezier(.2,.8,.2,1),
+    transform 0.9s cubic-bezier(.2,.8,.2,1);
 }
 
 .pageFade.show {
@@ -66,17 +69,13 @@
   transform: translateY(0) scale(1);
 }
 
-/* ========================= */
-/* 🎵 BUTTON INTERACTION */
-/* ========================= */
+/* hover-ready buttons */
 
 .vfxBtn {
   cursor: pointer;
 }
 
-/* ========================= */
-/* 🖼️ ART CREDIT HOVER */
-/* ========================= */
+/* art hover credit helper */
 
 .artCard {
   position: relative;
@@ -91,17 +90,21 @@
 
 .artCredit {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   padding: 10px 14px;
   font-size: 13px;
+  font-weight: 700;
   background: rgba(255, 160, 210, 0.9);
   color: white;
   transform: translateY(100%);
-  transition: 0.25s ease;
+  transition: transform 0.25s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.artCard:hover .artCredit {
+.artCard:hover .artCredit,
+.artCard:focus-within .artCredit {
   transform: translateY(0);
 }
