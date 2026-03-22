@@ -1,106 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fursona - PinkyDevil</title>
 
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/fursona.css"/>
-  <link rel="stylesheet" href="../css/global-vfx.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/fursona.css" />
 </head>
 <body>
 
-<div class="vfxBg">
-  <div class="vfxStars"></div>
-</div>
+  <div class="checkerBackground"></div>
 
-<div class="pageFade">
+  <div class="pageShell">
 
-  <!-- HEADER -->
-  <section class="fursonaHeader">
-    <span class="fursonaTiny">character shrine</span>
-    <h1 class="fursonaTitle">Fursona</h1>
-    <p class="fursonaSubtitle">
-      a soft little shrine space for my character, vibe, and design 💗
-    </p>
-  </section>
+    <nav class="topNav reveal">
+      <a href="../index.html" class="navLogoWrap">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      </a>
 
-  <!-- MAIN -->
-  <section class="fursonaMain">
-
-    <!-- LEFT NOTES -->
-    <div class="fursonaLeft">
-      <div class="fursonaNote tiltedLeft">
-        <h3>character vibe</h3>
-        <p>
-          soft, cute, dreamy, and full of pink little energy.
-        </p>
+      <div class="navLinks">
+        <a href="about.html" class="navButton">about</a>
+        <a href="projects.html" class="navButton">projects</a>
+        <a href="streams.html" class="navButton">streams</a>
+        <a href="music.html" class="navButton">music</a>
+        <a href="fursona.html" class="navButton active">fursona</a>
+        <a href="art.html" class="navButton">art</a>
+        <a href="chat.html" class="navButton">chat</a>
+        <a href="donated.html" class="navButton">donated</a>
       </div>
+    </nav>
 
-      <div class="fursonaNote">
-        <h3>main piece</h3>
-        <p>
-          this page is built around one main art piece so it feels more like a shrine than a gallery.
-        </p>
-      </div>
-    </div>
+    <main class="fursonaFrame reveal delay1">
 
-    <!-- CENTER SHRINE -->
-    <div class="fursonaCenter">
-      <div class="fursonaShrine">
-        <div class="fursonaHalo"></div>
+      <section class="fursonaHeader">
+        <div class="headerPattern"></div>
+        <h1 class="siteTitle glowText">Fursona</h1>
+        <p class="pageSubtitle">a dedicated little shrine for the cutest creature energy 💗</p>
+      </section>
 
-        <div class="fursonaFrame">
-          <img
-            src="../images/fursona-main.png"
-            alt="Main fursona art"
-            class="fursonaImage"
-          />
+      <section class="fursonaShowcase reveal delay2">
+        <div class="gifCard bigCard">
+          <h2 class="glowTextSmall">main gif</h2>
+          <img src="../images/fursona1.gif" alt="Fursona gif 1" class="fursonaGif">
         </div>
 
-        <div class="fursonaInfo">
-          <span class="fursonaTag">main fursona art</span>
-          <h2>Pinky’s Fursona</h2>
+        <div class="gifCard bigCard">
+          <h2 class="glowTextSmall">second gif</h2>
+          <img src="../images/fursona2.gif" alt="Fursona gif 2" class="fursonaGif">
+        </div>
+      </section>
+
+      <section class="fursonaText reveal delay3">
+        <div class="textCard">
+          <h2 class="glowTextSmall">vibe</h2>
           <p>
-            this is the main centerpiece of the page. later, if you want, we can add a name, bio, little lore notes, or a few tiny detail badges.
+            soft, expressive, cute, pink-coded, and very much part of the whole identity of this site.
+            this page is here so people can actually stop and appreciate the art instead of it just being hidden somewhere.
           </p>
-
-          <div class="fursonaPills">
-            <span>pink coded</span>
-            <span>soft vibe</span>
-            <span>main design</span>
-          </div>
         </div>
+      </section>
+
+    </main>
+
+    <footer class="siteFooter reveal delay4">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="fursona.html">fursona</a>
       </div>
-    </div>
+    </footer>
 
-    <!-- RIGHT INFO -->
-    <div class="fursonaRight">
-      <div class="fursonaCard">
-        <h3>design notes</h3>
-        <ul>
-          <li>cute and soft</li>
-          <li>dreamy pink energy</li>
-          <li>personal mascot vibe</li>
-        </ul>
-      </div>
+  </div>
 
-      <div class="fursonaCard">
-        <h3>future upgrades</h3>
-        <ul>
-          <li>name + bio</li>
-          <li>small lore section</li>
-          <li>extra shrine sparkles</li>
-          <li>tiny detail cards</li>
-        </ul>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-
-<script src="../js/global-vfx.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 120);
+      });
+    });
+  </script>
 </body>
 </html>
