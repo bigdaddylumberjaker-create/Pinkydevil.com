@@ -20,49 +20,92 @@
 
   <!-- HEADER -->
   <section class="streamsHeader">
-    <span class="streamsTiny">live space</span>
+    <span class="streamsTiny">live room</span>
     <h1 class="streamsTitle">Streams</h1>
     <p class="streamsSubtitle">
-      come hang out, chat, and vibe in my stream room 💗
+      come hang out, chat, and vibe in my stream space 💗
     </p>
   </section>
 
-  <!-- MAIN STREAM AREA -->
+  <!-- MAIN GRID -->
   <section class="streamsMain">
 
-    <!-- STREAM PLAYER -->
-    <div class="streamPlayer">
-      <iframe
-        src="https://player.twitch.tv/?channel=pinkydevii&parent=localhost"
-        frameborder="0"
-        allowfullscreen="true"
-        scrolling="no">
-      </iframe>
+    <!-- LEFT SIDE -->
+    <div class="streamLeft">
+
+      <!-- PLAYER -->
+      <div class="streamPlayer">
+        <iframe
+          src="https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io"
+          frameborder="0"
+          allowfullscreen="true"
+          scrolling="no">
+        </iframe>
+      </div>
+
+      <!-- STATUS PANEL -->
+      <div class="streamInfo">
+        <h3>stream status</h3>
+        <p id="liveStatus">checking if live...</p>
+
+        <div class="streamMeta">
+          <span>🎮 just chatting / games</span>
+          <span>💗 pink vibes always</span>
+        </div>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div class="streamSchedule">
+        <h3>schedule</h3>
+
+        <div class="scheduleItem">
+          <span>mon</span>
+          <p>chill + chatting</p>
+        </div>
+
+        <div class="scheduleItem">
+          <span>wed</span>
+          <p>gaming chaos</p>
+        </div>
+
+        <div class="scheduleItem">
+          <span>fri</span>
+          <p>late night vibes</p>
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- LIVE CHAT -->
-    <div class="streamChat">
-      <iframe
-        src="https://www.twitch.tv/embed/pinkydevii/chat?parent=pinkydevil.com"
-        frameborder="0">
-      </iframe>
+    <!-- RIGHT SIDE -->
+    <div class="streamRight">
+
+      <!-- CHAT -->
+      <div class="streamChat">
+        <iframe
+          src="https://www.twitch.tv/embed/pinkydevii/chat?parent=bigdaddylumberjaker-create.github.io">
+        </iframe>
+      </div>
+
+      <!-- LINKS -->
+      <div class="streamLinks">
+        <a href="https://twitch.tv/pinkydevii" target="_blank" class="streamBtn vfxBtn">
+          watch on twitch
+        </a>
+
+        <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" class="streamBtn alt vfxBtn">
+          youtube
+        </a>
+      </div>
+
     </div>
 
-  </section>
-
-  <!-- BUTTONS -->
-  <section class="streamLinks">
-    <a href="https://twitch.tv/pinkydevii" target="_blank" class="streamBtn vfxBtn">
-      Watch on Twitch
-    </a>
-
-    <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" class="streamBtn alt vfxBtn">
-      YouTube
-    </a>
   </section>
 
 </div>
 
 <script src="../js/global-vfx.js"></script>
+<script src="../js/streams-live.js"></script>
+
 </body>
 </html>
