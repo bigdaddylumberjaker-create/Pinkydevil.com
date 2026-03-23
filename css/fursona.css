@@ -350,11 +350,35 @@
 
 .shrineHalo {
   position: absolute;
-  inset: 18px;
+  inset: 10px;
   border-radius: 28px;
-  background: radial-gradient(circle at center, rgba(255, 146, 206, 0.16), transparent 65%);
+  background:
+    radial-gradient(circle at center, rgba(255, 146, 206, 0.24), transparent 52%),
+    radial-gradient(circle at center, rgba(255, 210, 235, 0.18), transparent 72%);
   pointer-events: none;
-  filter: blur(14px);
+  filter: blur(20px);
+  animation: haloPulse 4.8s ease-in-out infinite;
+}
+.mainArtInner {
+  overflow: hidden;
+}
+
+.mainFursonaArt {
+  transition: transform 0.35s ease;
+}
+
+.mainShrineCard:hover .mainFursonaArt {
+  transform: scale(1.02);
+}
+@keyframes haloPulse {
+  0%, 100% {
+    transform: scale(0.98);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
 }
 
 .mainArtFrame {
@@ -362,8 +386,12 @@
   z-index: 2;
   padding: 16px;
   border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.14));
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.40), rgba(255,255,255,0.16));
   border: 1px solid rgba(255,255,255,0.62);
+  box-shadow:
+    0 0 24px rgba(255, 185, 225, 0.16),
+    inset 0 0 16px rgba(255,255,255,0.08);
 }
 
 .mainArtInner {
@@ -503,4 +531,32 @@
   .siteFooter {
     flex-direction: column;
   }
+  .mainShrineCard {
+  animation: shrineFloat 6s ease-in-out infinite;
+}
+.noteCard,
+.infoCard,
+.mainShrineCard {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.noteCard:hover,
+.infoCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 24px rgba(255, 160, 210, 0.22),
+    0 18px 34px rgba(255, 154, 206, 0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.mainShrineCard:hover {
+  box-shadow:
+    0 0 28px rgba(255, 160, 210, 0.20),
+    0 22px 40px rgba(255, 154, 206, 0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+@keyframes shrineFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
 }
