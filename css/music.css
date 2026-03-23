@@ -558,7 +558,14 @@
   inset: 0;
   margin: auto;
 }
+.vinylOuter {
+  animation: spinVinyl 8s linear infinite;
+}
 
+@keyframes spinVinyl {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .vinylCard p {
   margin: 0;
   color: #8d5374;
