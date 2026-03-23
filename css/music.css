@@ -593,7 +593,23 @@
   background: #f2ecff;
   color: #7260b8;
 }
+.musicRoom {
+  animation: roomFloat 6s ease-in-out infinite;
+}
 
+@keyframes roomFloat {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.albumCard:hover,
+.noteCard:hover,
+.featuredCard:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 0 26px rgba(255, 160, 210, 0.25),
+    0 18px 34px rgba(255, 154, 206, 0.18);
+  transition: 0.25s ease;
+}
 .musicCardBtn {
   display: inline-flex;
   margin-top: 14px;
