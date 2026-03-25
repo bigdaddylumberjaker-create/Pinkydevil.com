@@ -27,8 +27,8 @@
   <div class="pageShell">
 
     <nav class="topNav reveal delay1">
-      <a href="../index.html" class="navLogoWrap">
-        <img src="../images/logo.png" class="navLogo" />
+      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
+        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
 
       <div class="navLinks">
@@ -58,13 +58,17 @@
           <article class="noteCard tiltedLeft">
             <span class="cardTag">community vibe</span>
             <h3>cozy, silly, friendly</h3>
-            <p>this page is meant to feel like a little room where people can stop by.</p>
+            <p>
+              this page is meant to feel like a little room where people can stop by, say hi, and hang out in my world.
+            </p>
           </article>
 
           <article class="noteCard">
-            <span class="cardTag">decorations</span>
+            <span class="cardTag">custom chat decorations</span>
             <h3>cute room details</h3>
-            <p>hearts, stars, paws, sparkles, and soft glow vibes 💗</p>
+            <p>
+              hearts, stars, paws, stickers, and soft little pink decorations can make this page feel more alive.
+            </p>
           </article>
         </aside>
 
@@ -75,21 +79,46 @@
             <div class="chatHeroContent">
               <span class="heroMini">community room online</span>
               <h2>Come Hang Out</h2>
-              <p>leave a message or just vibe ✨</p>
+              <p>
+                leave a message, say hi, or just vibe for a bit in the little PinkyDevil chat room.
+              </p>
             </div>
+          </article>
+
+          <article class="chatControlsCard">
+            <div class="chatControlsTop">
+              <span class="cardTag">room controls</span>
+              <button id="streamModeToggle" class="streamModeBtn" type="button" aria-pressed="false">
+                enable stream mode
+              </button>
+            </div>
+            <p class="chatControlsText">
+              Stream mode adds extra glow and brighter room energy for live days.
+            </p>
           </article>
 
           <article class="chatEmbedCard">
             <div class="windowBar">
               <div class="windowDots">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
               <span class="windowTitle">community_chat.exe</span>
             </div>
 
             <div class="chatEmbedWrap">
               <iframe
-                src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s">
+                src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
+                width="100%"
+                height="560"
+                allowtransparency="yes"
+                allow="autoplay"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                scrolling="auto"
+                title="PinkyDevil community chat">
               </iframe>
             </div>
           </article>
@@ -97,19 +126,29 @@
         </section>
 
         <aside class="rightColumn reveal delay5">
+          <article class="infoCard">
+            <span class="cardTag">stream day room mode</span>
+            <h3>special stream nights</h3>
+            <p>
+              on stream days this room can switch into a more glowy mode with brighter accents and more active vibes.
+            </p>
+          </article>
 
           <article class="infoCard">
-            <span class="cardTag">stream mode</span>
-            <h3>stream day room</h3>
-            <p>extra glow + energy when live 💗</p>
+            <span class="cardTag">extra glow effects</span>
+            <h3>soft room lighting</h3>
+            <p>
+              stronger pink glow around the chat box, shimmer on the hero card, and little pulses around the room.
+            </p>
           </article>
 
           <article class="infoCard">
             <span class="cardTag">community highlights</span>
-            <h3>featured vibes</h3>
-            <p>best messages + moments later ✨</p>
+            <h3>cute little spotlight area</h3>
+            <div class="highlightCard">
+              featured messages and fun moments can go here later ✦
+            </div>
           </article>
-
         </aside>
 
       </section>
@@ -126,6 +165,28 @@
   </div>
 
   <script src="../js/main.js"></script>
+  <script>
+    (function () {
+      const toggle = document.getElementById("streamModeToggle");
+      if (!toggle) return;
 
+      const STORAGE_KEY = "pinkydevil-chat-stream-mode";
+
+      function applyMode(enabled) {
+        document.body.classList.toggle("streamMode", enabled);
+        toggle.setAttribute("aria-pressed", enabled ? "true" : "false");
+        toggle.textContent = enabled ? "disable stream mode" : "enable stream mode";
+      }
+
+      const saved = localStorage.getItem(STORAGE_KEY) === "true";
+      applyMode(saved);
+
+      toggle.addEventListener("click", () => {
+        const enabled = !document.body.classList.contains("streamMode");
+        applyMode(enabled);
+        localStorage.setItem(STORAGE_KEY, String(enabled));
+      });
+    })();
+  </script>
 </body>
 </html>
