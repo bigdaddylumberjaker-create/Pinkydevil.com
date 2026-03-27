@@ -127,7 +127,7 @@
   }
 }
 
-/* local nav */
+/* nav */
 
 .topNav {
   max-width: 1320px;
@@ -242,14 +242,14 @@
   font-weight: 700;
 }
 
-/* room */
+/* scene */
 
 .donatedScene {
   max-width: 1320px;
   margin: 0 auto;
 }
 
-.supportRoom {
+.supportShrine {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr) 240px;
   gap: 20px;
@@ -273,13 +273,12 @@
   gap: 18px;
 }
 
-/* cards */
+/* shared cards */
 
 .noteCard,
 .infoCard,
-.supportShrineCard,
-.thanksCard,
-.thanksMiniCard {
+.mainSupportCard,
+.leaderboardCard {
   box-shadow:
     0 18px 34px rgba(255, 154, 206, 0.12),
     inset 0 0 0 1px rgba(255,255,255,0.12);
@@ -297,8 +296,7 @@
   transform: rotate(-2deg);
 }
 
-.cardTag,
-.featureTag {
+.cardTag {
   display: inline-block;
   margin-bottom: 10px;
   color: #c15e93;
@@ -310,22 +308,15 @@
 
 .noteCard h3,
 .infoCard h3,
-.supportPanel h2,
-.thanksMiniCard h3 {
+.leaderboardCard h3 {
   margin: 0 0 10px;
   color: #b44f82;
   line-height: 1.08;
-}
-
-.noteCard h3,
-.infoCard h3 {
   font-size: 26px;
 }
 
 .noteCard p,
-.infoCard p,
-.supportPanel p,
-.thanksMiniCard p {
+.infoCard p {
   margin: 0;
   color: #8d5374;
   line-height: 1.82;
@@ -338,69 +329,45 @@
   line-height: 1.9;
 }
 
-/* shrine */
+/* main support */
 
-.supportShrineCard {
+.mainSupportCard {
   position: relative;
-  padding: 26px;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.40);
-  border: 1px solid rgba(255,255,255,0.60);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   overflow: hidden;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.22));
+  border: 1px solid rgba(255,255,255,0.64);
+  padding: 26px;
 }
 
 .supportHalo {
   position: absolute;
-  inset: 18px;
-  border-radius: 28px;
-  background: radial-gradient(circle at center, rgba(255, 146, 206, 0.16), transparent 65%);
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(255, 130, 195, 0.18), transparent 56%);
   pointer-events: none;
-  filter: blur(14px);
+  animation: haloPulse 4.8s ease-in-out infinite;
 }
 
-.supportPanel {
+@keyframes haloPulse {
+  0%, 100% {
+    opacity: 0.68;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.mainSupportInner {
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
-.supportPanel h2 {
-  font-size: 42px;
-}
-
-.donationBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  margin-top: 18px;
-  padding: 16px 24px;
-  border-radius: 18px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #ff77b9, #ff9ad1);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.58);
-  box-shadow:
-    0 0 22px rgba(255, 120, 190, 0.22),
-    0 10px 22px rgba(255, 154, 206, 0.14);
-  transition: 0.22s ease;
-}
-
-.donationBtn:hover {
-  transform: translateY(-2px) scale(1.03);
-}
-
-.supportPills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.supportPills span,
+.heroMini,
 .softPill {
   display: inline-flex;
   align-items: center;
@@ -416,51 +383,196 @@
   line-height: 1;
 }
 
-/* why support section */
-
-.thanksCard {
-  padding: 22px;
-  border-radius: 28px;
-  background: rgba(255,255,255,0.40);
-  border: 1px solid rgba(255,255,255,0.60);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.mainSupportInner h2 {
+  margin: 12px 0 10px;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 0.96;
+  color: #b44f82;
 }
 
-.thanksTop {
+.mainSupportInner p {
+  margin: 0 auto;
+  max-width: 720px;
+  color: #8d5374;
+  line-height: 1.82;
+  font-size: 18px;
+}
+
+.donationBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 16px 24px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  color: white;
+  background: linear-gradient(135deg, #ff7ebb, #ff5da9);
+  box-shadow:
+    0 0 26px rgba(255, 120, 190, 0.22),
+    0 14px 28px rgba(255, 154, 206, 0.16);
+  transition: 0.22s ease;
+}
+
+.donationBtn:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
+.supportPills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.supportPills span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.58);
+  color: #a86087;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* leaderboards */
+
+.leaderboards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.leaderboardCard {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.20));
+  border: 1px solid rgba(255,255,255,0.60);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.leaderboardCard::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at center, rgba(255, 160, 210, 0.16), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  transform: scale(0.9);
+}
+
+.leaderboardCard:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 0 34px rgba(255, 160, 210, 0.24),
+    0 22px 40px rgba(255, 154, 206, 0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.leaderboardCard:hover::before {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.donationBoard:hover {
+  box-shadow:
+    0 0 40px rgba(255, 120, 190, 0.30),
+    0 22px 40px rgba(255, 154, 206, 0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.leaderboardTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.thanksGrid {
+.leaderboardList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
+  margin-top: 16px;
 }
 
-.thanksMiniCard {
-  padding: 18px;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.60);
+.leaderboardRow {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.52);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.thanksMiniCard.pink {
-  background: linear-gradient(180deg, rgba(255,240,248,0.92), rgba(255,228,240,0.82));
+.leaderboardRow:hover {
+  transform: translateX(4px);
+  box-shadow: 0 0 18px rgba(255, 170, 215, 0.18);
 }
 
-.thanksMiniCard.lavender {
-  background: linear-gradient(180deg, rgba(246,240,255,0.92), rgba(236,228,255,0.82));
+.rankBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff0f8, #ffd7eb);
+  color: #b44f82;
+  font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.62);
 }
 
-.thanksMiniCard.peach {
-  background: linear-gradient(180deg, rgba(255,245,235,0.92), rgba(255,234,220,0.82));
+.rank1 .rankBadge {
+  background: linear-gradient(135deg, #ffd76c, #fff0b0);
+  color: #8a5f00;
 }
 
-.thanksMiniCard h3 {
-  font-size: 26px;
+.rank2 .rankBadge {
+  background: linear-gradient(135deg, #dfe6f0, #f7fbff);
+  color: #617089;
+}
+
+.rank3 .rankBadge {
+  background: linear-gradient(135deg, #f0c7b0, #ffe7d7);
+  color: #8c5a3b;
+}
+
+.leaderboardPerson {
+  display: grid;
+  gap: 2px;
+}
+
+.leaderboardPerson strong {
+  color: #b44f82;
+  font-size: 16px;
+}
+
+.leaderboardPerson span {
+  color: #9a6481;
+  font-size: 13px;
+}
+
+.leaderboardAmount {
+  color: #b44f82;
+  font-size: 20px;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 /* footer */
@@ -492,15 +604,17 @@
 /* responsive */
 
 @media (max-width: 1280px) {
-  .supportRoom {
+  .supportShrine {
     grid-template-columns: 1fr;
   }
 
   .tiltedLeft {
     transform: none;
   }
+}
 
-  .thanksGrid {
+@media (max-width: 980px) {
+  .leaderboards {
     grid-template-columns: 1fr;
   }
 }
@@ -522,16 +636,32 @@
     font-size: 16px;
   }
 
-  .supportRoom {
+  .supportShrine {
     padding: 18px;
     border-radius: 28px;
   }
 
   .noteCard h3,
   .infoCard h3,
-  .supportPanel h2,
-  .thanksMiniCard h3 {
+  .leaderboardCard h3 {
     font-size: 24px;
+  }
+
+  .mainSupportInner h2 {
+    font-size: 28px;
+  }
+
+  .mainSupportInner p {
+    font-size: 16px;
+  }
+
+  .leaderboardRow {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+
+  .leaderboardAmount {
+    grid-column: 2;
+    justify-self: end;
   }
 
   .siteFooter {
