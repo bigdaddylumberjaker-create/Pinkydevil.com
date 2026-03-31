@@ -26,7 +26,7 @@
 
   <div class="pageShell">
 
-    <nav class="topNav reveal delay1">
+    <nav class="topNav reveal">
       <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
@@ -43,7 +43,7 @@
       </div>
     </nav>
 
-    <header class="musicHeader reveal delay2">
+    <header class="musicHeader reveal delay1">
       <span class="musicTiny">dreamy music room</span>
       <h1 class="musicTitle">Music</h1>
       <p class="musicSubtitle">
@@ -51,10 +51,10 @@
       </p>
     </header>
 
-    <main class="musicScene">
+    <main class="musicScene reveal delay2">
       <section class="musicRoom">
 
-        <article class="heroBannerCard reveal delay3">
+        <article class="heroBannerCard reveal delay2">
           <div class="heroBannerFrame">
             <img src="../images/music-eye-banner.png" alt="Music page eye banner" class="heroBannerImage" />
             <div class="heroBannerOverlay"></div>
@@ -71,8 +71,8 @@
 
         <section class="musicColumns">
 
-          <aside class="leftColumn reveal delay4">
-            <article class="noteCard tiltedLeft">
+          <aside class="leftColumn">
+            <article class="noteCard tiltedLeft reveal delay2 floatingCard">
               <span class="cardTag">music vibe</span>
               <h3>soft, emotional, sparkly</h3>
               <p>
@@ -80,7 +80,7 @@
               </p>
             </article>
 
-            <article class="noteCard">
+            <article class="noteCard reveal delay3 floatingCard">
               <span class="cardTag">what belongs here</span>
               <h3>songs i made + love</h3>
               <p>
@@ -89,9 +89,8 @@
             </article>
           </aside>
 
-          <section class="centerColumn reveal delay5">
-
-            <article class="featuredCard">
+          <section class="centerColumn">
+            <article class="featuredCard reveal delay3">
               <div class="featuredTop">
                 <span class="cardTag">featured song</span>
                 <span class="softPill">main pick</span>
@@ -134,9 +133,9 @@
               </div>
             </article>
 
-            <section class="albumShelf" id="music-grid">
+            <section class="albumShelf reveal delay4" id="music-grid">
 
-              <article class="albumCard pink">
+              <article class="albumCard pink floatingCard">
                 <div class="albumTop">
                   <span class="cardTag">track one</span>
                   <span class="softPill">favorite</span>
@@ -150,7 +149,7 @@
                 </a>
               </article>
 
-              <article class="albumCard lavender">
+              <article class="albumCard lavender floatingCard">
                 <div class="albumTop">
                   <span class="cardTag">track two</span>
                   <span class="softPill">mood</span>
@@ -164,7 +163,7 @@
                 </a>
               </article>
 
-              <article class="albumCard peach">
+              <article class="albumCard peach floatingCard">
                 <div class="albumTop">
                   <span class="cardTag">track three</span>
                   <span class="softPill">energy</span>
@@ -178,7 +177,7 @@
                 </a>
               </article>
 
-              <article class="albumCard blue">
+              <article class="albumCard blue floatingCard">
                 <div class="albumTop">
                   <span class="cardTag">track four</span>
                   <span class="softPill">soft</span>
@@ -195,8 +194,8 @@
             </section>
           </section>
 
-          <aside class="rightColumn reveal delay6">
-            <article class="noteCard tiltedRight">
+          <aside class="rightColumn">
+            <article class="noteCard tiltedRight reveal delay3 floatingCard">
               <span class="cardTag">future upgrades</span>
               <h3>more music room magic</h3>
               <ul class="futureList">
@@ -208,7 +207,7 @@
               </ul>
             </article>
 
-            <article class="vinylCard">
+            <article class="vinylCard reveal delay4 floatingCard">
               <div class="vinylOuter">
                 <div class="vinylInner"></div>
               </div>
@@ -220,7 +219,7 @@
       </section>
     </main>
 
-    <footer class="siteFooter reveal delay6">
+    <footer class="siteFooter reveal delay4">
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
@@ -231,5 +230,15 @@
   </div>
 
   <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
 </body>
 </html>
