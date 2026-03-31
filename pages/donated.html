@@ -26,7 +26,7 @@
 
   <div class="pageShell">
 
-    <nav class="topNav reveal delay1">
+    <nav class="topNav reveal">
       <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
@@ -43,7 +43,7 @@
       </div>
     </nav>
 
-    <header class="donatedHeader reveal delay2">
+    <header class="donatedHeader reveal delay1">
       <span class="donatedTiny">dreamy support shrine</span>
       <h1 class="donatedTitle">Support</h1>
       <p class="donatedSubtitle">
@@ -51,11 +51,11 @@
       </p>
     </header>
 
-    <main class="donatedScene">
+    <main class="donatedScene reveal delay2">
       <section class="supportShrine">
 
-        <aside class="leftColumn reveal delay3">
-          <article class="noteCard tiltedLeft">
+        <aside class="leftColumn">
+          <article class="noteCard tiltedLeft reveal delay2 floatingCard">
             <span class="cardTag">support vibe</span>
             <h3>kindness means a lot</h3>
             <p>
@@ -63,7 +63,7 @@
             </p>
           </article>
 
-          <article class="noteCard">
+          <article class="noteCard reveal delay3 floatingCard">
             <span class="cardTag">little note</span>
             <h3>thank you always</h3>
             <p>
@@ -73,8 +73,7 @@
         </aside>
 
         <section class="centerColumn">
-
-          <article class="mainSupportCard reveal delay4">
+          <article class="mainSupportCard reveal delay3">
             <div class="supportHalo"></div>
 
             <div class="mainSupportInner">
@@ -102,9 +101,9 @@
             </div>
           </article>
 
-          <section class="leaderboards reveal delay5">
+          <section class="leaderboards reveal delay4">
 
-            <article class="leaderboardCard donationBoard">
+            <article class="leaderboardCard donationBoard floatingCard">
               <div class="leaderboardTop">
                 <span class="cardTag">donation leaderboard</span>
                 <span class="softPill">supporters</span>
@@ -151,7 +150,7 @@
               </div>
             </article>
 
-            <article class="leaderboardCard givenBoard">
+            <article class="leaderboardCard givenBoard floatingCard">
               <div class="leaderboardTop">
                 <span class="cardTag">giving leaderboard</span>
                 <span class="softPill">donated by me</span>
@@ -201,8 +200,8 @@
           </section>
         </section>
 
-        <aside class="rightColumn reveal delay6">
-          <article class="infoCard">
+        <aside class="rightColumn">
+          <article class="infoCard reveal delay3 floatingCard">
             <span class="cardTag">support options</span>
             <h3>main place</h3>
             <ul class="infoList">
@@ -213,7 +212,7 @@
             </ul>
           </article>
 
-          <article class="infoCard">
+          <article class="infoCard reveal delay4 floatingCard">
             <span class="cardTag">future upgrades</span>
             <h3>more shrine magic</h3>
             <ul class="infoList">
@@ -228,7 +227,7 @@
       </section>
     </main>
 
-    <footer class="siteFooter reveal delay6">
+    <footer class="siteFooter reveal delay4">
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
@@ -239,5 +238,15 @@
   </div>
 
   <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
 </body>
 </html>
