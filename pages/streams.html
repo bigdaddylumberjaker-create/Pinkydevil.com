@@ -24,7 +24,7 @@
   </div>
 
   <div class="pageShell">
-    <nav class="topNav">
+    <nav class="topNav reveal">
       <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
@@ -41,7 +41,7 @@
       </div>
     </nav>
 
-    <header class="streamsHeader">
+    <header class="streamsHeader reveal delay1">
       <span class="streamsTiny">streaming room</span>
       <h1 class="streamsTitle">Streams</h1>
       <p class="streamsSubtitle">
@@ -49,10 +49,10 @@
       </p>
     </header>
 
-    <main class="streamsScene">
+    <main class="streamsScene reveal delay2">
       <section class="streamRoom">
 
-        <aside class="sideCard leftCard">
+        <aside class="sideCard leftCard reveal delay2 floatingCard">
           <span class="cardTag">stream vibe</span>
           <h3>cute, live, and cozy</h3>
           <p>
@@ -61,7 +61,7 @@
         </aside>
 
         <section class="centerColumn">
-          <article class="mainMonitor" id="mainMonitorCard">
+          <article class="mainMonitor reveal delay3">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -109,8 +109,8 @@
             </div>
           </article>
 
-          <section class="deskWidgets">
-            <article class="widgetCard">
+          <section class="deskWidgets reveal delay4">
+            <article class="widgetCard floatingCard">
               <div class="widgetTop">
                 <span class="widgetTag">schedule</span>
                 <span class="softPill">timeline</span>
@@ -143,7 +143,7 @@
               </div>
             </article>
 
-            <article class="widgetCard">
+            <article class="widgetCard floatingCard">
               <div class="widgetTop">
                 <span class="widgetTag">chat panel</span>
                 <span class="softPill">community</span>
@@ -157,7 +157,7 @@
               </div>
             </article>
 
-            <article class="widgetCard">
+            <article class="widgetCard floatingCard">
               <div class="widgetTop">
                 <span class="widgetTag">stream setup</span>
                 <span class="softPill">about</span>
@@ -178,7 +178,7 @@
         </section>
 
         <aside class="rightColumn">
-          <article class="sideCard">
+          <article class="sideCard reveal delay3 floatingCard">
             <span class="cardTag">stream status</span>
             <h3 id="streamStatusTitle">currently offline</h3>
             <p id="streamStatusDescription">
@@ -197,7 +197,7 @@
             </div>
           </article>
 
-          <article class="sideCard">
+          <article class="sideCard reveal delay4 floatingCard">
             <span class="cardTag">thumbnail preview</span>
             <div class="thumbnailWrap">
               <img
@@ -213,7 +213,7 @@
       </section>
     </main>
 
-    <footer class="siteFooter">
+    <footer class="siteFooter reveal delay4">
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
@@ -222,6 +222,17 @@
     </footer>
   </div>
 
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
   <script src="../js/streams-live.js"></script>
 </body>
 </html>
