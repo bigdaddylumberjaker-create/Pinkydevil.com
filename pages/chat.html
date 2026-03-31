@@ -26,7 +26,7 @@
 
   <div class="pageShell">
 
-    <nav class="topNav reveal delay1">
+    <nav class="topNav reveal">
       <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
       </a>
@@ -43,7 +43,7 @@
       </div>
     </nav>
 
-    <header class="chatHeader reveal delay2">
+    <header class="chatHeader reveal delay1">
       <span class="chatTiny">dreamy community room</span>
       <h1 class="chatTitle">Chat</h1>
       <p class="chatSubtitle">
@@ -51,11 +51,11 @@
       </p>
     </header>
 
-    <main class="chatScene">
+    <main class="chatScene reveal delay2">
       <section class="communityRoom">
 
-        <aside class="leftColumn reveal delay3">
-          <article class="noteCard tiltedLeft">
+        <aside class="leftColumn">
+          <article class="noteCard tiltedLeft reveal delay2 floatingCard">
             <span class="cardTag">community vibe</span>
             <h3>cozy, silly, friendly</h3>
             <p>
@@ -63,7 +63,7 @@
             </p>
           </article>
 
-          <article class="noteCard">
+          <article class="noteCard reveal delay3 floatingCard">
             <span class="cardTag">custom chat decorations</span>
             <h3>cute room details</h3>
             <p>
@@ -72,9 +72,9 @@
           </article>
         </aside>
 
-        <section class="centerColumn reveal delay4">
+        <section class="centerColumn">
 
-          <article class="chatHeroCard">
+          <article class="chatHeroCard reveal delay3">
             <div class="chatHeroGlow"></div>
             <div class="chatHeroContent">
               <span class="heroMini">community room online</span>
@@ -85,7 +85,7 @@
             </div>
           </article>
 
-          <article class="chatControlsCard">
+          <article class="chatControlsCard reveal delay3 floatingCard">
             <div class="chatControlsTop">
               <span class="cardTag">room controls</span>
               <button id="streamModeToggle" class="streamModeBtn" type="button" aria-pressed="false">
@@ -97,7 +97,7 @@
             </p>
           </article>
 
-          <article class="chatEmbedCard">
+          <article class="chatEmbedCard reveal delay4">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -125,8 +125,8 @@
 
         </section>
 
-        <aside class="rightColumn reveal delay5">
-          <article class="infoCard">
+        <aside class="rightColumn">
+          <article class="infoCard reveal delay3 floatingCard">
             <span class="cardTag">stream day room mode</span>
             <h3>special stream nights</h3>
             <p>
@@ -134,7 +134,7 @@
             </p>
           </article>
 
-          <article class="infoCard">
+          <article class="infoCard reveal delay4 floatingCard">
             <span class="cardTag">extra glow effects</span>
             <h3>soft room lighting</h3>
             <p>
@@ -142,7 +142,7 @@
             </p>
           </article>
 
-          <article class="infoCard">
+          <article class="infoCard reveal delay4 floatingCard">
             <span class="cardTag">community highlights</span>
             <h3>cute little spotlight area</h3>
             <div class="highlightCard">
@@ -154,7 +154,7 @@
       </section>
     </main>
 
-    <footer class="siteFooter reveal delay6">
+    <footer class="siteFooter reveal delay4">
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
@@ -166,6 +166,15 @@
 
   <script src="../js/main.js"></script>
   <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+
     (function () {
       const toggle = document.getElementById("streamModeToggle");
       if (!toggle) return;
