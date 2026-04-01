@@ -770,4 +770,64 @@ button:focus-visible {
     width: 108px;
     height: 108px;
   }
+  /* ========================= */
+/* SITE-WIDE POLISH PASS */
+/* ========================= */
+
+.sitePolishBtn {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease;
+}
+
+.sitePolishBtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.04);
+  box-shadow:
+    0 0 20px rgba(255, 170, 215, 0.20),
+    0 10px 22px rgba(255, 154, 206, 0.14);
+}
+
+.sitePolishBtn:active {
+  transform: scale(0.98);
+}
+
+.hoverSoundReady {
+  cursor: pointer;
+}
+
+/* art credit helper */
+.artCreditWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.artCreditLabel {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(30, 12, 24, 0.62);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.artCreditWrap:hover .artCreditLabel,
+.artCreditWrap:focus-within .artCreditLabel {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
