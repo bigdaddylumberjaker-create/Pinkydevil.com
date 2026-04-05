@@ -44,89 +44,116 @@
     </nav>
 
     <header class="aboutHeader reveal delay1">
-      <span class="aboutTiny">about me</span>
-      <h1 class="aboutTitle">About</h1>
+      <span class="aboutTiny">little profile world</span>
+      <h1 class="aboutTitle">About Me</h1>
       <p class="aboutSubtitle">
-        a soft little room for who i am, what i like, and the dreamy vibe behind my world 💗
+        a dreamy little space about who i am, what i love, and the kind of world i’m trying to build online
       </p>
     </header>
 
     <main class="aboutScene reveal delay2">
       <section class="aboutRoom">
 
-        <article class="aboutCard noteCard reveal delay2 floatingCard">
-          <span class="cardTag">my vibe</span>
-          <h3>calm, caring, cute</h3>
+        <article class="memoryCard cardLeftTop reveal delay2 floatingCard">
+          <span class="cardTag">who i am</span>
+          <h3>Pinky / PinkyDevil</h3>
           <p>
-            i like making things feel soft, pink, dreamy, and personal. i want my site to feel like its own little world instead of just a normal page.
+            i’m a pink-loving, dreamy, creative little gremlin building a world that feels personal, cute, glowy, and alive instead of generic.
           </p>
         </article>
 
-        <article class="aboutMainCard reveal delay2">
-          <div class="mainArtFrame artCreditWrap" tabindex="0">
+        <article class="portraitCard reveal delay2">
+          <div class="portraitFrame artCreditWrap" tabindex="0">
             <img
               src="../images/about/about-main.png"
-              alt="About page main artwork"
-              class="aboutMainImage zoomableArt"
+              alt="PinkyDevil art"
+              class="portraitImage"
             />
             <div class="artCreditLabel">art by: fill in artist name 💗</div>
           </div>
 
-          <div class="mainInfo">
-            <span class="featureTag">main piece</span>
-            <h2>PinkyDevil</h2>
-            <p>
-              this is the main about page art. you can replace this text with your own intro, little bio, or whatever best fits your vibe.
-            </p>
-
+          <div class="portraitInfo">
             <div class="infoPills">
-              <span>pink lover</span>
-              <span>cute chaos</span>
-              <span>dreamy world</span>
+              <span>pink coded</span>
+              <span>streamer</span>
+              <span>music</span>
+              <span>creative</span>
             </div>
           </div>
         </article>
 
-        <article class="aboutCard noteCard reveal delay3 floatingCard">
-          <span class="cardTag">things i like</span>
-          <h3>music, games, fluffy vibes</h3>
+        <article class="memoryCard cardRightTop reveal delay3 floatingCard">
+          <span class="cardTag">main vibe</span>
+          <h3>cute + personal</h3>
           <p>
-            i like music, games, pink aesthetics, and making things feel cozy and expressive.
+            i want my site to feel like stepping into my space, not just opening a normal portfolio.
           </p>
         </article>
 
-        <section class="aboutMiniGrid reveal delay3">
-          <article class="miniCard floatingCard">
-            <span class="miniTag">work</span>
-            <h3>saxophone life</h3>
-            <p>this space can talk about your saxophone work, lessons, and instrument side of your life.</p>
+        <section class="aboutGridCards reveal delay3">
+          <article class="aboutMiniCard floatingCard">
+            <span class="miniTag">things i love</span>
+            <h3>music, games, cute design</h3>
+            <p>
+              music, FPS games, puzzle games, furry stuff, soft colors, playful effects, and making websites feel magical.
+            </p>
           </article>
 
-          <article class="miniCard floatingCard">
-            <span class="miniTag">style</span>
-            <h3>pink everything</h3>
-            <p>this space can talk about your pink obsession, cute aesthetics, and dreamy visual style.</p>
-          </article>
-
-          <article class="miniCard floatingCard">
-            <span class="miniTag">energy</span>
-            <h3>soft but playful</h3>
-            <p>this space can talk about your personality and how you want your site and content to feel.</p>
+          <article class="aboutMiniCard floatingCard">
+            <span class="miniTag">what i’m building</span>
+            <h3>my own little world</h3>
+            <p>
+              pages for streams, music, projects, art, fursona stuff, community things, and everything that makes the site feel like me.
+            </p>
           </article>
         </section>
 
-        <section class="aboutGallery reveal delay4">
-          <article class="galleryCard wideCard floatingCard">
-            <div class="galleryImageWrap artCreditWrap" tabindex="0">
-              <img
-                src="../images/about/about-extra1.png"
-                alt="About page extra artwork one"
-                class="galleryImage zoomableArt"
-              />
-              <div class="artCreditLabel">art by: fill in artist name 💗</div>
-            </div>
+        <section class="storyCard reveal delay4">
+          <span class="miniTag">my little corner of the internet</span>
+          <h3>story</h3>
+          <p>
+            this site is where all my ideas, pages, creative stuff, and personality get stitched together. i like experimenting until things feel more and more like me instead of copying what everyone else does.
+          </p>
+          <p>
+            the big dream is to make something expressive, atmospheric, and memorable — a website with motion, softness, glow, and little details that make people feel like they found a real person’s world.
+          </p>
+        </section>
 
-            <div class="galleryInfo">
-              <span class="miniTag">extra visual</span>
-              <h3>memory frame one</h3>
-              <p>use this for
+        <section class="futureCard reveal delay4 floatingCard">
+          <span class="miniTag">future energy</span>
+          <h3>later</h3>
+          <ul class="futureList">
+            <li>more custom page scenes</li>
+            <li>better art-centered layouts</li>
+            <li>extra motion + sparkle details</li>
+            <li>more unique PinkyDevil identity</li>
+          </ul>
+        </section>
+
+      </section>
+    </main>
+
+    <footer class="siteFooter reveal delay4">
+      <div>© PinkyDevil</div>
+      <div class="footerLinks">
+        <a href="../index.html">home</a>
+        <a href="about.html">about</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
+  <script src="../js/ui-polish.js"></script>
+</body>
+</html>
