@@ -65,8 +65,9 @@
 
         <article class="featuredFrame reveal delay2">
           <div class="frameOuter">
-            <div class="frameInner">
-              <img src="../images/art/featured-art.png" alt="Featured artwork" class="featuredArtImage">
+            <div class="frameInner artCreditWrap" tabindex="0">
+              <img src="../images/art/featured-art.png" alt="Featured artwork" class="featuredArtImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
           </div>
 
@@ -95,9 +96,10 @@
         </article>
 
         <div class="sideFrames reveal delay3">
-          <article class="smallFrame rotateLeft">
-            <div class="smallFrameOuter">
-              <img src="../images/art/art1.png" alt="Artwork 1" class="smallFrameImage">
+          <article class="smallFrame rotateLeft floatingCard">
+            <div class="smallFrameOuter artCreditWrap" tabindex="0">
+              <img src="../images/art/art1.png" alt="Artwork 1" class="smallFrameImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
             <div class="smallFrameLabel">
               <h3>Artwork One</h3>
@@ -105,9 +107,10 @@
             </div>
           </article>
 
-          <article class="smallFrame rotateRight">
-            <div class="smallFrameOuter">
-              <img src="../images/art/art2.png" alt="Artwork 2" class="smallFrameImage">
+          <article class="smallFrame rotateRight floatingCard">
+            <div class="smallFrameOuter artCreditWrap" tabindex="0">
+              <img src="../images/art/art2.png" alt="Artwork 2" class="smallFrameImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
             <div class="smallFrameLabel">
               <h3>Artwork Two</h3>
@@ -115,9 +118,10 @@
             </div>
           </article>
 
-          <article class="smallFrame rotateLeft">
-            <div class="smallFrameOuter">
-              <img src="../images/art/art3.png" alt="Artwork 3" class="smallFrameImage">
+          <article class="smallFrame rotateLeft floatingCard">
+            <div class="smallFrameOuter artCreditWrap" tabindex="0">
+              <img src="../images/art/art3.png" alt="Artwork 3" class="smallFrameImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
             <div class="smallFrameLabel">
               <h3>Artwork Three</h3>
@@ -125,9 +129,10 @@
             </div>
           </article>
 
-          <article class="smallFrame rotateRight">
-            <div class="smallFrameOuter">
-              <img src="../images/art/art4.png" alt="Artwork 4" class="smallFrameImage">
+          <article class="smallFrame rotateRight floatingCard">
+            <div class="smallFrameOuter artCreditWrap" tabindex="0">
+              <img src="../images/art/art4.png" alt="Artwork 4" class="smallFrameImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
             <div class="smallFrameLabel">
               <h3>Artwork Four</h3>
@@ -137,9 +142,10 @@
         </div>
 
         <section class="bottomGallery reveal delay4">
-          <article class="bottomCard wideCard">
-            <div class="bottomImageWrap">
-              <img src="../images/art/art5.png" alt="Artwork 5" class="bottomImage">
+          <article class="bottomCard wideCard floatingCard">
+            <div class="bottomImageWrap artCreditWrap" tabindex="0">
+              <img src="../images/art/art5.png" alt="Artwork 5" class="bottomImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
             <div class="bottomInfo">
               <span class="bottomTag">wall piece</span>
@@ -150,9 +156,10 @@
             </div>
           </article>
 
-          <article class="bottomCard tallCard">
-            <div class="bottomImageWrap">
-              <img src="../images/art/art6.png" alt="Artwork 6" class="bottomImage">
+          <article class="bottomCard tallCard floatingCard">
+            <div class="bottomImageWrap artCreditWrap" tabindex="0">
+              <img src="../images/art/art6.png" alt="Artwork 6" class="bottomImage artZoomable">
+              <div class="artCreditLabel">art by: fill in artist name 💗</div>
             </div>
             <div class="bottomInfo">
               <span class="bottomTag">extra frame</span>
@@ -177,6 +184,11 @@
 
   </div>
 
+  <div id="artLightbox" class="artLightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+    <img id="lightboxImage" class="lightboxImage" src="" alt="Expanded artwork preview" />
+  </div>
+
   <script src="../js/main.js"></script>
   <script>
     window.addEventListener("load", () => {
@@ -189,5 +201,6 @@
     });
   </script>
   <script src="../js/ui-polish.js"></script>
+  <script src="../js/art.js"></script>
 </body>
 </html>
