@@ -1,43 +1,28 @@
 (() => {
-  const lightbox = document.getElementById("galleryLightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const closeButton = document.getElementById("lightboxClose");
-  const zoomableImages = document.querySelectorAll(".zoomableArt");
+  const images = document.querySelectorAll(".zoomableArt");
 
-  if (!lightbox || !lightboxImage || !closeButton || !zoomableImages.length) return;
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      const viewer = document.createElement("div");
+      viewer.style = `
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.85);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        z-index:9999;
+      `;
 
-  function openLightbox(src, alt) {
-    lightboxImage.src = src;
-    lightboxImage.alt = alt || "Expanded artwork preview";
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
+      const image = document.createElement("img");
+      image.src = img.src;
+      image.style = "max-width:90%; max-height:90%; border-radius:18px;";
 
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImage.src = "";
-    document.body.style.overflow = "";
-  }
+      viewer.appendChild(image);
 
-  zoomableImages.forEach((image) => {
-    image.addEventListener("click", () => {
-      openLightbox(image.src, image.alt);
+      viewer.onclick = () => viewer.remove();
+
+      document.body.appendChild(viewer);
     });
-  });
-
-  closeButton.addEventListener("click", closeLightbox);
-
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox.classList.contains("open")) {
-      closeLightbox();
-    }
   });
 })();
