@@ -609,4 +609,112 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  /* ========================= */
+/* ABOUT ART CREDIT SYSTEM */
+/* ========================= */
+
+.aboutCreditWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutCreditWrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,160,210,0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aboutCreditWrap:hover::before,
+.aboutCreditWrap:focus-within::before {
+  opacity: 1;
+}
+
+.aboutCreditWrap .portraitImage {
+  transition: transform 0.28s ease, filter 0.28s ease;
+  cursor: zoom-in;
+}
+
+.aboutCreditWrap:hover .portraitImage,
+.aboutCreditWrap:focus-within .portraitImage {
+  transform: scale(1.04);
+  filter: brightness(1.04);
+}
+
+.artCreditLabel {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(18, 8, 16, 0.68);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 2;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.aboutCreditWrap:hover .artCreditLabel,
+.aboutCreditWrap:focus-within .artCreditLabel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* lightbox */
+.artLightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 4, 8, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  z-index: 9999;
+}
+
+.artLightbox.open {
+  display: flex;
+}
+
+.lightboxImage {
+  max-width: min(92vw, 1100px);
+  max-height: 88vh;
+  border-radius: 18px;
+  box-shadow:
+    0 0 34px rgba(255, 120, 180, 0.28),
+    0 18px 40px rgba(0,0,0,0.35);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  color: white;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.lightboxClose:hover {
+  transform: scale(1.06);
+  background: rgba(255,255,255,0.26);
+}
 }
