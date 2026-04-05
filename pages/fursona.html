@@ -76,13 +76,14 @@
           <article class="mainShrineCard reveal delay3">
             <div class="shrineHalo"></div>
 
-            <div class="mainArtFrame">
+            <div class="mainArtFrame artCreditWrap" tabindex="0">
               <div class="mainArtInner">
                 <img
                   src="../images/fursona-main.png"
                   alt="Main fursona reference sheet"
-                  class="mainFursonaArt"
+                  class="mainFursonaArt zoomableArt"
                 />
+                <div class="artCreditLabel">art by: fill in artist name 💗</div>
               </div>
             </div>
 
@@ -138,6 +139,11 @@
 
   </div>
 
+  <div id="galleryLightbox" class="galleryLightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+    <img id="lightboxImage" class="lightboxImage" src="" alt="Expanded artwork preview" />
+  </div>
+
   <script src="../js/main.js"></script>
   <script>
     window.addEventListener("load", () => {
@@ -150,5 +156,6 @@
     });
   </script>
   <script src="../js/ui-polish.js"></script>
+  <script src="../js/gallery-lightbox.js"></script>
 </body>
 </html>
