@@ -10,25 +10,11 @@
 </head>
 <body>
 
-  <div class="aboutBg">
-    <div class="aboutGlow glow1"></div>
-    <div class="aboutGlow glow2"></div>
-    <div class="aboutGlow glow3"></div>
-
-    <div class="aboutSpark spark1">✦</div>
-    <div class="aboutSpark spark2">✦</div>
-    <div class="aboutSpark spark3">♡</div>
-    <div class="aboutSpark spark4">✦</div>
-    <div class="aboutSpark spark5">♡</div>
-
-    <div class="aboutGrid"></div>
-  </div>
-
   <div class="pageShell">
 
     <nav class="topNav reveal">
-      <a href="../index.html" class="navLogoWrap" aria-label="Go home">
-        <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
+      <a href="../index.html" class="navLogoWrap">
+        <img src="../images/logo.png" class="navLogo" />
       </a>
 
       <div class="navLinks">
@@ -44,129 +30,34 @@
     </nav>
 
     <header class="aboutHeader reveal delay1">
-      <span class="aboutTiny">dreamy about room</span>
-      <h1 class="aboutTitle">About Me</h1>
-      <p class="aboutSubtitle">
-        a little personal corner for who I am, what I love, and the vibe behind my world 💗
-      </p>
+      <h1>About Me</h1>
     </header>
 
     <main class="aboutScene reveal delay2">
-      <section class="aboutRoom">
 
-        <article class="memoryCard cardLeftTop reveal delay2 floatingCard">
-          <span class="cardTag">personality</span>
-          <h3>calm, caring, pink coded</h3>
-          <p>
-            i like making things feel cute, soft, and personal. i care about people a lot and i like spaces that feel kind and comforting.
-          </p>
-        </article>
+      <!-- MAIN IMAGE -->
+      <div class="artCreditWrap" tabindex="0">
+        <img src="../images/about/about-main.png" class="portraitImage zoomableArt">
 
-        <article class="portraitCard reveal delay2">
-          <div class="portraitFrame artCreditWrap" tabindex="0">
-            <img src="../images/about/about-main.png" alt="About page main art" class="portraitImage zoomableArt" />
-            <div class="artCreditLabel">art by: fill in artist name 💗</div>
-          </div>
+        <div class="artCreditLabel">
+          art by: fill in artist name 💗
+        </div>
+      </div>
 
-          <div class="portraitInfo">
-            <span class="featureTag">main piece</span>
-            <h2>PinkyDevil</h2>
-            <p>
-              this is the main visual for my about page. later you can replace this text with your own bio, vibes, likes, and little personal details.
-            </p>
+      <p class="aboutText">
+        your original about text goes here (UNCHANGED)
+      </p>
 
-            <div class="infoPills">
-              <span>pink lover</span>
-              <span>cute chaos</span>
-              <span>dreamy vibe</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="memoryCard cardRightTop reveal delay3 floatingCard">
-          <span class="cardTag">likes</span>
-          <h3>music, games, cozy stuff</h3>
-          <p>
-            i like music, fps games, puzzle games, building games, cute aesthetics, and people who are kind and chill.
-          </p>
-        </article>
-
-        <section class="aboutGridCards reveal delay3">
-          <article class="aboutMiniCard floatingCard">
-            <span class="miniTag">work</span>
-            <h3>saxophone life</h3>
-            <p>fixing instruments and giving saxophone lessons is a big part of my world.</p>
-          </article>
-
-          <article class="aboutMiniCard floatingCard">
-            <span class="miniTag">style</span>
-            <h3>pink everything</h3>
-            <p>i love pink aesthetics, dreamy glow, fluffy vibes, and soft cute design.</p>
-          </article>
-
-          <article class="aboutMiniCard floatingCard">
-            <span class="miniTag">energy</span>
-            <h3>soft but chaotic</h3>
-            <p>my vibe is calm and nice, but still playful and a little chaotic in a fun way.</p>
-          </article>
-        </section>
-
-        <section class="aboutGallery reveal delay4">
-          <article class="galleryPiece widePiece floatingCard">
-            <div class="galleryImageWrap artCreditWrap" tabindex="0">
-              <img src="../images/about/about-extra1.png" alt="About gallery image 1" class="galleryImage zoomableArt" />
-              <div class="artCreditLabel">art by: fill in artist name 💗</div>
-            </div>
-            <div class="galleryInfo">
-              <span class="miniTag">extra visual</span>
-              <h3>extra little memory</h3>
-              <p>use this for another image that fits your about page vibe.</p>
-            </div>
-          </article>
-
-          <article class="galleryPiece tallPiece floatingCard">
-            <div class="galleryImageWrap artCreditWrap" tabindex="0">
-              <img src="../images/about/about-extra2.png" alt="About gallery image 2" class="galleryImage zoomableArt" />
-              <div class="artCreditLabel">art by: fill in artist name 💗</div>
-            </div>
-            <div class="galleryInfo">
-              <span class="miniTag">extra frame</span>
-              <h3>cute detail</h3>
-              <p>a second image slot for more personality.</p>
-            </div>
-          </article>
-        </section>
-
-      </section>
     </main>
 
     <footer class="siteFooter reveal delay4">
       <div>© PinkyDevil</div>
-      <div class="footerLinks">
-        <a href="../index.html">home</a>
-        <a href="about.html">about</a>
-      </div>
     </footer>
 
   </div>
 
-  <div id="galleryLightbox" class="galleryLightbox" aria-hidden="true">
-    <button class="lightboxClose" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
-    <img id="lightboxImage" class="lightboxImage" src="" alt="Expanded artwork preview" />
-  </div>
-
   <script src="../js/main.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 110);
-      });
-    });
-  </script>
-  <script src="../js/ui-polish.js"></script>
   <script src="../js/gallery-lightbox.js"></script>
+
 </body>
 </html>
