@@ -72,21 +72,11 @@
           </p>
         </article>
 
+        <!-- 💗 FIXED CENTER IMAGE -->
         <div class="centerShrine reveal delay2">
-          <div class="shrineHalo"></div>
-          <div class="shrineCore">
-           <div class="aboutImageCenter aboutCreditWrap" tabindex="0">
-              <img src="../images/about-gift-art.gif" class="aboutMainImage artZoomable">
-              <div class="artCreditLabel">art by: riuntaru</div>
-
-            </div>
-
-            <div class="identityPills">
-              <span>pink coded</span>
-              <span>streamer</span>
-              <span>music</span>
-              <span>creative</span>
-            </div>
+          <div class="aboutImageCenter aboutCreditWrap" tabindex="0">
+            <img src="../images/about-gift-art.gif" alt="Gift art" class="aboutMainImage artZoomable">
+            <div class="artCreditLabel">art by: riuntaru 💗</div>
           </div>
         </div>
 
@@ -119,12 +109,10 @@
 
           <p>
             this site is where all my ideas, pages, creative stuff, and personality get stitched together.
-            i like experimenting until things feel more and more like me instead of copying what everyone else does.
           </p>
 
           <p>
-            the big dream is to make something expressive, atmospheric, and memorable — a website with motion,
-            softness, glow, and little details that make people feel like they found a real person’s world.
+            the big dream is to make something expressive, atmospheric, and memorable.
           </p>
         </article>
 
@@ -158,11 +146,8 @@
   <script src="../js/main.js"></script>
   <script>
     window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 110);
+      document.querySelectorAll(".reveal").forEach((el, i) => {
+        setTimeout(() => el.classList.add("show"), 120 + i * 110);
       });
     });
   </script>
