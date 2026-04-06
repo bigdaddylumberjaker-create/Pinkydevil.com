@@ -276,12 +276,12 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 360px;
-  transform: translate(-50%, -50%);
+  width: min(620px, calc(100% - 640px));
+  min-width: 420px;
   z-index: 3;
 }
 
-/* keep centered during reveal */
+/* keep centering during reveal */
 .centerShrine.reveal {
   opacity: 0;
   transform: translate(-50%, calc(-50% + 26px));
@@ -317,6 +317,7 @@
 
 .shrineCore {
   position: relative;
+  width: 100%;
   padding: 22px 20px 20px;
   border-radius: 34px;
   background: rgba(255,255,255,0.34);
@@ -332,15 +333,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .aboutMainImage {
-  width: 460px;
-  max-width: min(88vw, 460px);
-  height: auto;
   display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 18px;
+  object-fit: contain;
   box-shadow:
     0 0 40px rgba(255, 120, 180, 0.20),
     0 18px 36px rgba(255, 154, 206, 0.16);
@@ -349,8 +351,8 @@
 
 .aboutImageCenter:hover .aboutMainImage,
 .aboutImageCenter:focus-within .aboutMainImage {
-  transform: scale(1.03);
-  filter: brightness(1.04);
+  transform: scale(1.02);
+  filter: brightness(1.03);
 }
 
 .identityPills {
@@ -688,6 +690,7 @@
     transform: none;
     width: 100%;
     max-width: none;
+    min-width: 0;
   }
 
   .centerShrine.reveal {
@@ -699,7 +702,7 @@
   }
 
   .centerShrine {
-    width: min(520px, 100%);
+    width: min(680px, 100%);
     margin: 0 auto;
   }
 
@@ -762,24 +765,4 @@
     top: 12px;
     right: 14px;
   }
-  /* ===== MAKE CENTER IMAGE BIGGER (SAFE) ===== */
-
-/* make the center container wider */
-.centerShrine {
-  width: 600px !important;
-  max-width: 90vw;
-}
-
-/* expand the glass card */
-.shrineCore {
-  width: 100%;
-  padding: 28px 24px 26px;
-}
-
-/* make image fill the space */
-.aboutMainImage {
-  width: 100% !important;
-  max-width: 100%;
-  height: auto;
-}
 }
