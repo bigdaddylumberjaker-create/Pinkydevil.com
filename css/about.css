@@ -719,4 +719,31 @@
   transform: scale(1.06);
   background: rgba(255,255,255,0.26);
 }
+  /* ========================= */
+/* CENTER IMAGE (NO FRAME) */
+/* ========================= */
+
+.aboutImageCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.aboutMainImage {
+  width: 420px;        /* control size here */
+  max-width: 90vw;
+
+  height: auto;
+  display: block;
+
+  border-radius: 16px;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.aboutImageCenter:hover .aboutMainImage {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
 }
