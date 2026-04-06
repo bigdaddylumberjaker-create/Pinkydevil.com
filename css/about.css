@@ -762,4 +762,24 @@
     top: 12px;
     right: 14px;
   }
+  /* ===== MAKE CENTER IMAGE BIGGER (SAFE) ===== */
+
+/* make the center container wider */
+.centerShrine {
+  width: 600px !important;
+  max-width: 90vw;
+}
+
+/* expand the glass card */
+.shrineCore {
+  width: 100%;
+  padding: 28px 24px 26px;
+}
+
+/* make image fill the space */
+.aboutMainImage {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto;
+}
 }
