@@ -313,28 +313,22 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
-
 .portraitFrame {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* important */
-}
-.portraitFrame {
   padding: 10px;
   background: rgba(255,255,255,0.15);
 }
 
 .portraitImage {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
 
-  object-fit: contain;
-  object-position: center;
+  object-fit: contain;        /* show full image */
+  object-position: center;    /* center it */
 
-  display: block;
+  transform: scale(1.15);     /* 🔥 makes it bigger */
 }
 
 .identityPills {
