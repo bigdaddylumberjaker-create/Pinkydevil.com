@@ -73,13 +73,23 @@
         </article>
 
         <div class="centerShrine reveal delay2">
-          <div class="aboutImageCenter aboutCreditWrap" tabindex="0">
-            <img
-              src="../images/about-gift-art.gif"
-              alt="Gift art of PinkyDevil"
-              class="aboutMainImage artZoomable"
-            />
-            <div class="artCreditLabel">art by: riuntaru 💗</div>
+          <div class="shrineHalo"></div>
+          <div class="shrineCore">
+            <div class="aboutImageCenter aboutCreditWrap" tabindex="0">
+              <img
+                src="../images/about-gift-art.gif"
+                alt="Gift art of PinkyDevil"
+                class="aboutMainImage artZoomable"
+              />
+              <div class="artCreditLabel">art by: riuntaru</div>
+            </div>
+
+            <div class="identityPills">
+              <span>pink coded</span>
+              <span>streamer</span>
+              <span>music</span>
+              <span>creative</span>
+            </div>
           </div>
         </div>
 
@@ -148,6 +158,11 @@
 
   </div>
 
+  <div id="artLightbox" class="artLightbox" aria-hidden="true">
+    <button class="lightboxClose" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+    <img id="lightboxImage" class="lightboxImage" src="" alt="Expanded artwork preview" />
+  </div>
+
   <script src="../js/main.js"></script>
   <script>
     window.addEventListener("load", () => {
@@ -160,5 +175,6 @@
     });
   </script>
   <script src="../js/ui-polish.js"></script>
+  <script src="../js/art.js"></script>
 </body>
 </html>
