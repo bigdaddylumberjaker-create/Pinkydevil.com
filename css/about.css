@@ -746,4 +746,51 @@
   transform: scale(1.05);
   filter: brightness(1.05);
 }
+  /* ===== FINAL CENTER IMAGE FIX ===== */
+
+.centerShrine {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+
+/* REMOVE OLD SHRINE BOX */
+.shrineHalo,
+.shrineCore {
+  display: none !important;
+}
+
+/* CENTER IMAGE */
+.aboutImageCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BIG IMAGE */
+.aboutMainImage {
+  width: 520px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 40px rgba(255, 120, 180, 0.25),
+    0 20px 40px rgba(255, 154, 206, 0.18);
+
+  transition: transform 0.3s ease;
+}
+
+.aboutImageCenter:hover .aboutMainImage {
+  transform: scale(1.04);
+}
+
+/* CREDIT */
+.aboutImageCenter .artCreditLabel {
+  left: 12px;
+  right: auto;
+  width: fit-content;
+}
 }
