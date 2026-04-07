@@ -45,7 +45,7 @@
       <span class="streamsTiny">streaming room</span>
       <h1 class="streamsTitle">Streams</h1>
       <p class="streamsSubtitle">
-        live stream status, preview, and cute streaming vibes 💗
+        live stream status, stream room vibes, real chat, and little pink broadcast chaos 💗
       </p>
     </header>
 
@@ -56,7 +56,7 @@
           <span class="cardTag">stream vibe</span>
           <h3>cute, live, and cozy</h3>
           <p>
-            this page is meant to feel like stepping into my stream setup instead of opening a basic profile page.
+            this page is meant to feel like stepping into my stream room instead of opening a plain profile page.
           </p>
         </aside>
 
@@ -82,7 +82,7 @@
 
                 <div class="streamQuickLinks">
                   <a href="https://www.twitch.tv/pinkydevii" target="_blank" rel="noopener noreferrer" class="deskBtn">twitch</a>
-                  <a href="https://www.youtube.com/channel/UCwJ0CdmYV7URda9yRtGpafw" target="_blank" rel="noopener noreferrer" class="deskBtn alt">youtube</a>
+                  <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" rel="noopener noreferrer" class="deskBtn alt">youtube</a>
                 </div>
               </div>
 
@@ -102,6 +102,7 @@
               <div class="monitorFooter">
                 <div class="monitorPills">
                   <span>twitch: pinkydevii</span>
+                  <span>youtube: @PinkyDeviIowo</span>
                   <span>discord: tv.man</span>
                   <span id="streamViewerText">viewer info unavailable</span>
                 </div>
@@ -120,24 +121,24 @@
                 <div class="scheduleItem">
                   <span class="scheduleDot"></span>
                   <div>
-                    <h4>stream slot one</h4>
-                    <p>add your usual stream day / time here</p>
+                    <h4>main stream day</h4>
+                    <p>put your usual stream day and time here</p>
                   </div>
                 </div>
 
                 <div class="scheduleItem">
                   <span class="scheduleDot"></span>
                   <div>
-                    <h4>stream slot two</h4>
-                    <p>another usual day / time block</p>
+                    <h4>second stream slot</h4>
+                    <p>another day for extra chaos and cute vibes</p>
                   </div>
                 </div>
 
                 <div class="scheduleItem">
                   <span class="scheduleDot"></span>
                   <div>
-                    <h4>special / surprise streams</h4>
-                    <p>for bonus or random live sessions</p>
+                    <h4>bonus / surprise streams</h4>
+                    <p>for random live sessions and special events</p>
                   </div>
                 </div>
               </div>
@@ -145,31 +146,33 @@
 
             <article class="widgetCard floatingCard">
               <div class="widgetTop">
-                <span class="widgetTag">chat panel</span>
-                <span class="softPill">community</span>
+                <span class="widgetTag">live chat</span>
+                <span class="softPill">real room</span>
               </div>
 
-              <div class="chatPreview">
-                <p>
-                  want live chat on stream days too? this links to your chat page for the full community vibe.
-                </p>
-                <a href="chat.html" class="deskBtn small">open chat page</a>
+              <div class="streamChatWrap">
+                <iframe
+                  src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
+                  title="PinkyDevil stream chat"
+                  loading="lazy">
+                </iframe>
               </div>
             </article>
 
             <article class="widgetCard floatingCard">
               <div class="widgetTop">
                 <span class="widgetTag">stream setup</span>
-                <span class="softPill">about</span>
+                <span class="softPill">extras</span>
               </div>
 
               <div class="setupNotes">
                 <p>
-                  later this room can hold your overlay preview, recent clips, stream goals, and highlight cards.
+                  later this room can hold your overlay preview, recent clips, stream goals, and highlights.
                 </p>
                 <div class="setupPills">
                   <span>overlay preview</span>
                   <span>goals</span>
+                  <span>clips</span>
                   <span>highlights</span>
                 </div>
               </div>
@@ -208,6 +211,15 @@
               />
             </div>
           </article>
+
+          <article class="sideCard reveal delay4 floatingCard">
+            <span class="cardTag">quick links</span>
+            <div class="linkStack">
+              <a href="https://www.twitch.tv/pinkydevii" target="_blank" rel="noopener noreferrer" class="streamLinkBtn">watch on twitch</a>
+              <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" rel="noopener noreferrer" class="streamLinkBtn alt">visit youtube</a>
+              <a href="chat.html" class="streamLinkBtn">open chat page</a>
+            </div>
+          </article>
         </aside>
 
       </section>
@@ -233,6 +245,7 @@
       });
     });
   </script>
+  <script src="../js/ui-polish.js"></script>
   <script src="../js/streams-live.js"></script>
 </body>
 </html>
