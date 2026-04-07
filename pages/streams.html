@@ -8,22 +8,17 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/streams.css" />
 </head>
+
 <body>
   <div class="streamsBg">
     <div class="streamsGlow glow1"></div>
     <div class="streamsGlow glow2"></div>
     <div class="streamsGlow glow3"></div>
-
-    <div class="streamsSpark spark1">✦</div>
-    <div class="streamsSpark spark2">✦</div>
-    <div class="streamsSpark spark3">♡</div>
-    <div class="streamsSpark spark4">✦</div>
-    <div class="streamsSpark spark5">♡</div>
-
     <div class="streamsGrid"></div>
   </div>
 
   <div class="pageShell">
+
     <nav class="topNav reveal">
       <a href="../index.html" class="navLogoWrap" aria-label="Go home">
         <img src="../images/logo.png" alt="PinkyDevil logo" class="navLogo" />
@@ -42,26 +37,25 @@
     </nav>
 
     <header class="streamsHeader reveal delay1">
-      <span class="streamsTiny">streaming room</span>
+      <span class="streamsTiny">stream room</span>
       <h1 class="streamsTitle">Streams</h1>
       <p class="streamsSubtitle">
-        live stream status, stream room vibes, real chat, and little pink broadcast chaos 💗
+        live stream, real chat, and cute chaos 💗
       </p>
     </header>
 
     <main class="streamsScene reveal delay2">
       <section class="streamRoom">
 
-        <aside class="sideCard leftCard reveal delay2 floatingCard">
-          <span class="cardTag">stream vibe</span>
-          <h3>cute, live, and cozy</h3>
-          <p>
-            this page is meant to feel like stepping into my stream room instead of opening a plain profile page.
-          </p>
+        <aside class="sideCard floatingCard reveal delay2">
+          <span class="cardTag">vibe</span>
+          <h3>cozy live room</h3>
+          <p>this is your stream space, not just a page.</p>
         </aside>
 
         <section class="centerColumn">
-          <article class="mainMonitor reveal delay3" id="mainMonitorCard">
+
+          <article class="mainMonitor reveal delay3">
             <div class="windowBar">
               <div class="windowDots">
                 <span></span>
@@ -86,140 +80,52 @@
                 </div>
               </div>
 
-              <div class="videoFrameWrap">
-                <div class="videoFrame">
-                  <iframe
-                    id="streamEmbed"
-                    src="https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io&muted=true"
-                    allowfullscreen
-                    scrolling="no"
-                    frameborder="0"
-                    allow="autoplay; fullscreen">
-                  </iframe>
-                </div>
-              </div>
-
-              <div class="monitorFooter">
-                <div class="monitorPills">
-                  <span>twitch: pinkydevii</span>
-                  <span>youtube: @PinkyDeviIowo</span>
-                  <span>discord: tv.man</span>
-                  <span id="streamViewerText">viewer info unavailable</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <section class="deskWidgets reveal delay4">
-            <article class="widgetCard floatingCard">
-              <div class="widgetTop">
-                <span class="widgetTag">schedule</span>
-                <span class="softPill">timeline</span>
-              </div>
-
-              <div class="scheduleList">
-                <div class="scheduleItem">
-                  <span class="scheduleDot"></span>
-                  <div>
-                    <h4>main stream day</h4>
-                    <p>put your usual stream day and time here</p>
-                  </div>
-                </div>
-
-                <div class="scheduleItem">
-                  <span class="scheduleDot"></span>
-                  <div>
-                    <h4>second stream slot</h4>
-                    <p>another day for extra chaos and cute vibes</p>
-                  </div>
-                </div>
-
-                <div class="scheduleItem">
-                  <span class="scheduleDot"></span>
-                  <div>
-                    <h4>bonus / surprise streams</h4>
-                    <p>for random live sessions and special events</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="widgetCard floatingCard">
-              <div class="widgetTop">
-                <span class="widgetTag">live chat</span>
-                <span class="softPill">real room</span>
-              </div>
-
-              <div class="streamChatWrap">
+              <div class="videoFrame">
                 <iframe
-                  src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
-                  title="PinkyDevil stream chat"
-                  loading="lazy">
+                  src="https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io&muted=true"
+                  allowfullscreen
+                  scrolling="no"
+                  frameborder="0"
+                  allow="autoplay; fullscreen">
                 </iframe>
               </div>
-            </article>
+            </div>
+          </article>
 
-            <article class="widgetCard floatingCard">
-              <div class="widgetTop">
-                <span class="widgetTag">stream setup</span>
-                <span class="softPill">extras</span>
-              </div>
+          <article class="widgetCard reveal delay4">
+            <div class="widgetTop">
+              <span class="widgetTag">live chat</span>
+              <span class="softPill" id="chatModeLabel">auto mode</span>
+            </div>
 
-              <div class="setupNotes">
-                <p>
-                  later this room can hold your overlay preview, recent clips, stream goals, and highlights.
-                </p>
-                <div class="setupPills">
-                  <span>overlay preview</span>
-                  <span>goals</span>
-                  <span>clips</span>
-                  <span>highlights</span>
-                </div>
-              </div>
-            </article>
-          </section>
+            <div class="chatToggle">
+              <button id="btnTwitchChat" class="chatTab">twitch</button>
+              <button id="btnSiteChat" class="chatTab">site</button>
+            </div>
+
+            <div id="twitchChatBox" class="streamChatWrap hidden">
+              <iframe
+                src="https://www.twitch.tv/embed/pinkydevii/chat?parent=bigdaddylumberjaker-create.github.io"
+                title="Twitch Chat"
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div id="siteChatBox" class="streamChatWrap hidden">
+              <iframe
+                src="https://www3.cbox.ws/box/?boxid=3539788&boxtag=lTfn4s"
+                title="Site Chat"
+                loading="lazy">
+              </iframe>
+            </div>
+          </article>
+
         </section>
 
-        <aside class="rightColumn">
-          <article class="sideCard reveal delay3 floatingCard">
-            <span class="cardTag">stream status</span>
-            <h3 id="streamStatusTitle">currently offline</h3>
-            <p id="streamStatusDescription">
-              no live session detected right now, but this panel updates automatically when the stream goes live.
-            </p>
-
-            <div class="liveMeta">
-              <div class="metaLine">
-                <span class="metaLabel">game</span>
-                <span id="streamGameText" class="metaValue">not live</span>
-              </div>
-              <div class="metaLine">
-                <span class="metaLabel">started</span>
-                <span id="streamStartedText" class="metaValue">—</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="sideCard reveal delay4 floatingCard">
-            <span class="cardTag">thumbnail preview</span>
-            <div class="thumbnailWrap">
-              <img
-                id="streamThumbnail"
-                class="streamThumbnail"
-                src="../images/stream-placeholder.png"
-                alt="Stream preview thumbnail"
-              />
-            </div>
-          </article>
-
-          <article class="sideCard reveal delay4 floatingCard">
-            <span class="cardTag">quick links</span>
-            <div class="linkStack">
-              <a href="https://www.twitch.tv/pinkydevii" target="_blank" rel="noopener noreferrer" class="streamLinkBtn">watch on twitch</a>
-              <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" rel="noopener noreferrer" class="streamLinkBtn alt">visit youtube</a>
-              <a href="chat.html" class="streamLinkBtn">open chat page</a>
-            </div>
-          </article>
+        <aside class="sideCard reveal delay3">
+          <span class="cardTag">status</span>
+          <h3>stream status</h3>
+          <p id="sideStatusText">auto updates when live later</p>
         </aside>
 
       </section>
@@ -229,23 +135,107 @@
       <div>© PinkyDevil</div>
       <div class="footerLinks">
         <a href="../index.html">home</a>
-        <a href="streams.html">streams</a>
       </div>
     </footer>
+
   </div>
 
-  <script src="../js/main.js"></script>
   <script>
     window.addEventListener("load", () => {
-      const reveals = document.querySelectorAll(".reveal");
-      reveals.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, 120 + index * 110);
+      document.querySelectorAll(".reveal").forEach((el, i) => {
+        setTimeout(() => el.classList.add("show"), 120 + i * 100);
       });
     });
   </script>
-  <script src="../js/ui-polish.js"></script>
-  <script src="../js/streams-live.js"></script>
+
+  <script>
+    const tBtn = document.getElementById("btnTwitchChat");
+    const sBtn = document.getElementById("btnSiteChat");
+    const tChat = document.getElementById("twitchChatBox");
+    const sChat = document.getElementById("siteChatBox");
+    const liveBadge = document.getElementById("liveBadge");
+    const streamStatusText = document.getElementById("streamStatusText");
+    const sideStatusText = document.getElementById("sideStatusText");
+    const chatModeLabel = document.getElementById("chatModeLabel");
+
+    let manualOverride = false;
+    const channel = "pinkydevii";
+
+    function setActiveTab(mode) {
+      if (mode === "twitch") {
+        tChat.classList.remove("hidden");
+        sChat.classList.add("hidden");
+        tBtn.classList.add("active");
+        sBtn.classList.remove("active");
+      } else {
+        sChat.classList.remove("hidden");
+        tChat.classList.add("hidden");
+        sBtn.classList.add("active");
+        tBtn.classList.remove("active");
+      }
+    }
+
+    tBtn.addEventListener("click", () => {
+      manualOverride = true;
+      chatModeLabel.textContent = "manual twitch";
+      setActiveTab("twitch");
+    });
+
+    sBtn.addEventListener("click", () => {
+      manualOverride = true;
+      chatModeLabel.textContent = "manual site";
+      setActiveTab("site");
+    });
+
+    async function checkLiveStatus() {
+      try {
+        const response = await fetch(`https://decapi.me/twitch/uptime/${channel}`, {
+          cache: "no-store"
+        });
+        const result = (await response.text()).trim();
+
+        const isLive = result && !/offline/i.test(result);
+
+        if (isLive) {
+          liveBadge.textContent = "live";
+          liveBadge.classList.remove("offline");
+          liveBadge.classList.add("live");
+          streamStatusText.textContent = `live now ✦ uptime: ${result}`;
+          sideStatusText.textContent = `stream is live right now ✦ uptime: ${result}`;
+
+          if (!manualOverride) {
+            chatModeLabel.textContent = "auto twitch";
+            setActiveTab("twitch");
+          }
+        } else {
+          liveBadge.textContent = "offline";
+          liveBadge.classList.remove("live");
+          liveBadge.classList.add("offline");
+          streamStatusText.textContent = "currently offline";
+          sideStatusText.textContent = "currently offline, site chat is open for community vibes";
+
+          if (!manualOverride) {
+            chatModeLabel.textContent = "auto site";
+            setActiveTab("site");
+          }
+        }
+      } catch (error) {
+        liveBadge.textContent = "offline";
+        liveBadge.classList.remove("live");
+        liveBadge.classList.add("offline");
+        streamStatusText.textContent = "status unavailable";
+        sideStatusText.textContent = "could not check live status right now";
+
+        if (!manualOverride) {
+          chatModeLabel.textContent = "auto site";
+          setActiveTab("site");
+        }
+      }
+    }
+
+    checkLiveStatus();
+    setInterval(checkLiveStatus, 60000);
+  </script>
+
 </body>
 </html>
