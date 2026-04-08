@@ -1,3 +1,5 @@
+// upgraded streams-live.js
+
 (() => {
   const STATUS_ENDPOINTS = [
     "https://pinky-twitch-status.bigdaddylumberjaker.workers.dev/"
@@ -14,6 +16,8 @@
   const streamEmbed = document.getElementById("streamEmbed");
   const mainMonitorCard = document.getElementById("mainMonitorCard");
 
+  let uptimeInterval = null;
+
   function formatStartedAt(startedAt) {
     if (!startedAt) return "—";
     const date = new Date(startedAt);
@@ -21,123 +25,116 @@
     return date.toLocaleString();
   }
 
-  function setOfflineState(message = "currently offline", description = "no live session detected right now, but this panel updates automatically when the stream goes live.") {
-    if (liveBadge) {
-      liveBadge.textContent = "offline";
-      liveBadge.classList.remove("live");
-      liveBadge.classList.add("offline");
-    }
+  function startUptimeTimer(startedAt) {
+    if (!startedAt) return;
 
-    if (streamStatusText) {
-      streamStatusText.textContent = "stream is currently offline";
-    }
+    const startTime = new Date(startedAt).getTime();
 
-    if (streamStatusTitle) {
-      streamStatusTitle.textContent = message;
-    }
+    if (uptimeInterval) clearInterval(uptimeInterval);
 
-    if (streamStatusDescription) {
-      streamStatusDescription.textContent = description;
-    }
+    uptimeInterval = setInterval(() => {
+      const now = Date.now();
+      const diff = now - startTime;
 
-    if (streamViewerText) {
-      streamViewerText.textContent = "viewer info unavailable";
-    }
+      const hrs = Math.floor(diff / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
 
-    if (streamGameText) {
-      streamGameText.textContent = "not live";
-    }
+      const formatted = `${hrs}h ${mins}m ${secs}s`;
 
-    if (streamStartedText) {
-      streamStartedText.textContent = "—";
-    }
+      if (streamStatusText) {
+        streamStatusText.textContent = `live ✦ uptime: ${formatted}`;
+      }
+    }, 1000);
+  }
 
-    if (streamThumbnail) {
-      streamThumbnail.src = "../images/stream-placeholder.png";
-    }
+  function setOfflineState(
+    message = "currently offline",
+    description = "no live session detected right now."
+  ) {
+    if (uptimeInterval) clearInterval(uptimeInterval);
 
-    if (streamEmbed) {
-      streamEmbed.src = "https://player.twitch.tv/?channel=pinkydevi&parent=bigdaddylumberjaker-create.github.io&muted=true";
-    }
+    liveBadge.textContent = "offline";
+    liveBadge.classList.remove("live");
+    liveBadge.classList.add("offline");
 
-    if (mainMonitorCard) {
-      mainMonitorCard.classList.remove("liveMode");
+    streamStatusText.textContent = "stream is currently offline";
+    streamStatusTitle.textContent = message;
+    streamStatusDescription.textContent = description;
+
+    streamViewerText.textContent = "viewer info unavailable";
+    streamGameText.textContent = "not live";
+    streamStartedText.textContent = "—";
+
+    streamThumbnail.src = "../images/stream-placeholder.png";
+
+    streamEmbed.src =
+      "https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io&muted=true";
+
+    mainMonitorCard.classList.remove("liveMode");
+
+    // AUTO CHAT SWITCH
+    if (window.streamsChatAuto) {
+      window.streamsChatAuto.applyAutoChatMode(false);
     }
   }
 
   function setLiveState(data) {
-    if (liveBadge) {
-      liveBadge.textContent = "live";
-      liveBadge.classList.remove("offline");
-      liveBadge.classList.add("live");
+    liveBadge.textContent = "live";
+    liveBadge.classList.remove("offline");
+    liveBadge.classList.add("live");
+
+    streamStatusTitle.textContent = data.title || "currently live";
+
+    // VIEWERS
+    if (typeof data.viewer_count === "number") {
+      streamViewerText.textContent = `${data.viewer_count} viewers`;
+    } else {
+      streamViewerText.textContent = "live now";
     }
 
-    if (streamStatusText) {
-      streamStatusText.textContent = "stream is live right now!";
-    }
+    // GAME
+    streamGameText.textContent = data.game_name || "live";
 
-    if (streamStatusTitle) {
-      streamStatusTitle.textContent = data.title || "currently live";
-    }
+    // START TIME
+    streamStartedText.textContent = formatStartedAt(data.started_at);
 
-    if (streamStatusDescription) {
-      const gamePart = data.game_name ? `Streaming ${data.game_name}. ` : "";
-      const startedPart = data.started_at ? `Started at ${formatStartedAt(data.started_at)}.` : "";
-      streamStatusDescription.textContent = `${gamePart}${startedPart}`.trim() || "live stream detected.";
-    }
+    // UPTIME TIMER
+    startUptimeTimer(data.started_at);
 
-    if (streamViewerText) {
-      if (typeof data.viewer_count === "number") {
-        streamViewerText.textContent = `${data.viewer_count} viewers`;
-      } else {
-        streamViewerText.textContent = "live now";
-      }
-    }
-
-    if (streamGameText) {
-      streamGameText.textContent = data.game_name || "live";
-    }
-
-    if (streamStartedText) {
-      streamStartedText.textContent = formatStartedAt(data.started_at);
-    }
-
-    if (streamThumbnail && data.thumbnail_url) {
-      const cacheBust = Date.now();
+    // THUMBNAIL (REAL)
+    if (data.thumbnail_url) {
       streamThumbnail.src =
         data.thumbnail_url
           .replace("{width}", "1280")
-          .replace("{height}", "720") + `?t=${cacheBust}`;
+          .replace("{height}", "720") +
+        `?t=${Date.now()}`;
     }
 
-    if (streamEmbed) {
-      streamEmbed.src = "https://player.twitch.tv/?channel=pinkydevi&parent=bigdaddylumberjaker-create.github.io&muted=false";
-    }
+    // EMBED UNMUTED WHEN LIVE
+    streamEmbed.src =
+      "https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io&muted=false";
 
-    if (mainMonitorCard) {
-      mainMonitorCard.classList.add("liveMode");
+    // STREAM MODE VISUAL
+    mainMonitorCard.classList.add("liveMode");
+
+    // DESCRIPTION
+    streamStatusDescription.textContent =
+      `Streaming ${data.game_name || "something cute"} ✦ join in!`;
+
+    // AUTO CHAT SWITCH
+    if (window.streamsChatAuto) {
+      window.streamsChatAuto.applyAutoChatMode(true);
     }
   }
 
   async function tryEndpoint(url) {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Accept: "application/json"
-      },
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      throw new Error(`Status endpoint failed: ${response.status}`);
-    }
-
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error();
     return response.json();
   }
 
   async function loadStreamStatus() {
-    let lastError = null;
-
     for (const endpoint of STATUS_ENDPOINTS) {
       try {
         const data = await tryEndpoint(endpoint);
@@ -149,28 +146,12 @@
 
         setOfflineState();
         return;
-      } catch (error) {
-        lastError = error;
-      }
+      } catch (err) {}
     }
 
-    console.error("Could not load stream status.", lastError);
-
-    setOfflineState(
-      "status unavailable",
-      "the live status service could not be reached right now. the page still works, but the automatic Twitch status check failed."
-    );
-
-    if (streamStatusText) {
-      streamStatusText.textContent = "stream status unavailable";
-    }
+    setOfflineState("status unavailable", "could not reach stream server.");
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", loadStreamStatus);
-  } else {
-    loadStreamStatus();
-  }
-
+  loadStreamStatus();
   setInterval(loadStreamStatus, 120000);
 })();
