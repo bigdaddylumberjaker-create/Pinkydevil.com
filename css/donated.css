@@ -658,101 +658,7 @@
   white-space: nowrap;
 }
 
-/* footer */
-
-.siteFooter {
-  max-width: 1320px;
-  margin: 16px auto 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: #b05c89;
-  font-size: 15px;
-}
-
-.footerLinks {
-  display: flex;
-  gap: 14px;
-}
-
-.footerLinks a {
-  color: #c06c99;
-  text-decoration: none;
-}
-
-.footerLinks a:hover {
-  text-decoration: underline;
-}
-
-/* responsive */
-
-@media (max-width: 1280px) {
-  .supportShrine {
-    grid-template-columns: 1fr;
-  }
-
-  .tiltedLeft {
-    transform: none;
-  }
-}
-
-@media (max-width: 980px) {
-  .leaderboards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 760px) {
-  .pageShell {
-    padding: 14px;
-  }
-
-  .navButton {
-    flex: 1 1 calc(50% - 8px);
-  }
-
-  .donatedTitle {
-    font-size: clamp(44px, 12vw, 72px);
-  }
-
-  .donatedSubtitle {
-    font-size: 16px;
-  }
-
-  .supportShrine {
-    padding: 18px;
-    border-radius: 28px;
-  }
-
-  .noteCard h3,
-  .infoCard h3,
-  .leaderboardCard h3 {
-    font-size: 24px;
-  }
-
-  .mainSupportInner h2 {
-    font-size: 28px;
-  }
-
-  .mainSupportInner p {
-    font-size: 16px;
-  }
-
-  .leaderboardRow {
-    grid-template-columns: 38px minmax(0, 1fr);
-  }
-
-  .leaderboardAmount {
-    grid-column: 2;
-    justify-self: end;
-  }
-
-  .siteFooter {
-    flex-direction: column;
-  }
-  /* ========================= */
 /* EMOTIONAL SUPPORT SECTION */
-/* ========================= */
 
 .emotionalSupportSection {
   margin-top: 20px;
@@ -852,13 +758,101 @@
   }
 }
 
+/* footer */
+
+.siteFooter {
+  max-width: 1320px;
+  margin: 16px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #b05c89;
+  font-size: 15px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 14px;
+}
+
+.footerLinks a {
+  color: #c06c99;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+}
+
+/* responsive */
+
+@media (max-width: 1280px) {
+  .supportShrine {
+    grid-template-columns: 1fr;
+  }
+
+  .tiltedLeft {
+    transform: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .leaderboards {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 760px) {
+  .pageShell {
+    padding: 14px;
+  }
+
+  .navButton {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .donatedTitle {
+    font-size: clamp(44px, 12vw, 72px);
+  }
+
+  .donatedSubtitle {
+    font-size: 16px;
+  }
+
+  .supportShrine {
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .noteCard h3,
+  .infoCard h3,
+  .leaderboardCard h3,
   .emotionalSupportCard h3 {
     font-size: 24px;
+  }
+
+  .mainSupportInner h2 {
+    font-size: 28px;
+  }
+
+  .mainSupportInner p {
+    font-size: 16px;
+  }
+
+  .leaderboardRow {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+
+  .leaderboardAmount {
+    grid-column: 2;
+    justify-self: end;
   }
 
   .supportNameScroller {
     height: 160px;
   }
-}
+
+  .siteFooter {
+    flex-direction: column;
+  }
 }
