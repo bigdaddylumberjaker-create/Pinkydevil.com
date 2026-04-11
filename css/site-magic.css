@@ -1,0 +1,144 @@
+/* ========================= */
+/* GLOBAL MAGIC PASS */
+/* ========================= */
+
+/* background breathing */
+.aboutBg,
+.streamsBg,
+.donatedBg,
+.artBg,
+.fursonaBg,
+.musicBg,
+.chatBg,
+.projectsBg {
+  background-size: 100% 100%;
+  animation: siteBgShift 18s ease-in-out infinite;
+}
+
+@keyframes siteBgShift {
+  0%, 100% {
+    filter: saturate(1) brightness(1);
+  }
+  50% {
+    filter: saturate(1.04) brightness(1.02);
+  }
+}
+
+/* slower glow drift + tiny opacity pulse */
+.aboutGlow,
+.streamsGlow,
+.donatedGlow,
+.artGlow,
+.fursonaGlow,
+.musicGlow,
+.chatGlow,
+.projectsGlow {
+  animation:
+    siteGlowFloat 22s ease-in-out infinite,
+    siteGlowBreathe 7s ease-in-out infinite !important;
+}
+
+@keyframes siteGlowFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12px, -10px) scale(1.04);
+  }
+}
+
+@keyframes siteGlowBreathe {
+  0%, 100% {
+    opacity: 0.30;
+  }
+  50% {
+    opacity: 0.44;
+  }
+}
+
+/* make sparkles drift a little softer */
+.aboutSpark,
+.streamsSpark,
+.donatedSpark,
+.artSpark,
+.fursonaSpark,
+.musicSpark,
+.chatSpark,
+.projectsSpark {
+  animation: siteSparkFloat 10s ease-in-out infinite !important;
+}
+
+@keyframes siteSparkFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.22;
+  }
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+    opacity: 0.34;
+  }
+}
+
+/* logo pulse on hover */
+.navLogoWrap:hover .navLogo,
+.navLogoWrap:focus-visible .navLogo {
+  animation: logoPulse 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 14px rgba(255, 120, 190, 0.45));
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* click hearts */
+.clickHeart {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  color: #ff7ebb;
+  font-size: 22px;
+  z-index: 9999;
+  animation: clickHeartFloat 0.9s ease-out forwards;
+  text-shadow: 0 0 12px rgba(255, 120, 190, 0.35);
+  user-select: none;
+}
+
+@keyframes clickHeartFloat {
+  0% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -95px) scale(1.4) rotate(8deg);
+  }
+}
+
+/* cursor sparkles */
+.cursorSparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 128, 190, 0.85);
+  font-size: 12px;
+  text-shadow: 0 0 10px rgba(255, 120, 190, 0.32);
+  animation: cursorSparkleFade 0.7s ease-out forwards;
+  user-select: none;
+}
+
+@keyframes cursorSparkleFade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -22px) scale(1.25) rotate(12deg);
+  }
+}
