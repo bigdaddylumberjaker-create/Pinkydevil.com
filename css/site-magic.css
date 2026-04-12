@@ -141,4 +141,26 @@
     opacity: 0;
     transform: translate(-50%, -22px) scale(1.25) rotate(12deg);
   }
+  /* ========================= */
+/* HOME PAGE SUPPORT (FIX) */
+/* ========================= */
+
+/* enable background breathing on home */
+.homeBg {
+  background-size: 100% 100%;
+  animation: siteBgShift 18s ease-in-out infinite;
+}
+
+/* make nebula + clouds move + breathe */
+.homeNebula,
+.homeCloud {
+  animation:
+    siteGlowFloat 22s ease-in-out infinite,
+    siteGlowBreathe 7s ease-in-out infinite;
+}
+
+/* optional: stars softer movement */
+.homeStar {
+  animation: siteSparkFloat 10s ease-in-out infinite;
+}
 }
