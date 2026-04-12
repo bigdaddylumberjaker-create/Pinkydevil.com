@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PinkyDevil</title>
 
-  <!-- LOAD ORDER MATTERS -->
+  <link rel="stylesheet" href="css/site-magic.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="css/site-magic.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 </head>
@@ -69,17 +68,25 @@
     <div class="homeCloud cloud4"></div>
 
     <div class="homeStars">
-      <span class="homeStar">✦</span>
-      <span class="homeStar">✦</span>
-      <span class="homeStar">✦</span>
-      <span class="homeStar">✦</span>
-      <span class="homeStar">✦</span>
+      <span class="homeStar hs1">✦</span>
+      <span class="homeStar hs2">✦</span>
+      <span class="homeStar hs3">✦</span>
+      <span class="homeStar hs4">✦</span>
+      <span class="homeStar hs5">✦</span>
+      <span class="homeStar hs6">✦</span>
+      <span class="homeStar hs7">✦</span>
+      <span class="homeStar hs8">✦</span>
+      <span class="homeStar hs9">✦</span>
+      <span class="homeStar hs10">✦</span>
     </div>
 
     <div class="homeHearts">
-      <span class="miniHeart">♡</span>
-      <span class="miniHeart">♡</span>
-      <span class="miniHeart">♡</span>
+      <span class="miniHeart h1">♡</span>
+      <span class="miniHeart h2">♡</span>
+      <span class="miniHeart h3">♡</span>
+      <span class="miniHeart h4">♡</span>
+      <span class="miniHeart h5">♡</span>
+      <span class="miniHeart h6">♡</span>
     </div>
   </div>
 
@@ -100,18 +107,98 @@
             <span id="homeLiveBadge" class="homeLiveBadge offline">offline</span>
             <span id="homeLiveText" class="homeLiveText">currently offline</span>
           </div>
+
+          <div class="homeQuickLinks">
+            <a href="https://www.twitch.tv/pinkydevii" target="_blank" rel="noopener noreferrer" class="homeMiniBtn">twitch</a>
+            <a href="https://youtube.com/@PinkyDeviIowo" target="_blank" rel="noopener noreferrer" class="homeMiniBtn alt">youtube</a>
+          </div>
+        </div>
+
+        <div class="heartStage">
+          <svg class="heartSvg" viewBox="0 0 600 540" aria-hidden="true">
+            <defs>
+              <linearGradient id="heartFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffd1ea" stop-opacity="1" />
+                <stop offset="56%" stop-color="#ff9fd3" stop-opacity="0.94" />
+                <stop offset="100%" stop-color="#ff6fb3" stop-opacity="0.84" />
+              </linearGradient>
+
+              <filter id="heartGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="11" result="blur1"></feGaussianBlur>
+                <feMerge>
+                  <feMergeNode in="blur1"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path
+              d="M300 496
+                 C268 468, 90 345, 50 226
+                 C19 132, 71 55, 154 40
+                 C222 28, 271 66, 300 110
+                 C329 66, 378 28, 446 40
+                 C529 55, 581 132, 550 226
+                 C510 345, 332 468, 300 496 Z"
+              fill="url(#heartFill)"
+              stroke="#ff6fb3"
+              stroke-width="10"
+              filter="url(#heartGlow)">
+            </path>
+
+            <path
+              d="M300 470
+                 C272 446, 121 340, 87 236
+                 C60 152, 103 89, 171 77
+                 C227 67, 267 100, 300 145
+                 C333 100, 373 67, 429 77
+                 C497 89, 540 152, 513 236
+                 C479 340, 328 446, 300 470 Z"
+              fill="rgba(255,255,255,0.14)">
+            </path>
+          </svg>
+
+          <div class="heartCenterText">
+            <span class="heartMini">main portal</span>
+            <h2>enter my world</h2>
+            <p>pick a page and explore the cute little universe ✦</p>
+          </div>
         </div>
 
         <div class="portalButtons">
-          <div class="heroButtons">
-            <a href="pages/about.html" class="btn">About</a>
-            <a href="pages/projects.html" class="btn">Projects</a>
-            <a href="pages/streams.html" class="btn">Streams</a>
-            <a href="pages/music.html" class="btn">Music</a>
-            <a href="pages/fursona.html" class="btn">Fursona</a>
-            <a href="pages/art.html" class="btn">Art</a>
-            <a href="pages/chat.html" class="btn">Chat</a>
-            <a href="pages/donated.html" class="btn">Donated</a>
+          <div class="portalButtonsInner">
+            <span class="portalMini">pick a page</span>
+
+            <div class="heroButtons">
+              <a href="pages/about.html" class="btn btn-about">About</a>
+              <a href="pages/projects.html" class="btn btn-projects">Projects</a>
+              <a href="pages/streams.html" class="btn btn-streams">Streams</a>
+              <a href="pages/music.html" class="btn btn-music">Music</a>
+              <a href="pages/fursona.html" class="btn btn-fursona">Fursona</a>
+              <a href="pages/art.html" class="btn btn-art">Art</a>
+              <a href="pages/chat.html" class="btn btn-chat">Chat</a>
+              <a href="pages/donated.html" class="btn btn-donated">Donated</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="homeInfoRow">
+          <div class="homeInfoCard">
+            <span class="sideTag">vibe</span>
+            <h3>pink, dreamy, fluffy</h3>
+            <p>soft clouds, pink stars, and cute little spaces that feel personal instead of plain.</p>
+          </div>
+
+          <div class="homeInfoCard">
+            <span class="sideTag">inside</span>
+            <h3>streams, art, music</h3>
+            <p>all the pages are little portals into different corners of the PinkyDevil world.</p>
+          </div>
+
+          <div class="homeInfoCard">
+            <span class="sideTag">energy</span>
+            <h3>cute little chaos</h3>
+            <p>a dreamy pink universe for hanging out, exploring pages, and showing what makes your site yours.</p>
           </div>
         </div>
 
@@ -119,22 +206,40 @@
     </div>
   </section>
 
-  <!-- FIXED INTRO SCRIPT -->
   <script>
     window.forceEnterHome = function () {
       const loader = document.getElementById("loader");
       const hero = document.querySelector(".hero");
+      const logo = document.getElementById("logoIntro");
+      const button = document.getElementById("enterButton");
 
       if (!loader || loader.dataset.exiting === "1") return;
       loader.dataset.exiting = "1";
 
+      if (logo) {
+        logo.style.transition = "transform 0.7s ease, opacity 0.7s ease";
+        logo.style.transform = "translateY(-14px) scale(0.95)";
+        logo.style.opacity = "0.2";
+      }
+
+      if (button) {
+        button.disabled = true;
+        button.style.opacity = "0.5";
+        button.style.transform = "scale(0.96)";
+      }
+
       loader.style.opacity = "0";
       loader.style.pointerEvents = "none";
 
+      if (hero) {
+        setTimeout(() => {
+          hero.classList.add("visible");
+        }, 160);
+      }
+
       setTimeout(() => {
         loader.style.display = "none";
-        if (hero) hero.classList.add("visible");
-      }, 900);
+      }, 950);
     };
 
     window.addEventListener("DOMContentLoaded", () => {
@@ -143,13 +248,20 @@
         button.addEventListener("click", window.forceEnterHome);
       }
     });
+
+    window.addEventListener("keydown", (event) => {
+      const loader = document.getElementById("loader");
+      if (!loader || loader.style.display === "none") return;
+
+      if (event.key === "Enter") {
+        window.forceEnterHome();
+      }
+    });
   </script>
 
-  <!-- IMPORTANT ORDER -->
   <script src="js/main.js"></script>
   <script src="js/intro.js"></script>
   <script src="js/home-live.js"></script>
   <script src="js/site-magic.js"></script>
-
 </body>
 </html>
