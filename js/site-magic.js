@@ -1,9 +1,8 @@
 (() => {
-  const SOUND_ENABLED = true;
-  const ENTER_SOUND_PATH = "/audio/enter-soft.mp3";
-
   let lastSparkleTime = 0;
-  let soundPrimed = false;
+  let parallaxFrame = null;
+  let pointerX = 0;
+  let pointerY = 0;
 
   function spawnClickHeart(x, y) {
     const heart = document.createElement("span");
@@ -13,9 +12,7 @@
     heart.style.top = `${y}px`;
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 900);
+    setTimeout(() => heart.remove(), 900);
   }
 
   function spawnCursorSparkle(x, y) {
@@ -26,21 +23,50 @@
     sparkle.style.top = `${y}px`;
     document.body.appendChild(sparkle);
 
-    setTimeout(() => {
-      sparkle.remove();
-    }, 700);
+    setTimeout(() => sparkle.remove(), 700);
   }
 
-  function playEnterSound() {
-    if (!SOUND_ENABLED) return;
+  function updateHomeParallax() {
+    parallaxFrame = null;
 
-    try {
-      const audio = new Audio(ENTER_SOUND_PATH);
-      audio.volume = 0.18;
-      audio.play().catch(() => {});
-    } catch (error) {
-      console.warn("Enter sound could not play.", error);
-    }
+    const homeBg = document.querySelector(".homeBg");
+    if (!homeBg) return;
+
+    const width = window.innerWidth || 1;
+    const height = window.innerHeight || 1;
+
+    const offsetX = (pointerX / width - 0.5) * 2;
+    const offsetY = (pointerY / height - 0.5) * 2;
+
+    const nebulae = document.querySelectorAll(".homeNebula");
+    const clouds = document.querySelectorAll(".homeCloud");
+    const stars = document.querySelectorAll(".homeStar");
+    const hearts = document.querySelectorAll(".miniHeart");
+
+    nebulae.forEach((el, index) => {
+      const strength = 10 + index * 3;
+      el.style.transform = `translate(${offsetX * strength}px, ${offsetY * strength}px)`;
+    });
+
+    clouds.forEach((el, index) => {
+      const strength = 16 + index * 4;
+      el.style.transform = `translate(${offsetX * strength}px, ${offsetY * strength}px)`;
+    });
+
+    stars.forEach((el, index) => {
+      const strength = 5 + (index % 4);
+      el.style.transform = `translate(${offsetX * strength}px, ${offsetY * strength}px)`;
+    });
+
+    hearts.forEach((el, index) => {
+      const strength = 7 + (index % 3) * 2;
+      el.style.transform = `translate(${offsetX * strength}px, ${offsetY * strength}px)`;
+    });
+  }
+
+  function queueParallaxUpdate() {
+    if (parallaxFrame) return;
+    parallaxFrame = window.requestAnimationFrame(updateHomeParallax);
   }
 
   document.addEventListener("click", (event) => {
@@ -49,28 +75,31 @@
 
   document.addEventListener("mousemove", (event) => {
     const now = Date.now();
+
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    queueParallaxUpdate();
+
     if (now - lastSparkleTime < 55) return;
     lastSparkleTime = now;
-
     spawnCursorSparkle(event.clientX, event.clientY);
   });
 
-  document.addEventListener(
-    "pointerdown",
-    () => {
-      soundPrimed = true;
-    },
-    { once: true }
-  );
+  window.addEventListener("resize", queueParallaxUpdate);
+  window.addEventListener("load", queueParallaxUpdate);
 
-  window.addEventListener("DOMContentLoaded", () => {
-    const enterButton = document.getElementById("enterButton");
-    if (!enterButton) return;
-
+  const enterButton = document.getElementById("enterButton");
+  if (enterButton) {
     enterButton.addEventListener("click", () => {
-      if (soundPrimed || document.visibilityState === "visible") {
-        playEnterSound();
+      try {
+        const audio = new Audio("audio/enter-soft.mp3");
+        audio.volume = 0.18;
+        audio.play().catch(() => {});
+      } catch (e) {
+        console.log("sound skipped");
       }
     });
-  });
+  }
+
+  console.log("site-magic.js loaded");
 })();
