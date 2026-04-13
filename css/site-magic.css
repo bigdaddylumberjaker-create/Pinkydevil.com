@@ -151,4 +151,12 @@
     opacity: 0;
     transform: translate(-50%, -22px) scale(1.25) rotate(12deg);
   }
+.homeNebula,
+.homeCloud,
+.homeStar,
+.miniHeart {
+  transition: transform 0.22s ease-out;
+  will-change: transform;
+}
+
 }
