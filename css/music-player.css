@@ -1,0 +1,110 @@
+.trackMeta {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0 0;
+  color: #8d5374;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.trackMeta.compact {
+  margin: 12px 0 16px;
+  font-size: 13px;
+}
+
+.trackMeta strong {
+  color: #b44f82;
+}
+
+.peelPlayerCard {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.albumCardInner {
+  position: relative;
+  z-index: 3;
+}
+
+.albumVideoPeek {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.16), transparent 35%),
+    rgba(255, 239, 247, 0.72);
+}
+
+.miniYoutubePlayer {
+  position: absolute;
+  inset: 0;
+}
+
+.miniYoutubePlayer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.albumPeel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 94px;
+  height: 94px;
+  z-index: 4;
+  pointer-events: none;
+  transform: translate(-8px, -8px) rotate(0deg);
+  transform-origin: top left;
+  transition: transform 0.34s ease, filter 0.34s ease;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,221,238,0.92) 52%, rgba(255,170,214,0.82) 100%);
+  box-shadow:
+    0 0 16px rgba(255, 145, 195, 0.22),
+    inset -6px -6px 10px rgba(255,255,255,0.32);
+}
+
+.albumPeel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0));
+}
+
+.peelPlayerCard.is-playing .albumPeel {
+  transform: translate(-6px, -6px) rotate(-18deg);
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.12));
+}
+
+.peelPlayerCard.is-playing .albumVideoPeek {
+  opacity: 1;
+}
+
+.peelPlayerCard.is-playing .albumCardInner {
+  background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.68));
+  border-radius: 18px;
+  padding: 12px;
+  margin: 8px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.36);
+}
+
+.js-track-toggle.is-playing {
+  background: linear-gradient(135deg, #ff7ebb, #ff5da9);
+  color: white;
+  box-shadow:
+    0 0 18px rgba(255, 120, 190, 0.26),
+    0 12px 24px rgba(255, 154, 206, 0.16);
+}
+
+@media (max-width: 760px) {
+  .albumPeel {
+    width: 76px;
+    height: 76px;
+  }
+}
