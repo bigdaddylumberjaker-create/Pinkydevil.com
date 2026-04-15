@@ -151,6 +151,9 @@
     opacity: 0;
     transform: translate(-50%, -22px) scale(1.25) rotate(12deg);
   }
+}
+
+/* parallax smoothing */
 .homeNebula,
 .homeCloud,
 .homeStar,
@@ -159,4 +162,125 @@
   will-change: transform;
 }
 
+/* ========================= */
+/* AURA MODE TOGGLE */
+/* ========================= */
+
+.auraToggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.58);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.30);
+  color: #a24f80;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 12px 28px rgba(255, 154, 206, 0.14),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease;
+}
+
+.auraToggle:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 0 24px rgba(255, 140, 195, 0.20),
+    0 14px 30px rgba(255, 154, 206, 0.18);
+}
+
+.auraToggle.active {
+  background: linear-gradient(135deg, rgba(255,126,187,0.88), rgba(211,176,255,0.86));
+  color: white;
+  box-shadow:
+    0 0 26px rgba(255, 120, 190, 0.34),
+    0 16px 34px rgba(255, 154, 206, 0.22);
+}
+
+.auraToggle .auraDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* ========================= */
+/* AURA MODE ACTIVE */
+/* ========================= */
+
+body.auraMode .homeBg,
+body.auraMode .aboutBg,
+body.auraMode .streamsBg,
+body.auraMode .donatedBg,
+body.auraMode .artBg,
+body.auraMode .fursonaBg,
+body.auraMode .musicBg,
+body.auraMode .chatBg,
+body.auraMode .projectsBg {
+  filter: saturate(1.09) brightness(1.04);
+}
+
+body.auraMode .homeNebula,
+body.auraMode .homeCloud,
+body.auraMode .aboutGlow,
+body.auraMode .streamsGlow,
+body.auraMode .donatedGlow,
+body.auraMode .artGlow,
+body.auraMode .fursonaGlow,
+body.auraMode .musicGlow,
+body.auraMode .chatGlow,
+body.auraMode .projectsGlow {
+  opacity: 0.50 !important;
+}
+
+body.auraMode .homePortal,
+body.auraMode .mainMonitor,
+body.auraMode .mainSupportCard,
+body.auraMode .featuredFrame,
+body.auraMode .centerShrine,
+body.auraMode .leaderboardCard,
+body.auraMode .widgetCard,
+body.auraMode .sideCard,
+body.auraMode .storyPanel,
+body.auraMode .memoryCard,
+body.auraMode .noteCard,
+body.auraMode .infoCard {
+  box-shadow:
+    0 0 34px rgba(255, 120, 190, 0.18),
+    0 18px 34px rgba(255, 154, 206, 0.16),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+body.auraMode .navLogo {
+  filter: drop-shadow(0 0 18px rgba(255, 120, 190, 0.55));
+}
+
+body.auraMode .heroMainTitle,
+body.auraMode .aboutTitle,
+body.auraMode .streamsTitle,
+body.auraMode .donatedTitle,
+body.auraMode .artTitle {
+  filter: drop-shadow(0 0 16px rgba(255, 120, 190, 0.30));
+}
+
+@media (max-width: 760px) {
+  .auraToggle {
+    right: 12px;
+    bottom: 12px;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
 }
