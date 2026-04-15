@@ -1,8 +1,18 @@
 (() => {
   let lastSparkleTime = 0;
   let parallaxFrame = null;
-  let pointerX = 0;
-  let pointerY = 0;
+  let pointerX = window.innerWidth / 2;
+  let pointerY = window.innerHeight / 2;
+
+  function setAuraMode(enabled) {
+    document.body.classList.toggle("auraMode", Boolean(enabled));
+  }
+
+  function applyAutomaticAuraMode() {
+    const isHomePage = Boolean(document.querySelector(".homeBg"));
+    const streamLive = document.body.dataset.streamLive === "true";
+    setAuraMode(isHomePage || streamLive);
+  }
 
   function spawnClickHeart(x, y) {
     const heart = document.createElement("span");
@@ -69,30 +79,6 @@
     parallaxFrame = window.requestAnimationFrame(updateHomeParallax);
   }
 
-  function createAuraToggle() {
-    if (document.querySelector(".auraToggle")) return;
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "auraToggle";
-    button.setAttribute("aria-label", "Toggle Aura Mode");
-    button.innerHTML = `<span class="auraDot"></span><span class="auraLabel">aura mode</span>`;
-
-    const saved = localStorage.getItem("pinky_aura_mode") === "on";
-    if (saved) {
-      document.body.classList.add("auraMode");
-      button.classList.add("active");
-    }
-
-    button.addEventListener("click", () => {
-      const enabled = document.body.classList.toggle("auraMode");
-      button.classList.toggle("active", enabled);
-      localStorage.setItem("pinky_aura_mode", enabled ? "on" : "off");
-    });
-
-    document.body.appendChild(button);
-  }
-
   document.addEventListener("click", (event) => {
     spawnClickHeart(event.clientX, event.clientY);
   });
@@ -110,9 +96,16 @@
   });
 
   window.addEventListener("resize", queueParallaxUpdate);
+
   window.addEventListener("load", () => {
+    applyAutomaticAuraMode();
     queueParallaxUpdate();
-    createAuraToggle();
+  });
+
+  document.addEventListener("stream-live-state", (event) => {
+    const isLive = Boolean(event.detail && event.detail.isLive);
+    document.body.dataset.streamLive = isLive ? "true" : "false";
+    applyAutomaticAuraMode();
   });
 
   const enterButton = document.getElementById("enterButton");
