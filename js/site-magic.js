@@ -69,6 +69,30 @@
     parallaxFrame = window.requestAnimationFrame(updateHomeParallax);
   }
 
+  function createAuraToggle() {
+    if (document.querySelector(".auraToggle")) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "auraToggle";
+    button.setAttribute("aria-label", "Toggle Aura Mode");
+    button.innerHTML = `<span class="auraDot"></span><span class="auraLabel">aura mode</span>`;
+
+    const saved = localStorage.getItem("pinky_aura_mode") === "on";
+    if (saved) {
+      document.body.classList.add("auraMode");
+      button.classList.add("active");
+    }
+
+    button.addEventListener("click", () => {
+      const enabled = document.body.classList.toggle("auraMode");
+      button.classList.toggle("active", enabled);
+      localStorage.setItem("pinky_aura_mode", enabled ? "on" : "off");
+    });
+
+    document.body.appendChild(button);
+  }
+
   document.addEventListener("click", (event) => {
     spawnClickHeart(event.clientX, event.clientY);
   });
@@ -86,7 +110,10 @@
   });
 
   window.addEventListener("resize", queueParallaxUpdate);
-  window.addEventListener("load", queueParallaxUpdate);
+  window.addEventListener("load", () => {
+    queueParallaxUpdate();
+    createAuraToggle();
+  });
 
   const enterButton = document.getElementById("enterButton");
   if (enterButton) {
