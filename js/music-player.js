@@ -1,5 +1,6 @@
 let musicPlayers = {};
 let currentTrackId = null;
+let clipWatchers = {};
 
 const TRACKS = {
   track1: {
@@ -18,11 +19,18 @@ const TRACKS = {
     end: 597
   },
   track4: {
-    videoId: "Cg1Xd3ZUUNU",
-    start: 1,
+    videoId: "WW6R8xDjBKA",
+    start: 0,
     end: 0
   }
 };
+
+function clearClipWatcher(trackId) {
+  if (clipWatchers[trackId]) {
+    clearInterval(clipWatchers[trackId]);
+    clipWatchers[trackId] = null;
+  }
+}
 
 function stopAllTracks() {
   Object.keys(musicPlayers).forEach((id) => {
@@ -30,14 +38,19 @@ function stopAllTracks() {
     if (player && typeof player.stopVideo === "function") {
       player.stopVideo();
     }
+
+    clearClipWatcher(id);
+
     const card = document.querySelector(`.peelPlayerCard[data-player="${id}"]`);
     const button = document.querySelector(`.js-track-toggle[data-target="${id}"]`);
+
     if (card) card.classList.remove("is-playing");
     if (button) {
       button.classList.remove("is-playing");
       button.textContent = "play";
     }
   });
+
   currentTrackId = null;
 }
 
@@ -62,18 +75,18 @@ function playTrack(trackId) {
   currentTrackId = trackId;
 
   if (config.end && config.end > config.start) {
-    const checkEnd = setInterval(() => {
+    clipWatchers[trackId] = setInterval(() => {
       if (currentTrackId !== trackId) {
-        clearInterval(checkEnd);
+        clearClipWatcher(trackId);
         return;
       }
 
       const time = player.getCurrentTime();
       if (time >= config.end) {
         stopAllTracks();
-        clearInterval(checkEnd);
+        clearClipWatcher(trackId);
       }
-    }, 400);
+    }, 350);
   }
 }
 
