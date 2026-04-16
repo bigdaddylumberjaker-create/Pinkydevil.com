@@ -4,24 +4,25 @@ let clipWatchers = {};
 
 const TRACKS = {
   track1: {
+    type: "youtube",
     videoId: "YsGjFh1ke44",
     start: 0,
     end: 0
   },
   track2: {
+    type: "youtube",
     videoId: "DopBUv0ZV2w",
     start: 0,
     end: 0
   },
   track3: {
+    type: "youtube",
     videoId: "vzo-2zQQ3dA",
     start: 452,
     end: 597
   },
   track4: {
-    videoId: "WW6R8xDjBKA",
-    start: 0,
-    end: 0
+    type: "local"
   }
 };
 
@@ -32,14 +33,50 @@ function clearClipWatcher(trackId) {
   }
 }
 
+function stopLocalTrack4() {
+  const video = document.getElementById("track4-local-video");
+  const audio = document.getElementById("track4-local-audio");
+
+  if (video) {
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
+
+function playLocalTrack4() {
+  const video = document.getElementById("track4-local-video");
+  const audio = document.getElementById("track4-local-audio");
+
+  if (video) {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  }
+
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+  }
+}
+
 function stopAllTracks() {
-  Object.keys(musicPlayers).forEach((id) => {
-    const player = musicPlayers[id];
-    if (player && typeof player.stopVideo === "function") {
-      player.stopVideo();
+  Object.keys(TRACKS).forEach((id) => {
+    clearClipWatcher(id);
+
+    if (TRACKS[id].type === "youtube") {
+      const player = musicPlayers[id];
+      if (player && typeof player.stopVideo === "function") {
+        player.stopVideo();
+      }
     }
 
-    clearClipWatcher(id);
+    if (id === "track4") {
+      stopLocalTrack4();
+    }
 
     const card = document.querySelector(`.videoRevealCard[data-player="${id}"]`);
     const button = document.querySelector(`.js-track-toggle[data-target="${id}"]`);
@@ -56,8 +93,7 @@ function stopAllTracks() {
 
 function playTrack(trackId) {
   const config = TRACKS[trackId];
-  const player = musicPlayers[trackId];
-  if (!config || !player) return;
+  if (!config) return;
 
   stopAllTracks();
 
@@ -70,23 +106,33 @@ function playTrack(trackId) {
     button.textContent = "stop";
   }
 
-  player.seekTo(config.start || 0, true);
-  player.playVideo();
   currentTrackId = trackId;
 
-  if (config.end && config.end > config.start) {
-    clipWatchers[trackId] = setInterval(() => {
-      if (currentTrackId !== trackId) {
-        clearClipWatcher(trackId);
-        return;
-      }
+  if (config.type === "youtube") {
+    const player = musicPlayers[trackId];
+    if (!player) return;
 
-      const time = player.getCurrentTime();
-      if (time >= config.end) {
-        stopAllTracks();
-        clearClipWatcher(trackId);
-      }
-    }, 350);
+    player.seekTo(config.start || 0, true);
+    player.playVideo();
+
+    if (config.end && config.end > config.start) {
+      clipWatchers[trackId] = setInterval(() => {
+        if (currentTrackId !== trackId) {
+          clearClipWatcher(trackId);
+          return;
+        }
+
+        const time = player.getCurrentTime();
+        if (time >= config.end) {
+          stopAllTracks();
+          clearClipWatcher(trackId);
+        }
+      }, 350);
+    }
+  }
+
+  if (config.type === "local" && trackId === "track4") {
+    playLocalTrack4();
   }
 }
 
@@ -95,6 +141,7 @@ function toggleTrack(trackId) {
     stopAllTracks();
     return;
   }
+
   playTrack(trackId);
 }
 
@@ -109,7 +156,7 @@ function bindTrackButtons() {
 
 function createPlayer(trackId) {
   const config = TRACKS[trackId];
-  if (!config) return;
+  if (!config || config.type !== "youtube") return;
 
   musicPlayers[trackId] = new YT.Player(`${trackId}-player`, {
     videoId: config.videoId,
