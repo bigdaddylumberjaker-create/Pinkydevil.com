@@ -21,15 +21,14 @@
 }
 
 /* ========================= */
-/* PREMIUM FOLD PLAYER CARD */
+/* VIDEO REVEAL CARD */
 /* ========================= */
 
-.premiumFoldCard {
+.videoRevealCard {
   position: relative;
   overflow: hidden;
   isolation: isolate;
   min-height: 350px;
-  perspective: 1400px;
 }
 
 .albumVideoLayer {
@@ -64,17 +63,18 @@
   position: relative;
   z-index: 3;
   min-height: 350px;
-  padding: 22px 20px 92px;
+  padding: 22px 20px 88px;
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255,247,252,0.98), rgba(255,238,248,0.96));
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,0.48),
     0 12px 24px rgba(255, 154, 206, 0.08);
   transition:
-    background 0.34s ease,
-    box-shadow 0.34s ease,
-    backdrop-filter 0.34s ease,
-    -webkit-backdrop-filter 0.34s ease;
+    opacity 0.30s ease,
+    background 0.30s ease,
+    box-shadow 0.30s ease,
+    backdrop-filter 0.30s ease,
+    -webkit-backdrop-filter 0.30s ease;
 }
 
 .albumTop,
@@ -82,121 +82,26 @@
 .albumSurface p,
 .albumSurface .trackMeta {
   transition:
-    opacity 0.26s ease,
-    transform 0.26s ease,
-    filter 0.26s ease;
-}
-
-/* fold shadow under the moving flap */
-.albumFoldShadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 142px;
-  height: 142px;
-  z-index: 4;
-  opacity: 0;
-  pointer-events: none;
-  transform-origin: top left;
-  transform: translate3d(0,0,0);
-  transition:
     opacity 0.24s ease,
-    transform 0.46s ease,
-    filter 0.46s ease;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  background: radial-gradient(circle at 0 0, rgba(0,0,0,0.24), rgba(0,0,0,0.08) 48%, transparent 72%);
-  filter: blur(10px);
+    transform 0.24s ease,
+    filter 0.24s ease;
 }
 
-/* actual flap */
-.albumFold {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 122px;
-  height: 122px;
-  z-index: 5;
-  opacity: 0;
-  pointer-events: none;
-  transform-origin: top left;
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0,0,0);
-  transition:
-    opacity 0.18s ease,
-    transform 0.52s cubic-bezier(.22,.8,.18,1),
-    filter 0.42s ease;
-  transform-style: preserve-3d;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-.albumFold::before,
-.albumFold::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  backface-visibility: hidden;
-  border-top-left-radius: 8px;
-}
-
-.albumFold::before {
-  background:
-    linear-gradient(135deg,
-      rgba(255,255,255,0.99) 0%,
-      rgba(255,243,249,0.98) 54%,
-      rgba(255,219,236,0.92) 100%);
-  box-shadow:
-    inset -10px -10px 16px rgba(0,0,0,0.04),
-    inset 0 0 0 1px rgba(255,255,255,0.55);
-}
-
-.albumFold::after {
-  background:
-    linear-gradient(135deg,
-      rgba(255,228,240,0.96) 0%,
-      rgba(255,205,225,0.90) 55%,
-      rgba(247,181,212,0.84) 100%);
-  transform: rotateY(180deg);
-  box-shadow:
-    inset 12px 12px 18px rgba(255,255,255,0.16),
-    inset -10px -10px 18px rgba(0,0,0,0.08);
-}
-
-/* control bar that stays visible */
-.albumControlBar {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
-  height: 68px;
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.90), rgba(255,238,247,0.94));
-  border: 1px solid rgba(255,255,255,0.54);
-  box-shadow:
-    0 10px 18px rgba(255, 154, 206, 0.10),
-    inset 0 0 0 1px rgba(255,255,255,0.16);
-  transition:
-    background 0.34s ease,
-    backdrop-filter 0.34s ease,
-    -webkit-backdrop-filter 0.34s ease,
-    box-shadow 0.34s ease;
-}
-
+/* play button stays, no extra holder */
 .musicCardBtn,
 .musicCardBtn.alt {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 6;
   min-width: 92px;
-  position: relative;
-  z-index: 7;
 }
 
 /* ========================= */
 /* PLAYING STATE */
 /* ========================= */
 
-.premiumFoldCard.is-playing .albumVideoLayer {
+.videoRevealCard.is-playing .albumVideoLayer {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
@@ -206,44 +111,22 @@
     visibility 0s;
 }
 
-.premiumFoldCard.is-playing .albumSurface {
-  background: rgba(255,255,255,0.14);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.18),
-    0 12px 24px rgba(255, 154, 206, 0.06);
-  backdrop-filter: blur(1.6px);
-  -webkit-backdrop-filter: blur(1.6px);
+/* card face fades away so video shows through */
+.videoRevealCard.is-playing .albumSurface {
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+  backdrop-filter: blur(1.2px);
+  -webkit-backdrop-filter: blur(1.2px);
 }
 
-.premiumFoldCard.is-playing .albumTop,
-.premiumFoldCard.is-playing h3,
-.premiumFoldCard.is-playing p,
-.premiumFoldCard.is-playing .trackMeta {
+.videoRevealCard.is-playing .albumTop,
+.videoRevealCard.is-playing h3,
+.videoRevealCard.is-playing p,
+.videoRevealCard.is-playing .trackMeta {
   opacity: 0;
   transform: translateY(12px);
   filter: blur(4px);
   pointer-events: none;
-}
-
-.premiumFoldCard.is-playing .albumFoldShadow {
-  opacity: 1;
-  transform: translate3d(12px, 10px, 0);
-  filter: blur(14px);
-}
-
-.premiumFoldCard.is-playing .albumFold {
-  opacity: 1;
-  transform: rotateX(10deg) rotateY(-168deg) rotateZ(-4deg) translate3d(-4px, -4px, 24px);
-  filter: drop-shadow(10px 12px 14px rgba(0,0,0,0.16));
-}
-
-.premiumFoldCard.is-playing .albumControlBar {
-  background: linear-gradient(135deg, rgba(255,203,229,0.88), rgba(255,236,247,0.82));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow:
-    0 12px 22px rgba(255, 154, 206, 0.16),
-    inset 0 0 0 1px rgba(255,255,255,0.22);
 }
 
 .js-track-toggle.is-playing {
@@ -259,26 +142,19 @@
 /* ========================= */
 
 @media (max-width: 760px) {
-  .premiumFoldCard,
+  .videoRevealCard,
   .albumSurface {
     min-height: 320px;
   }
 
   .albumSurface {
-    padding: 20px 18px 84px;
+    padding: 20px 18px 82px;
   }
 
-  .albumControlBar {
-    height: 62px;
-  }
-
-  .albumFoldShadow {
-    width: 112px;
-    height: 112px;
-  }
-
-  .albumFold {
-    width: 94px;
-    height: 94px;
+  .musicCardBtn,
+  .musicCardBtn.alt {
+    left: 18px;
+    bottom: 18px;
+    min-width: 84px;
   }
 }
