@@ -2,7 +2,21 @@
   const lightbox = document.getElementById("artLightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const closeButton = document.getElementById("lightboxClose");
-  const zoomableImages = document.querySelectorAll(".artZoomable");
+
+  // ONLY extra slider art goes here
+  // add more by copying one block
+  const SHOWCASE_ART = [
+    {
+      src: "../images/arts/extra1.jpg",
+      alt: "Extra showcase artwork one",
+      artist: "unknown artist 💗"
+    },
+    {
+      src: "../images/arts/extra2.png",
+      alt: "Extra showcase artwork two",
+      artist: "unknown artist 💗"
+    }
+  ];
 
   function openLightbox(src, alt) {
     if (!lightbox || !lightboxImage) return;
@@ -22,8 +36,11 @@
     document.body.style.overflow = "";
   }
 
-  if (zoomableImages.length) {
+  function bindZoomableImages() {
+    const zoomableImages = document.querySelectorAll(".artZoomable");
     zoomableImages.forEach((image) => {
+      if (image.dataset.zoomBound === "true") return;
+      image.dataset.zoomBound = "true";
       image.addEventListener("click", () => {
         openLightbox(image.src, image.alt);
       });
@@ -48,12 +65,51 @@
     }
   });
 
-  const slides = document.querySelectorAll(".showcaseSlide");
-  const dots = document.querySelectorAll(".showcaseDot");
+  const track = document.getElementById("showcaseTrack");
+  const dotsWrap = document.getElementById("showcaseDots");
   const showcaseSlider = document.getElementById("showcaseSlider");
 
+  let slides = [];
+  let dots = [];
   let currentSlide = 0;
   let sliderInterval = null;
+
+  function buildShowcaseSlides() {
+    if (!track || !dotsWrap) return;
+
+    track.innerHTML = "";
+    dotsWrap.innerHTML = "";
+
+    SHOWCASE_ART.forEach((art, index) => {
+      const slide = document.createElement("article");
+      slide.className = "showcaseSlide" + (index === 0 ? " active" : "");
+      slide.innerHTML = `
+        <div class="showcaseImageWrap artCreditWrap" tabindex="0">
+          <img src="${art.src}" alt="${art.alt}" class="showcaseImage artZoomable">
+          <div class="artCreditLabel">art by: ${art.artist}</div>
+        </div>
+      `;
+      track.appendChild(slide);
+
+      const dot = document.createElement("button");
+      dot.className = "showcaseDot" + (index === 0 ? " active" : "");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Show slide " + (index + 1));
+      dotsWrap.appendChild(dot);
+    });
+
+    slides = Array.from(document.querySelectorAll(".showcaseSlide"));
+    dots = Array.from(document.querySelectorAll(".showcaseDot"));
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        startSlider();
+      });
+    });
+
+    bindZoomableImages();
+  }
 
   function showSlide(index) {
     if (!slides.length) return;
@@ -84,22 +140,13 @@
     }, 4200);
   }
 
-  if (dots.length) {
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-        startSlider();
-      });
-    });
-  }
-
   if (showcaseSlider) {
     showcaseSlider.addEventListener("mouseenter", stopSlider);
     showcaseSlider.addEventListener("mouseleave", startSlider);
   }
 
-  if (slides.length) {
-    showSlide(0);
-    startSlider();
-  }
+  buildShowcaseSlides();
+  bindZoomableImages();
+  showSlide(0);
+  startSlider();
 })();
