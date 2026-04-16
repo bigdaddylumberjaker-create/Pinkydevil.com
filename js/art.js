@@ -3,8 +3,8 @@
   const lightboxImage = document.getElementById("lightboxImage");
   const closeButton = document.getElementById("lightboxClose");
 
-  // ONLY extra slider art goes here
-  // add more by copying one block
+  // ONLY put extra slider art here.
+  // Do not add featured/art1/art2/art3/art4/art5/art6 here.
   const SHOWCASE_ART = [
     {
       src: "../images/arts/extra1.jpg",
