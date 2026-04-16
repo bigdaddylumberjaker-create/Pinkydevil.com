@@ -703,6 +703,28 @@
   transform: scale(1.1);
 }
 
+/* cleaner slider patch */
+.galleryRoomClean .featuredFrame {
+  padding-top: 0;
+}
+
+.galleryRoomClean .showcaseTop p,
+.galleryRoomClean .showcaseInfo {
+  display: none;
+}
+
+.showcaseSliderClean .showcaseTrack {
+  min-height: 420px;
+}
+
+.showcaseSliderClean .showcaseSlide {
+  grid-template-columns: 1fr;
+}
+
+.showcaseSliderClean .showcaseImage {
+  min-height: 380px;
+}
+
 /* ========================= */
 /* ART CREDIT + HOVER */
 /* ========================= */
@@ -960,28 +982,7 @@
   .showcaseImage {
     min-height: 240px;
   }
-  .galleryRoomClean .featuredFrame {
-  padding-top: 0;
-}
 
-.galleryRoomClean .showcaseTop p,
-.galleryRoomClean .showcaseInfo {
-  display: none;
-}
-
-.showcaseSliderClean .showcaseTrack {
-  min-height: 420px;
-}
-
-.showcaseSliderClean .showcaseSlide {
-  grid-template-columns: 1fr;
-}
-
-.showcaseSliderClean .showcaseImage {
-  min-height: 380px;
-}
-
-@media (max-width: 760px) {
   .showcaseSliderClean .showcaseTrack {
     min-height: 280px;
   }
@@ -989,5 +990,4 @@
   .showcaseSliderClean .showcaseImage {
     min-height: 240px;
   }
-}
 }
