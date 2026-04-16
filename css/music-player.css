@@ -29,8 +29,10 @@
   overflow: hidden;
   isolation: isolate;
   min-height: 350px;
+  border-radius: 24px;
 }
 
+/* video layer underneath */
 .albumVideoLayer {
   position: absolute;
   inset: 0;
@@ -39,12 +41,12 @@
   border-radius: 24px;
   opacity: 0;
   visibility: hidden;
-  transform: scale(1.03);
+  transform: scale(1.01);
   transition:
-    opacity 0.34s ease,
-    transform 0.46s ease,
-    visibility 0s linear 0.34s;
-  background: #111;
+    opacity 0.28s ease,
+    transform 0.32s ease,
+    visibility 0s linear 0.28s;
+  background: #000;
 }
 
 .miniYoutubePlayer {
@@ -59,22 +61,35 @@
   display: block;
 }
 
+/* main visible card face */
 .albumSurface {
   position: relative;
   z-index: 3;
   min-height: 350px;
   padding: 22px 20px 88px;
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255,247,252,0.98), rgba(255,238,248,0.96));
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.48),
-    0 12px 24px rgba(255, 154, 206, 0.08);
+  background: transparent;
+  box-shadow: none;
   transition:
-    opacity 0.30s ease,
-    background 0.30s ease,
-    box-shadow 0.30s ease,
-    backdrop-filter 0.30s ease,
-    -webkit-backdrop-filter 0.30s ease;
+    opacity 0.26s ease,
+    background-color 0.26s ease;
+}
+
+/* give the COLOR TO THE REAL CARD, not an extra inner sheet */
+.videoRevealCard.pink {
+  background: linear-gradient(180deg, rgba(255,247,252,0.98), rgba(255,238,248,0.96));
+}
+
+.videoRevealCard.lavender {
+  background: linear-gradient(180deg, rgba(247,243,255,0.98), rgba(236,228,255,0.96));
+}
+
+.videoRevealCard.peach {
+  background: linear-gradient(180deg, rgba(255,246,239,0.98), rgba(255,233,222,0.96));
+}
+
+.videoRevealCard.blue {
+  background: linear-gradient(180deg, rgba(240,248,255,0.98), rgba(224,239,255,0.96));
 }
 
 .albumTop,
@@ -82,12 +97,11 @@
 .albumSurface p,
 .albumSurface .trackMeta {
   transition:
-    opacity 0.24s ease,
-    transform 0.24s ease,
-    filter 0.24s ease;
+    opacity 0.22s ease,
+    transform 0.22s ease;
 }
 
-/* play button stays, no extra holder */
+/* keep button simple and floating on card */
 .musicCardBtn,
 .musicCardBtn.alt {
   position: absolute;
@@ -106,29 +120,27 @@
   visibility: visible;
   transform: scale(1);
   transition:
-    opacity 0.34s ease,
-    transform 0.46s ease,
+    opacity 0.28s ease,
+    transform 0.32s ease,
     visibility 0s;
 }
 
-/* card face fades away so video shows through */
+/* remove blur / haze / inner panel look */
 .videoRevealCard.is-playing .albumSurface {
-  background: rgba(255,255,255,0.08);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
-  backdrop-filter: blur(1.2px);
-  -webkit-backdrop-filter: blur(1.2px);
+  background: transparent;
 }
 
+/* fade text away so the video shows clearly */
 .videoRevealCard.is-playing .albumTop,
 .videoRevealCard.is-playing h3,
 .videoRevealCard.is-playing p,
 .videoRevealCard.is-playing .trackMeta {
   opacity: 0;
-  transform: translateY(12px);
-  filter: blur(4px);
+  transform: translateY(10px);
   pointer-events: none;
 }
 
+/* keep only the play/stop button visible */
 .js-track-toggle.is-playing {
   background: linear-gradient(135deg, #ff7ebb, #ff5da9);
   color: white;
