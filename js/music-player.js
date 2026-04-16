@@ -41,7 +41,7 @@ function stopAllTracks() {
 
     clearClipWatcher(id);
 
-    const card = document.querySelector(`.peelPlayerCard[data-player="${id}"]`);
+    const card = document.querySelector(`.premiumFoldCard[data-player="${id}"]`);
     const button = document.querySelector(`.js-track-toggle[data-target="${id}"]`);
 
     if (card) card.classList.remove("is-playing");
@@ -61,7 +61,7 @@ function playTrack(trackId) {
 
   stopAllTracks();
 
-  const card = document.querySelector(`.peelPlayerCard[data-player="${trackId}"]`);
+  const card = document.querySelector(`.premiumFoldCard[data-player="${trackId}"]`);
   const button = document.querySelector(`.js-track-toggle[data-target="${trackId}"]`);
 
   if (card) card.classList.add("is-playing");
