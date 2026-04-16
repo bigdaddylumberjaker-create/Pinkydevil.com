@@ -61,17 +61,32 @@
   display: block;
 }
 
-/* local track 4 */
 .localVideoLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 24px;
   background: #000;
 }
 
 .localTrackVideo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
   border: 0;
+  background: #000;
+}
+
+.localVideoLayer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* the only colored box should be this inner one */
