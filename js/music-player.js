@@ -35,31 +35,19 @@ function clearClipWatcher(trackId) {
 
 function stopLocalTrack4() {
   const video = document.getElementById("track4-local-video");
-  const audio = document.getElementById("track4-local-audio");
 
   if (video) {
     video.pause();
     video.currentTime = 0;
   }
-
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
-  }
 }
 
 function playLocalTrack4() {
   const video = document.getElementById("track4-local-video");
-  const audio = document.getElementById("track4-local-audio");
 
   if (video) {
     video.currentTime = 0;
     video.play().catch(() => {});
-  }
-
-  if (audio) {
-    audio.currentTime = 0;
-    audio.play().catch(() => {});
   }
 }
 
@@ -184,4 +172,11 @@ function createPlayer(trackId) {
 window.onYouTubeIframeAPIReady = function () {
   Object.keys(TRACKS).forEach(createPlayer);
   bindTrackButtons();
+
+  const localTrack4Video = document.getElementById("track4-local-video");
+  if (localTrack4Video) {
+    localTrack4Video.addEventListener("ended", () => {
+      stopAllTracks();
+    });
+  }
 };
