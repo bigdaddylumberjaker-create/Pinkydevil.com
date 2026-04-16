@@ -173,11 +173,11 @@
                     <div><strong>artist:</strong> Taco</div>
                     <div><strong>credit:</strong> official video upload</div>
                   </div>
-
-                  <button class="musicCardBtn js-track-toggle" data-target="track1">
-                    play
-                  </button>
                 </div>
+
+                <button class="musicCardBtn js-track-toggle" data-target="track1">
+                  play
+                </button>
               </article>
 
               <article class="albumCard lavender floatingCard videoRevealCard" data-player="track2">
@@ -201,11 +201,11 @@
                     <div><strong>artist:</strong> Spectrum [スペクトラム]</div>
                     <div><strong>credit:</strong> official upload</div>
                   </div>
-
-                  <button class="musicCardBtn alt js-track-toggle" data-target="track2">
-                    play
-                  </button>
                 </div>
+
+                <button class="musicCardBtn alt js-track-toggle" data-target="track2">
+                  play
+                </button>
               </article>
 
               <article class="albumCard peach floatingCard videoRevealCard" data-player="track3">
@@ -229,16 +229,28 @@
                     <div><strong>artist:</strong> Casino Swing</div>
                     <div><strong>credit:</strong> All-In Jackpot / Brass Section - Electro Swing</div>
                   </div>
-
-                  <button class="musicCardBtn js-track-toggle" data-target="track3">
-                    play
-                  </button>
                 </div>
+
+                <button class="musicCardBtn js-track-toggle" data-target="track3">
+                  play
+                </button>
               </article>
 
-              <article class="albumCard blue floatingCard videoRevealCard" data-player="track4">
-                <div class="albumVideoLayer">
-                  <div id="track4-player" class="miniYoutubePlayer"></div>
+              <article class="albumCard blue floatingCard videoRevealCard localMediaCard" data-player="track4">
+                <div class="albumVideoLayer localVideoLayer">
+                  <video
+                    id="track4-local-video"
+                    class="localTrackVideo"
+                    preload="metadata"
+                    playsinline
+                    controls
+                  >
+                    <source src="../media/music/psycho-dragons.mp4" type="video/mp4" />
+                  </video>
+
+                  <audio id="track4-local-audio" preload="metadata">
+                    <source src="../media/music/psycho-dragons.mp3" type="audio/mpeg" />
+                  </audio>
                 </div>
 
                 <div class="albumSurface">
@@ -255,13 +267,13 @@
 
                   <div class="trackMeta compact">
                     <div><strong>artist:</strong> Caravan Palace</div>
-                    <div><strong>credit:</strong> Dragons / linked favorite</div>
+                    <div><strong>credit:</strong> local video + mp3</div>
                   </div>
-
-                  <button class="musicCardBtn alt js-track-toggle" data-target="track4">
-                    play
-                  </button>
                 </div>
+
+                <button class="musicCardBtn alt js-track-toggle" data-target="track4">
+                  play
+                </button>
               </article>
 
             </section>
