@@ -32,9 +32,9 @@
   border-radius: 24px;
   background: transparent !important;
   box-shadow: none !important;
+  padding: 0 !important;
 }
 
-/* video layer */
 .albumVideoLayer {
   position: absolute;
   inset: 0;
@@ -44,8 +44,8 @@
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.24s ease,
-    visibility 0s linear 0.24s;
+    opacity 0.22s ease,
+    visibility 0s linear 0.22s;
   background: #000;
 }
 
@@ -82,14 +82,7 @@
   background: #000;
 }
 
-.localVideoLayer video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* the only colored box should be this inner one */
+/* only the inner box has color */
 .albumSurface {
   position: relative;
   z-index: 3;
@@ -97,8 +90,8 @@
   padding: 22px 20px 88px;
   border-radius: 24px;
   transition:
-    opacity 0.24s ease,
-    visibility 0s linear 0.24s;
+    opacity 0.20s ease,
+    visibility 0s linear 0.20s;
 }
 
 .videoRevealCard.pink .albumSurface {
@@ -117,13 +110,21 @@
   background: linear-gradient(180deg, rgba(240,248,255,0.98), rgba(224,239,255,0.96));
 }
 
+/* remove outer color look */
+.videoRevealCard.pink,
+.videoRevealCard.lavender,
+.videoRevealCard.peach,
+.videoRevealCard.blue {
+  background: transparent !important;
+}
+
 /* button stays visible */
 .musicCardBtn,
 .musicCardBtn.alt {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  z-index: 6;
+  z-index: 10;
   min-width: 92px;
 }
 
@@ -135,17 +136,16 @@
   opacity: 1;
   visibility: visible;
   transition:
-    opacity 0.24s ease,
+    opacity 0.22s ease,
     visibility 0s;
 }
 
-/* delete the whole text box while playing */
 .videoRevealCard.is-playing .albumSurface {
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.20s ease,
-    visibility 0s linear 0.20s;
+    opacity 0.16s ease,
+    visibility 0s linear 0.16s;
 }
 
 .js-track-toggle.is-playing {
