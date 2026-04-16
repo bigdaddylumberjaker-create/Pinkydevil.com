@@ -115,37 +115,37 @@
                 <div class="leaderboardRow rank1">
                   <div class="rankBadge">1</div>
                   <div class="leaderboardPerson">
-                    <strong>name here</strong>
+                    <strong>Original name</strong>
                     <span>top supporter</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$155</div>
                 </div>
 
                 <div class="leaderboardRow rank2">
                   <div class="rankBadge">2</div>
                   <div class="leaderboardPerson">
-                    <strong>name here</strong>
+                    <strong>Celenyx</strong>
                     <span>sweet bean</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$100</div>
                 </div>
 
                 <div class="leaderboardRow rank3">
                   <div class="rankBadge">3</div>
                   <div class="leaderboardPerson">
-                    <strong>name here</strong>
+                    <strong>Ravendyr</strong>
                     <span>cute legend</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$45</div>
                 </div>
 
                 <div class="leaderboardRow">
                   <div class="rankBadge">4</div>
                   <div class="leaderboardPerson">
-                    <strong>name here</strong>
+                    <strong>Brett</strong>
                     <span>supporter</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$40</div>
                 </div>
               </div>
             </article>
@@ -162,37 +162,37 @@
                 <div class="leaderboardRow rank1">
                   <div class="rankBadge">1</div>
                   <div class="leaderboardPerson">
-                    <strong>person / place here</strong>
+                    <strong>2022 Christmas gifting</strong>
                     <span>most supported</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$2,016.4</div>
                 </div>
 
                 <div class="leaderboardRow rank2">
                   <div class="rankBadge">2</div>
                   <div class="leaderboardPerson">
-                    <strong>person / place here</strong>
+                    <strong>FFT community server</strong>
                     <span>kind support</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$1.5k</div>
                 </div>
 
                 <div class="leaderboardRow rank3">
                   <div class="rankBadge">3</div>
                   <div class="leaderboardPerson">
-                    <strong>person / place here</strong>
+                    <strong>students lunch debts</strong>
                     <span>good vibes</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$1.1k</div>
                 </div>
 
                 <div class="leaderboardRow">
                   <div class="rankBadge">4</div>
                   <div class="leaderboardPerson">
-                    <strong>person / place here</strong>
+                    <strong>students band payments</strong>
                     <span>support target</span>
                   </div>
-                  <div class="leaderboardAmount">$0</div>
+                  <div class="leaderboardAmount">$700</div>
                 </div>
               </div>
             </article>
@@ -214,21 +214,7 @@
               </p>
 
               <div class="supportNameScroller">
-                <div class="supportNameTrack">
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                  <span>name here ✦</span>
-                </div>
+                <div class="supportNameTrack" id="supportNameTrack"></div>
               </div>
             </article>
           </section>
@@ -280,6 +266,83 @@
           item.classList.add("show");
         }, 120 + index * 110);
       });
+
+      const supportNames = [
+        "Original name",
+        "Lilacy devil",
+        "Dani",
+        "nainai",
+        "celenyxie",
+        "btelnyy",
+        "leewolverine",
+        "redro",
+        "feroline",
+        "lucyxcya",
+        "lonkgobonk",
+        "Brett",
+        "Daniel",
+        "max",
+        "ranie",
+        "crashy",
+        "puffilicius",
+        "Tsuras",
+        "astroxu",
+        "ayeka",
+        "cooldude1943",
+        "jam",
+        "mel0n",
+        "milk",
+        "Procyon",
+        "protonPerson",
+        "yeenclave",
+        "gray joestar",
+        "Langting",
+        "R.I.P Jackson",
+        "R.I.P Trina",
+        "R.I.P Jacob",
+        "R.I.P Theo",
+        "R.I.P Eugene Johnny",
+        "R.I.P Oliver",
+        "moony",
+        "ender",
+        "La chévre",
+        "toasty",
+        "R.I.P Pete",
+        "Wyxnn",
+        "R.I.P zion",
+        "Rain"
+      ];
+
+      function shuffleArray(array) {
+        const arr = [...array];
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
+      function buildSupportRows(names) {
+        const rows = [];
+        for (let i = 0; i < names.length; i += 3) {
+          const group = names.slice(i, i + 3);
+          rows.push(group);
+        }
+        return rows;
+      }
+
+      const track = document.getElementById("supportNameTrack");
+      if (track) {
+        const shuffled = shuffleArray(supportNames);
+        const rows = buildSupportRows(shuffled);
+        const doubledRows = [...rows, ...rows];
+
+        track.innerHTML = doubledRows.map((group) => `
+          <div class="supportNameRow">
+            ${group.map(name => `<span>${name} ✦</span>`).join("")}
+          </div>
+        `).join("");
+      }
     });
   </script>
   <script src="../js/site-magic.js"></script>
