@@ -672,6 +672,15 @@
   transform: scale(1.1);
 }
 
+/* cleaner slider patch */
+.galleryRoomClean .featuredFrame {
+  padding-top: 0;
+}
+
+.galleryRoomClean .showcaseInfo {
+  display: none;
+}
+
 /* ========================= */
 /* ART CREDIT + HOVER */
 /* ========================= */
