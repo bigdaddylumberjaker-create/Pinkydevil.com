@@ -344,6 +344,12 @@
   display: block;
   border-radius: 22px;
   transition: transform 0.35s ease;
+  animation: fursonaIdle 6s ease-in-out infinite;
+}
+
+@keyframes fursonaIdle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
 }
 
 .mainShrineCard:hover .mainFursonaArt {
@@ -371,6 +377,13 @@
   max-width: 640px;
   color: #8d5374;
   line-height: 1.85;
+}
+
+.shrineExtra {
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 15px;
+  color: #9a587d;
 }
 
 .identityPills {
@@ -485,6 +498,10 @@
   cursor: pointer;
 }
 
+.infoCard:nth-child(2) {
+  transform: rotate(1.2deg);
+}
+
 /* footer */
 
 .siteFooter {
@@ -549,6 +566,10 @@
 
   .mainFursonaArt {
     max-width: 100%;
+  }
+
+  .infoCard:nth-child(2) {
+    transform: none;
   }
 }
 
