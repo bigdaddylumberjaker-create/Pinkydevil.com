@@ -35,7 +35,6 @@ function clearClipWatcher(trackId) {
 
 function stopLocalTrack4() {
   const video = document.getElementById("track4-local-video");
-
   if (video) {
     video.pause();
     video.currentTime = 0;
@@ -44,7 +43,6 @@ function stopLocalTrack4() {
 
 function playLocalTrack4() {
   const video = document.getElementById("track4-local-video");
-
   if (video) {
     video.currentTime = 0;
     video.play().catch(() => {});
