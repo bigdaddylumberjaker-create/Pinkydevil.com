@@ -232,16 +232,18 @@
             </ul>
           </article>
 
+          <!-- ✅ UPDATED CARD (Option B) -->
           <article class="infoCard reveal delay4 floatingCard">
-            <span class="cardTag">future upgrades</span>
-            <h3>more shrine magic</h3>
+            <span class="cardTag">why this exists</span>
+            <h3>a little thank you space</h3>
             <ul class="infoList">
-              <li>support goals</li>
-              <li>cute thank-you wall</li>
-              <li>animated shrine effects</li>
-              <li>extra support rewards info</li>
+              <li>this page is a little thank you space</li>
+              <li>a place to remember kindness</li>
+              <li>and the people who made things easier</li>
+              <li>even small support means a lot to me</li>
             </ul>
           </article>
+
         </aside>
 
       </section>
@@ -268,49 +270,7 @@
       });
 
       const supportNames = [
-        "Original name",
-        "Lilacy devil",
-        "Dani",
-        "nainai",
-        "celenyxie",
-        "btelnyy",
-        "leewolverine",
-        "redro",
-        "feroline",
-        "lucyxcya",
-        "lonkgobonk",
-        "Brett",
-        "Daniel",
-        "max",
-        "ranie",
-        "crashy",
-        "puffilicius",
-        "Tsuras",
-        "astroxu",
-        "ayeka",
-        "cooldude1943",
-        "jam",
-        "mel0n",
-        "milk",
-        "Procyon",
-        "protonPerson",
-        "yeenclave",
-        "gray joestar",
-        "Langting",
-        "R.I.P Jackson",
-        "R.I.P Trina",
-        "R.I.P Jacob",
-        "R.I.P Theo",
-        "R.I.P Eugene Johnny",
-        "R.I.P Oliver",
-        "moony",
-        "ender",
-        "La chévre",
-        "toasty",
-        "R.I.P Pete",
-        "Wyxnn",
-        "R.I.P zion",
-        "Rain"
+        "Original name","Lilacy devil","Dani","nainai","celenyxie","btelnyy","leewolverine","redro","feroline","lucyxcya","lonkgobonk","Brett","Daniel","max","ranie","crashy","puffilicius","Tsuras","astroxu","ayeka","cooldude1943","jam","mel0n","milk","Procyon","protonPerson","yeenclave","gray joestar","Langting","R.I.P Jackson","R.I.P Trina","R.I.P Jacob","R.I.P Theo","R.I.P Eugene Johnny","R.I.P Oliver","moony","ender","La chévre","toasty","R.I.P Pete","Wyxnn","R.I.P zion","Rain"
       ];
 
       function shuffleArray(array) {
@@ -325,19 +285,17 @@
       function buildSupportRows(names) {
         const rows = [];
         for (let i = 0; i < names.length; i += 3) {
-          const group = names.slice(i, i + 3);
-          rows.push(group);
+          rows.push(names.slice(i, i + 3));
         }
         return rows;
       }
 
       const track = document.getElementById("supportNameTrack");
       if (track) {
-        const shuffled = shuffleArray(supportNames);
-        const rows = buildSupportRows(shuffled);
+        const rows = buildSupportRows(shuffleArray(supportNames));
         const doubledRows = [...rows, ...rows];
 
-        track.innerHTML = doubledRows.map((group) => `
+        track.innerHTML = doubledRows.map(group => `
           <div class="supportNameRow">
             ${group.map(name => `<span>${name} ✦</span>`).join("")}
           </div>
@@ -345,6 +303,7 @@
       }
     });
   </script>
+
   <script src="../js/site-magic.js"></script>
   <script src="../js/ui-polish.js"></script>
 </body>
