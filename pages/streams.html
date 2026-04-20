@@ -250,44 +250,18 @@
     </footer>
   </div>
 
-<script src="../js/site-magic.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      reveals.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, 120 + index * 110);
+      });
+    });
+  </script>
 
-<script src="../js/streams-live.js"></script>
-
-<script>
-  // PATCH: hook into live detection and apply visual mode
-  (function () {
-    const monitor = document.getElementById("mainMonitorCard");
-    const liveBadge = document.getElementById("liveBadge");
-
-    function applyLiveMode(isLive) {
-      if (!monitor || !liveBadge) return;
-
-      if (isLive) {
-        monitor.classList.add("liveMode");
-        liveBadge.classList.remove("offline");
-        liveBadge.classList.add("live");
-        liveBadge.textContent = "LIVE";
-      } else {
-        monitor.classList.remove("liveMode");
-        liveBadge.classList.remove("live");
-        liveBadge.classList.add("offline");
-        liveBadge.textContent = "offline";
-      }
-    }
-
-    // hook into your existing system if it exists
-    window.streamsLiveHook = applyLiveMode;
-
-    // fallback (if your live script doesn't call it yet)
-    setTimeout(() => {
-      // default = offline until script updates
-      applyLiveMode(false);
-    }, 500);
-  })();
-</script>
-</body>
-</html>
   <script>
     const twitchBtn = document.getElementById("btnTwitchChat");
     const siteBtn = document.getElementById("btnSiteChat");
