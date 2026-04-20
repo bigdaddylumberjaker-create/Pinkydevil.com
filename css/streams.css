@@ -831,4 +831,45 @@
 .mainMonitor.liveMode ~ * {
   opacity: 0.9;
 }
+  /* ========================= */
+/* LIVE MODE ENHANCEMENT PATCH */
+/* ========================= */
+
+.mainMonitor.liveMode {
+  box-shadow:
+    0 0 60px rgba(255, 120, 200, 0.45),
+    0 0 120px rgba(255, 120, 200, 0.25),
+    0 0 200px rgba(255, 120, 200, 0.12);
+  transform: scale(1.015);
+  transition: all 0.4s ease;
+}
+
+.mainMonitor.liveMode .monitorGlow {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 90, 170, 0.35),
+    rgba(255, 120, 200, 0.18),
+    transparent 70%
+  );
+}
+
+.mainMonitor.liveMode .videoFrame {
+  box-shadow:
+    0 0 30px rgba(255, 120, 200, 0.55),
+    0 0 80px rgba(255, 120, 200, 0.25);
+}
+
+/* smoother iframe rendering */
+.videoFrame iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+/* slight hover polish */
+.mainMonitor:hover {
+  transform: scale(1.01);
+  transition: 0.25s ease;
+}
 }
