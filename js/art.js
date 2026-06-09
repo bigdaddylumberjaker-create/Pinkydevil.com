@@ -16,7 +16,8 @@
       alt: "Extra showcase artwork two",
       artist: "artost by: @twinklejaylen 💗"
     }
-  ];{
+  
+    {
       src: "../images/arts/extra1.jpg",
       alt: "Extra showcase artwork three",
       artist: "artist by: birdie"
@@ -26,7 +27,7 @@
       alt: "Extra showcase artwork two",
       artist: "artist by: redpandaheart_m1art💗"
     }
-  ];{
+  {
       src: "../images/arts/wip1.png",
       alt: "Extra showcase artwork one",
       artist: "artist by: @_Linkypinky_ 💗"
