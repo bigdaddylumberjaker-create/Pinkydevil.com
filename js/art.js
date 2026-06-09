@@ -7,17 +7,31 @@
   // Do not add featured/art1/art2/art3/art4/art5/art6 here.
   const SHOWCASE_ART = [
     {
-      src: "../images/arts/extra1.jpg",
+      src: "../images/arts/art2.png",
       alt: "Extra showcase artwork one",
-      artist: "unknown artist 💗"
+      artist: "artist by:  Polkana 💗"
+    },
+    {
+      src: "../images/arts/art4.png",
+      alt: "Extra showcase artwork two",
+      artist: "artost by: @twinklejaylen 💗"
+    }
+  ];{
+      src: "../images/arts/extra1.jpg",
+      alt: "Extra showcase artwork three",
+      artist: "artist by: birdie"
     },
     {
       src: "../images/arts/extra2.png",
       alt: "Extra showcase artwork two",
-      artist: "unknown artist 💗"
+      artist: "artist by: redpandaheart_m1art💗"
     }
-  ];
-
+  ];{
+      src: "../images/arts/wip1.png",
+      alt: "Extra showcase artwork one",
+      artist: "artist by: @_Linkypinky_ 💗"
+    },
+    
   function openLightbox(src, alt) {
     if (!lightbox || !lightboxImage) return;
     lightboxImage.src = src;
