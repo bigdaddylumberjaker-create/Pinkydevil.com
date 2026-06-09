@@ -32,7 +32,7 @@
       alt: "Extra showcase artwork one",
       artist: "artist by: @_Linkypinky_ 💗"
     },
-    
+]
   function openLightbox(src, alt) {
     if (!lightbox || !lightboxImage) return;
     lightboxImage.src = src;
