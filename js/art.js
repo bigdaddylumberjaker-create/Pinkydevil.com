@@ -27,7 +27,7 @@
       artist: "artist by: redpandaheart_m1art💗"
     },
     {
-      src: "../images/arts/wip1.png",
+      src: "../images/arts/wip1.jpg",
       alt: "Extra showcase artwork one",
       artist: "artist by: @_Linkypinky_ 💗"
     },
