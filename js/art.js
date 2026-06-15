@@ -1,7 +1,7 @@
 (() => {
   const lightbox = document.getElementById("artLightbox");
   const lightboxImage = document.getElementById("lightboxImage");
-  const closeButton = document.getElementById("lightboxClose");
+  const closeButton = document.getElementById("lightboxClose"); 
  
   // ONLY put extra slider art here.
   // Do not add featured/art1/art2/art3/art4/art5/art6 here.
