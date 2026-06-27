@@ -11,12 +11,12 @@
       alt: "Extra showcase artwork one",
       artist: "artist by:  Polkana 💗"
     },
-     {
+    {
       src: "../images/arts/show.gif",
       alt: "Extra showcase artwork one",
       artist: "artist by:  Lyanmyan 💗"
     },
-     {
+    {
       src: "../images/arts/pawjobs.gif",
       alt: "Extra showcase artwork one",
       artist: "artist by:  Lyanmyan 💗"
