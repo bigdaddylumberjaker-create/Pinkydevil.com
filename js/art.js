@@ -12,6 +12,11 @@
       artist: "artist by:  Polkana 💗"
     },
     {
+      src: "../images/arts/gyatgyat.jpg",
+      alt: "Extra showcase artwork one",
+      artist: "artist by:  Polkana 💗"
+    },
+    {
       src: "../images/arts/show.gif",
       alt: "Extra showcase artwork one",
       artist: "artist by:  Lyanmyan 💗"
