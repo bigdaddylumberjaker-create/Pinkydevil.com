@@ -7,6 +7,16 @@
   // Do not add featured/art1/art2/art3/art4/art5/art6 here.
   const SHOWCASE_ART = [
     {
+      src: "../images/arts/belly.gif",
+      alt: "Extra showcase artwork one",
+      artist: "artist by:  Lyanmyan 💗"
+    },
+    {
+      src: "../images/arts/pixel.gif",
+      alt: "Extra showcase artwork one",
+      artist: "artist by: @notg_arts"
+    },
+    {
       src: "../images/arts/art2.png",
       alt: "Extra showcase artwork one",
       artist: "artist by:  Polkana 💗"
