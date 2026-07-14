@@ -96,7 +96,7 @@
 
     if (streamEmbed) {
       streamEmbed.src =
-        "https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io&muted=true";
+        "https://player.twitch.tv/?channel=pinkydevii&parent=pinkydevil.com&parent=www.pinkydevil.com&muted=true";
     }
 
     if (mainMonitorCard) {
@@ -149,7 +149,7 @@
 
     if (streamEmbed) {
       streamEmbed.src =
-        "https://player.twitch.tv/?channel=pinkydevii&parent=bigdaddylumberjaker-create.github.io&muted=false";
+        "https://player.twitch.tv/?channel=pinkydevii&parent=pinkydevil.com&parent=www.pinkydevil.com&muted=false";
     }
 
     if (mainMonitorCard) {
