@@ -12,7 +12,7 @@
       artist: "artist by:  Lyanmyan 💗"
     },
     {
-      src: "../images/arts/pixel.gif",
+      src: "../images/arts/pixel.png",
       alt: "Extra showcase artwork one",
       artist: "artist by: @notg_arts"
     },
